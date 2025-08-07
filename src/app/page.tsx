@@ -1,127 +1,377 @@
 'use client';
 
-import React, { useState } from 'react';
-import Desktop from '@/components/Desktop';
-import Window from '@/components/Window';
-import Dock from '@/components/Dock';
-import MenuBar from '@/components/MenuBar';
-import HomeWindow from '@/components/windows/HomeWindow';
-import AboutWindow from '@/components/windows/AboutWindow';
-import ProjectsWindow from '@/components/windows/ProjectsWindow';
-import ContactWindow from '@/components/windows/ContactWindow';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { 
+  Brain, 
+  Code, 
+  Briefcase, 
+  Mail, 
+  Github, 
+  Linkedin, 
+  Zap,
+  Sparkles,
+  Cpu,
+  Network,
+  Activity,
+  Target,
+  Lightbulb
+} from 'lucide-react';
+import NeuralNode from '@/components/NeuralNode';
+import NeuralConnection from '@/components/NeuralConnection';
 
-interface WindowState {
+interface NodeData {
   id: string;
-  isOpen: boolean;
-  zIndex: number;
+  title: string;
+  content: string;
+  icon: React.ReactNode;
+  x: number;
+  y: number;
+  connections: string[];
+  color: string;
+  pulse: boolean;
+  strength: number;
 }
 
-export default function Portfolio() {
-  const [windows, setWindows] = useState<WindowState[]>([
-    { id: 'home', isOpen: true, zIndex: 1 },
-    { id: 'about', isOpen: false, zIndex: 1 },
-    { id: 'projects', isOpen: false, zIndex: 1 },
-    { id: 'contact', isOpen: false, zIndex: 1 },
+export default function NeuralPortfolio() {
+  const [nodes, setNodes] = useState<NodeData[]>([
+    {
+      id: 'about',
+      title: 'About Me',
+      content: 'Full-stack developer passionate about creating innovative solutions and pushing the boundaries of web technology. Specializing in AI/ML, blockchain, and cutting-edge web applications.',
+      icon: <Brain className="w-6 h-6" />,
+      x: 50,
+      y: 50,
+      connections: ['skills', 'experience', 'vision'],
+      color: '#FF6B6B',
+      pulse: true,
+      strength: 0.9
+    },
+    {
+      id: 'skills',
+      title: 'Skills',
+      content: 'React, Next.js, TypeScript, Node.js, Python, AI/ML, Cloud Architecture, DevOps, Blockchain, Real-time Systems, Microservices',
+      icon: <Code className="w-6 h-6" />,
+      x: 300,
+      y: 100,
+      connections: ['about', 'projects', 'experience'],
+      color: '#4ECDC4',
+      pulse: false,
+      strength: 0.8
+    },
+    {
+      id: 'experience',
+      title: 'Experience',
+      content: '5+ years building scalable applications, leading development teams, and delivering impactful solutions for Fortune 500 companies and startups.',
+      icon: <Briefcase className="w-6 h-6" />,
+      x: 150,
+      y: 300,
+      connections: ['about', 'contact', 'skills'],
+      color: '#45B7D1',
+      pulse: false,
+      strength: 0.85
+    },
+    {
+      id: 'projects',
+      title: 'Projects',
+      content: 'AI-powered applications, blockchain solutions, real-time systems, innovative web platforms, and cutting-edge technology implementations.',
+      icon: <Zap className="w-6 h-6" />,
+      x: 450,
+      y: 250,
+      connections: ['skills', 'contact', 'vision'],
+      color: '#96CEB4',
+      pulse: false,
+      strength: 0.75
+    },
+    {
+      id: 'contact',
+      title: 'Connect',
+      content: 'Ready to collaborate on exciting projects. Let\'s build something amazing together! Always open to new opportunities and innovative partnerships.',
+      icon: <Mail className="w-6 h-6" />,
+      x: 250,
+      y: 450,
+      connections: ['experience', 'projects', 'about'],
+      color: '#FFEAA7',
+      pulse: false,
+      strength: 0.7
+    },
+    {
+      id: 'vision',
+      title: 'Vision',
+      content: 'Pioneering the future of technology through innovative solutions, AI integration, and sustainable development practices that make a real impact.',
+      icon: <Target className="w-6 h-6" />,
+      x: 500,
+      y: 50,
+      connections: ['about', 'projects', 'skills'],
+      color: '#A8E6CF',
+      pulse: false,
+      strength: 0.9
+    }
   ]);
 
-  const [activeApp, setActiveApp] = useState<string>('home');
+  const [selectedNode, setSelectedNode] = useState<string | null>(null);
+  const [connections, setConnections] = useState<{ from: string; to: string; strength: number }[]>([]);
+  const [brainWaves, setBrainWaves] = useState<Array<{ id: number; x: number; y: number; amplitude: number }>>([]);
+  const [isNetworkActive, setIsNetworkActive] = useState(true);
 
-  const handleAppClick = (appId: string) => {
-    setWindows(prev => 
-      prev.map(window => ({
-        ...window,
-        isOpen: window.id === appId ? true : window.isOpen,
-        zIndex: window.id === appId ? Math.max(...prev.map(w => w.zIndex)) + 1 : window.zIndex
-      }))
-    );
-    setActiveApp(appId);
-  };
+  useEffect(() => {
+    // Generate connections based on node data
+    const newConnections: { from: string; to: string; strength: number }[] = [];
+    nodes.forEach(node => {
+      node.connections.forEach(targetId => {
+        const targetNode = nodes.find(n => n.id === targetId);
+        if (targetNode) {
+          newConnections.push({ 
+            from: node.id, 
+            to: targetId, 
+            strength: (node.strength + targetNode.strength) / 2 
+          });
+        }
+      });
+    });
+    setConnections(newConnections);
 
-  const handleWindowClose = (windowId: string) => {
-    setWindows(prev => 
-      prev.map(window => 
-        window.id === windowId ? { ...window, isOpen: false } : window
-      )
-    );
-  };
+    // Animate pulse effect with brain-like patterns
+    const interval = setInterval(() => {
+      setNodes(prev => prev.map(node => ({
+        ...node,
+        pulse: Math.random() > 0.6 && node.strength > 0.8
+      })));
+    }, 3000);
 
-  const handleWindowMaximize = (windowId: string) => {
-    // Handle maximize logic if needed
-  };
+    return () => clearInterval(interval);
+  }, [nodes]);
 
-  const handleWindowMinimize = (windowId: string) => {
-    // Handle minimize logic if needed
-  };
+  useEffect(() => {
+    // Generate brain wave patterns
+    const waveInterval = setInterval(() => {
+      setBrainWaves(prev => [
+        ...prev,
+        {
+          id: Date.now(),
+          x: Math.random() * window.innerWidth,
+          y: Math.random() * window.innerHeight,
+          amplitude: Math.random() * 100 + 50
+        }
+      ]);
+    }, 500);
 
-  const getWindowContent = (windowId: string) => {
-    switch (windowId) {
-      case 'home':
-        return <HomeWindow />;
-      case 'about':
-        return <AboutWindow />;
-      case 'projects':
-        return <ProjectsWindow />;
-      case 'contact':
-        return <ContactWindow />;
-      default:
-        return null;
+    return () => clearInterval(waveInterval);
+  }, []);
+
+  useEffect(() => {
+    // Clean up brain waves
+    const cleanupInterval = setInterval(() => {
+      setBrainWaves(prev => prev.filter(wave => Date.now() - wave.id < 3000));
+    }, 1000);
+
+    return () => clearInterval(cleanupInterval);
+  }, []);
+
+  const handleNodeClick = (nodeId: string) => {
+    setSelectedNode(selectedNode === nodeId ? null : nodeId);
+    
+    // Activate connected nodes
+    const clickedNode = nodes.find(n => n.id === nodeId);
+    if (clickedNode) {
+      setNodes(prev => prev.map(node => ({
+        ...node,
+        pulse: clickedNode.connections.includes(node.id) || node.id === nodeId
+      })));
     }
   };
 
-  const getWindowTitle = (windowId: string) => {
-    switch (windowId) {
-      case 'home':
-        return 'Welcome';
-      case 'about':
-        return 'About Me';
-      case 'projects':
-        return 'Projects';
-      case 'contact':
-        return 'Contact';
-      default:
-        return 'Window';
-    }
-  };
-
-  const getWindowPosition = (windowId: string) => {
-    switch (windowId) {
-      case 'home':
-        return { x: 100, y: 100 };
-      case 'about':
-        return { x: 150, y: 150 };
-      case 'projects':
-        return { x: 200, y: 200 };
-      case 'contact':
-        return { x: 250, y: 250 };
-      default:
-        return { x: 100, y: 100 };
-    }
+  const getNodePosition = (nodeId: string) => {
+    const node = nodes.find(n => n.id === nodeId);
+    return node ? { x: node.x, y: node.y } : { x: 0, y: 0 };
   };
 
   return (
-    <Desktop>
-      {/* Menu Bar */}
-      <MenuBar />
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden">
+      {/* Animated background particles */}
+      <div className="absolute inset-0">
+        {[...Array(100)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-1 h-1 bg-white/10 rounded-full"
+            animate={{
+              x: [0, window.innerWidth],
+              y: [0, window.innerHeight],
+            }}
+            transition={{
+              duration: Math.random() * 15 + 10,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+            style={{
+              left: Math.random() * window.innerWidth,
+              top: Math.random() * window.innerHeight,
+            }}
+          />
+        ))}
+      </div>
 
-      {/* Windows */}
-      {windows.map((window) => (
-        <Window
-          key={window.id}
-          id={window.id}
-          title={getWindowTitle(window.id)}
-          isOpen={window.isOpen}
-          zIndex={window.zIndex}
-          defaultPosition={getWindowPosition(window.id)}
-          onClose={() => handleWindowClose(window.id)}
-          onMaximize={() => handleWindowMaximize(window.id)}
-          onMinimize={() => handleWindowMinimize(window.id)}
+      {/* Brain wave patterns */}
+      <div className="absolute inset-0">
+        {brainWaves.map(wave => (
+          <motion.div
+            key={wave.id}
+            className="absolute w-1 h-1 bg-purple-400/30 rounded-full"
+            style={{
+              left: wave.x,
+              top: wave.y,
+            }}
+            initial={{ scale: 0, opacity: 0.8 }}
+            animate={{ 
+              scale: [0, wave.amplitude / 10, 0],
+              opacity: [0.8, 0.3, 0]
+            }}
+            transition={{ duration: 3 }}
+          />
+        ))}
+      </div>
+
+      {/* Neural connections */}
+      <svg className="absolute inset-0 w-full h-full pointer-events-none">
+        {connections.map((connection, index) => {
+          const from = getNodePosition(connection.from);
+          const to = getNodePosition(connection.to);
+          
+          return (
+            <NeuralConnection
+              key={index}
+              from={from}
+              to={to}
+              color={`hsl(${200 + connection.strength * 60}, 70%, 60%)`}
+              index={index}
+              isActive={isNetworkActive}
+            />
+          );
+        })}
+      </svg>
+
+      {/* Header with neural activity */}
+      <motion.div 
+        className="absolute top-8 left-8 z-10"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+      >
+        <div className="flex items-center gap-3 mb-2">
+          <motion.div
+            animate={{ rotate: [0, 360] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+          >
+            <Network className="w-8 h-8 text-purple-400" />
+          </motion.div>
+          <div>
+            <h1 className="text-4xl font-bold text-white gradient-text">
+              Neural Portfolio
+            </h1>
+            <p className="text-purple-200 text-lg">Interactive • Dynamic • Connected</p>
+          </div>
+        </div>
+        
+        {/* Neural activity indicator */}
+        <div className="flex gap-1 mt-2">
+          {[...Array(5)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="w-2 h-2 bg-purple-400 rounded-full"
+              animate={{
+                opacity: [0.3, 1, 0.3],
+                scale: [0.8, 1.2, 0.8]
+              }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                delay: i * 0.2
+              }}
+            />
+          ))}
+        </div>
+      </motion.div>
+
+      {/* Neural Nodes */}
+      <AnimatePresence>
+        {nodes.map((node) => (
+          <NeuralNode
+            key={node.id}
+            id={node.id}
+            title={node.title}
+            content={node.content}
+            icon={node.icon}
+            color={node.color}
+            pulse={node.pulse}
+            isSelected={selectedNode === node.id}
+            onSelect={handleNodeClick}
+            position={{ x: node.x, y: node.y }}
+          />
+        ))}
+      </AnimatePresence>
+
+      {/* Floating action buttons */}
+      <motion.div 
+        className="absolute bottom-8 right-8 flex gap-4"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 1 }}
+      >
+        <motion.a
+          href="https://github.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-12 h-12 bg-black/20 backdrop-blur-sm border border-white/20 rounded-full flex items-center justify-center text-white hover:bg-white/10 transition-colors"
+          whileHover={{ scale: 1.1, rotate: 360 }}
+          whileTap={{ scale: 0.9 }}
         >
-          {getWindowContent(window.id)}
-        </Window>
-      ))}
+          <Github className="w-6 h-6" />
+        </motion.a>
+        <motion.a
+          href="https://linkedin.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-12 h-12 bg-black/20 backdrop-blur-sm border border-white/20 rounded-full flex items-center justify-center text-white hover:bg-white/10 transition-colors"
+          whileHover={{ scale: 1.1, rotate: 360 }}
+          whileTap={{ scale: 0.9 }}
+        >
+          <Linkedin className="w-6 h-6" />
+        </motion.a>
+        <motion.a
+          href="mailto:contact@example.com"
+          className="w-12 h-12 bg-black/20 backdrop-blur-sm border border-white/20 rounded-full flex items-center justify-center text-white hover:bg-white/10 transition-colors"
+          whileHover={{ scale: 1.1, rotate: 360 }}
+          whileTap={{ scale: 0.9 }}
+        >
+          <Mail className="w-6 h-6" />
+        </motion.a>
+      </motion.div>
 
-      {/* Dock */}
-      <Dock onAppClick={handleAppClick} activeApp={activeApp} />
-    </Desktop>
+      {/* Interactive instructions */}
+      <motion.div 
+        className="absolute bottom-8 left-8 text-white/60 text-sm"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 2 }}
+      >
+        <p>💡 Click nodes to explore • Drag to reposition • Watch the neural network pulse!</p>
+        <p className="text-xs mt-1">🧠 Each connection represents a skill relationship</p>
+      </motion.div>
+
+      {/* Network status */}
+      <motion.div 
+        className="absolute top-8 right-8 flex items-center gap-2 text-white/80"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1.5 }}
+      >
+        <motion.div
+          className="w-2 h-2 bg-green-400 rounded-full"
+          animate={{ scale: [1, 1.2, 1] }}
+          transition={{ duration: 2, repeat: Infinity }}
+        />
+        <span className="text-sm">Neural Network Active</span>
+      </motion.div>
+    </div>
   );
 }
