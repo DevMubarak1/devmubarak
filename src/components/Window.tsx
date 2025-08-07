@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { Rnd } from 'react-rnd';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Minus, Maximize2, Minimize2 } from 'lucide-react';
+import { Maximize2, Minimize2 } from 'lucide-react';
 
 interface WindowProps {
   id: string;
@@ -21,7 +21,6 @@ interface WindowProps {
 }
 
 export default function Window({
-  id,
   title,
   children,
   defaultPosition = { x: 100, y: 100 },
@@ -76,40 +75,42 @@ export default function Window({
           disableResizing={isMaximized}
           className="liquid-glass rounded-lg overflow-hidden"
         >
-          {/* Window Header */}
-          <div className="flex items-center justify-between p-3 bg-white/10 backdrop-blur-sm border-b border-white/20">
-            <div className="flex items-center gap-2">
-              <div className="window-controls">
-                <button
-                  className="control-button control-close"
-                  onClick={handleClose}
-                  title="Close"
-                />
-                <button
-                  className="control-button control-minimize"
-                  onClick={handleMinimize}
-                  title="Minimize"
-                />
-                <button
-                  className="control-button control-maximize"
-                  onClick={handleMaximize}
-                  title={isMaximized ? "Restore" : "Maximize"}
-                />
+          <div className="w-full h-full">
+            {/* Window Header */}
+            <div className="flex items-center justify-between p-3 bg-white/10 backdrop-blur-sm border-b border-white/20">
+              <div className="flex items-center gap-2">
+                <div className="window-controls">
+                  <button
+                    className="control-button control-close"
+                    onClick={handleClose}
+                    title="Close"
+                  />
+                  <button
+                    className="control-button control-minimize"
+                    onClick={handleMinimize}
+                    title="Minimize"
+                  />
+                  <button
+                    className="control-button control-maximize"
+                    onClick={handleMaximize}
+                    title={isMaximized ? "Restore" : "Maximize"}
+                  />
+                </div>
+                <span className="text-sm font-medium text-white/90 ml-2">{title}</span>
               </div>
-              <span className="text-sm font-medium text-white/90 ml-2">{title}</span>
+              <div className="flex items-center gap-1">
+                {isMaximized ? (
+                  <Minimize2 size={16} className="text-white/70 hover:text-white cursor-pointer" />
+                ) : (
+                  <Maximize2 size={16} className="text-white/70 hover:text-white cursor-pointer" />
+                )}
+              </div>
             </div>
-            <div className="flex items-center gap-1">
-              {isMaximized ? (
-                <Minimize2 size={16} className="text-white/70 hover:text-white cursor-pointer" />
-              ) : (
-                <Maximize2 size={16} className="text-white/70 hover:text-white cursor-pointer" />
-              )}
-            </div>
-          </div>
 
-          {/* Window Content */}
-          <div className="p-4 h-full overflow-auto glass-scrollbar">
-            {children}
+            {/* Window Content */}
+            <div className="p-4 h-full overflow-auto glass-scrollbar">
+              {children}
+            </div>
           </div>
         </Rnd>
       </motion.div>

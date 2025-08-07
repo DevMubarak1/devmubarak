@@ -46,7 +46,7 @@ export default function ContactWindow() {
         <div className="liquid-glass rounded-lg p-6">
           <h2 className="text-2xl font-bold text-white mb-4">Get In Touch</h2>
           <p className="text-white/80 mb-6">
-            I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
+            I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">

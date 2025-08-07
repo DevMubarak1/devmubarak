@@ -6,7 +6,6 @@ import {
   ExternalLink, 
   Github, 
   Code, 
-  Globe, 
   Star,
   Eye
 } from 'lucide-react';

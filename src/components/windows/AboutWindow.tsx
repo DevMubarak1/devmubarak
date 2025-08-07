@@ -34,7 +34,7 @@ export default function AboutWindow() {
         <div className="liquid-glass rounded-lg p-6">
           <h2 className="text-2xl font-bold text-white mb-4">About Me</h2>
           <p className="text-white/80 mb-4 leading-relaxed">
-            I'm a passionate full-stack developer with a love for creating innovative web applications. 
+            I&apos;m a passionate full-stack developer with a love for creating innovative web applications. 
             With expertise in modern JavaScript frameworks and a keen eye for design, I build applications 
             that are both beautiful and functional.
           </p>
