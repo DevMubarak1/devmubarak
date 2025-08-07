@@ -39,9 +39,6 @@ export default function NeuralConnection({ from, to, color, index, isActive }: N
     return () => cancelAnimationFrame(animationFrame);
   });
 
-  const distance = Math.sqrt(Math.pow(to.x - from.x, 2) + Math.pow(to.y - from.y, 2));
-  const angle = Math.atan2(to.y - from.y, to.x - from.x);
-
   return (
     <g>
       {/* Main connection line */}

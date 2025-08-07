@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import dynamic from 'next/dynamic';
 import { 
   Brain, 
   Code, 
@@ -17,8 +18,10 @@ import {
   Target,
   Lightbulb
 } from 'lucide-react';
-import NeuralNode from '@/components/NeuralNode';
-import NeuralConnection from '@/components/NeuralConnection';
+
+// Dynamic imports to prevent SSR issues
+const NeuralNode = dynamic(() => import('@/components/NeuralNode'), { ssr: false });
+const NeuralConnection = dynamic(() => import('@/components/NeuralConnection'), { ssr: false });
 
 interface NodeData {
   id: string;
@@ -113,6 +116,32 @@ export default function NeuralPortfolio() {
   const [connections, setConnections] = useState<{ from: string; to: string; strength: number }[]>([]);
   const [brainWaves, setBrainWaves] = useState<Array<{ id: number; x: number; y: number; amplitude: number }>>([]);
   const [isNetworkActive, setIsNetworkActive] = useState(true);
+  const [windowDimensions, setWindowDimensions] = useState({ width: 1200, height: 800 });
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  useEffect(() => {
+    // Set window dimensions on client side
+    if (typeof window !== 'undefined') {
+      setWindowDimensions({
+        width: window.innerWidth,
+        height: window.innerHeight
+      });
+
+      const handleResize = () => {
+        setWindowDimensions({
+          width: window.innerWidth,
+          height: window.innerHeight
+        });
+      };
+
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }
+  }, []);
 
   useEffect(() => {
     // Generate connections based on node data
@@ -145,19 +174,21 @@ export default function NeuralPortfolio() {
   useEffect(() => {
     // Generate brain wave patterns
     const waveInterval = setInterval(() => {
-      setBrainWaves(prev => [
-        ...prev,
-        {
-          id: Date.now(),
-          x: Math.random() * window.innerWidth,
-          y: Math.random() * window.innerHeight,
-          amplitude: Math.random() * 100 + 50
-        }
-      ]);
+      if (typeof window !== 'undefined') {
+        setBrainWaves(prev => [
+          ...prev,
+          {
+            id: Date.now(),
+            x: Math.random() * windowDimensions.width,
+            y: Math.random() * windowDimensions.height,
+            amplitude: Math.random() * 100 + 50
+          }
+        ]);
+      }
     }, 500);
 
     return () => clearInterval(waveInterval);
-  }, []);
+  }, [windowDimensions]);
 
   useEffect(() => {
     // Clean up brain waves
@@ -186,6 +217,24 @@ export default function NeuralPortfolio() {
     return node ? { x: node.x, y: node.y } : { x: 0, y: 0 };
   };
 
+  if (!isClient) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center">
+        <div className="text-white text-center">
+          <motion.div
+            animate={{ rotate: 360 }}
+            transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+            className="mb-4"
+          >
+            <Network className="w-12 h-12 text-purple-400 mx-auto" />
+          </motion.div>
+          <h1 className="text-2xl font-bold mb-2">Neural Portfolio</h1>
+          <p className="text-purple-200">Loading neural network...</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden">
       {/* Animated background particles */}
@@ -195,8 +244,8 @@ export default function NeuralPortfolio() {
             key={i}
             className="absolute w-1 h-1 bg-white/10 rounded-full"
             animate={{
-              x: [0, window.innerWidth],
-              y: [0, window.innerHeight],
+              x: [0, windowDimensions.width],
+              y: [0, windowDimensions.height],
             }}
             transition={{
               duration: Math.random() * 15 + 10,
@@ -204,8 +253,8 @@ export default function NeuralPortfolio() {
               ease: "linear"
             }}
             style={{
-              left: Math.random() * window.innerWidth,
-              top: Math.random() * window.innerHeight,
+              left: Math.random() * windowDimensions.width,
+              top: Math.random() * windowDimensions.height,
             }}
           />
         ))}
