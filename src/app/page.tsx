@@ -1,103 +1,127 @@
-import Image from "next/image";
+'use client';
 
-export default function Home() {
+import React, { useState } from 'react';
+import Desktop from '@/components/Desktop';
+import Window from '@/components/Window';
+import Dock from '@/components/Dock';
+import MenuBar from '@/components/MenuBar';
+import HomeWindow from '@/components/windows/HomeWindow';
+import AboutWindow from '@/components/windows/AboutWindow';
+import ProjectsWindow from '@/components/windows/ProjectsWindow';
+import ContactWindow from '@/components/windows/ContactWindow';
+
+interface WindowState {
+  id: string;
+  isOpen: boolean;
+  zIndex: number;
+}
+
+export default function Portfolio() {
+  const [windows, setWindows] = useState<WindowState[]>([
+    { id: 'home', isOpen: true, zIndex: 1 },
+    { id: 'about', isOpen: false, zIndex: 1 },
+    { id: 'projects', isOpen: false, zIndex: 1 },
+    { id: 'contact', isOpen: false, zIndex: 1 },
+  ]);
+
+  const [activeApp, setActiveApp] = useState<string>('home');
+
+  const handleAppClick = (appId: string) => {
+    setWindows(prev => 
+      prev.map(window => ({
+        ...window,
+        isOpen: window.id === appId ? true : window.isOpen,
+        zIndex: window.id === appId ? Math.max(...prev.map(w => w.zIndex)) + 1 : window.zIndex
+      }))
+    );
+    setActiveApp(appId);
+  };
+
+  const handleWindowClose = (windowId: string) => {
+    setWindows(prev => 
+      prev.map(window => 
+        window.id === windowId ? { ...window, isOpen: false } : window
+      )
+    );
+  };
+
+  const handleWindowMaximize = (windowId: string) => {
+    // Handle maximize logic if needed
+  };
+
+  const handleWindowMinimize = (windowId: string) => {
+    // Handle minimize logic if needed
+  };
+
+  const getWindowContent = (windowId: string) => {
+    switch (windowId) {
+      case 'home':
+        return <HomeWindow />;
+      case 'about':
+        return <AboutWindow />;
+      case 'projects':
+        return <ProjectsWindow />;
+      case 'contact':
+        return <ContactWindow />;
+      default:
+        return null;
+    }
+  };
+
+  const getWindowTitle = (windowId: string) => {
+    switch (windowId) {
+      case 'home':
+        return 'Welcome';
+      case 'about':
+        return 'About Me';
+      case 'projects':
+        return 'Projects';
+      case 'contact':
+        return 'Contact';
+      default:
+        return 'Window';
+    }
+  };
+
+  const getWindowPosition = (windowId: string) => {
+    switch (windowId) {
+      case 'home':
+        return { x: 100, y: 100 };
+      case 'about':
+        return { x: 150, y: 150 };
+      case 'projects':
+        return { x: 200, y: 200 };
+      case 'contact':
+        return { x: 250, y: 250 };
+      default:
+        return { x: 100, y: 100 };
+    }
+  };
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <Desktop>
+      {/* Menu Bar */}
+      <MenuBar />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+      {/* Windows */}
+      {windows.map((window) => (
+        <Window
+          key={window.id}
+          id={window.id}
+          title={getWindowTitle(window.id)}
+          isOpen={window.isOpen}
+          zIndex={window.zIndex}
+          defaultPosition={getWindowPosition(window.id)}
+          onClose={() => handleWindowClose(window.id)}
+          onMaximize={() => handleWindowMaximize(window.id)}
+          onMinimize={() => handleWindowMinimize(window.id)}
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+          {getWindowContent(window.id)}
+        </Window>
+      ))}
+
+      {/* Dock */}
+      <Dock onAppClick={handleAppClick} activeApp={activeApp} />
+    </Desktop>
   );
 }
