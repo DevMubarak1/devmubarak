@@ -1,8 +1,8 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Rnd } from 'react-rnd';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useMotionValue, useTransform } from 'framer-motion';
 import { Maximize2, Minimize2 } from 'lucide-react';
 
 interface WindowProps {
@@ -35,6 +35,36 @@ export default function Window({
 }: WindowProps) {
   const [isMaximized, setIsMaximized] = useState(false);
   const [isMinimized, setIsMinimized] = useState(false);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  // Cursor-responsive motion values
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  const rotateX = useTransform(mouseY, [-150, 150], [5, -5]);
+  const rotateY = useTransform(mouseX, [-150, 150], [-5, 5]);
+
+  useEffect(() => {
+    const handleMouseMove = (e: Event) => {
+      const target = e.currentTarget as HTMLElement;
+      const rect = target.getBoundingClientRect();
+      const mouseEvent = e as MouseEvent;
+      
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const x = mouseEvent.clientX - rect.left - centerX;
+      const y = mouseEvent.clientY - rect.top - centerY;
+      
+      setMousePosition({ x, y });
+      mouseX.set(x);
+      mouseY.set(y);
+    };
+
+    const windowElement = document.querySelector(`[data-window-id="${title}"]`);
+    if (windowElement) {
+      windowElement.addEventListener('mousemove', handleMouseMove);
+      return () => windowElement.removeEventListener('mousemove', handleMouseMove);
+    }
+  }, [title, mouseX, mouseY]);
 
   const handleMaximize = () => {
     setIsMaximized(!isMaximized);
@@ -55,11 +85,12 @@ export default function Window({
   return (
     <AnimatePresence>
       <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        exit={{ opacity: 0, scale: 0.9 }}
-        transition={{ duration: 0.3, ease: "easeOut" }}
+        initial={{ opacity: 0, scale: 0.9, y: 20 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.9, y: 20 }}
+        transition={{ duration: 0.4, ease: "easeOut" }}
         style={{ zIndex }}
+        data-window-id={title}
       >
         <Rnd
           default={{
@@ -73,11 +104,17 @@ export default function Window({
           bounds="parent"
           disableDragging={isMaximized}
           disableResizing={isMaximized}
-          className="liquid-glass rounded-lg overflow-hidden"
+          className="liquid-glass liquid-glass-cursor liquid-drip rounded-lg overflow-hidden"
+          style={{
+            transform: isMaximized 
+              ? 'none' 
+              : `perspective(1000px) rotateX(${rotateX.get()}deg) rotateY(${rotateY.get()}deg)`,
+            transformStyle: "preserve-3d",
+          }}
         >
           <div className="w-full h-full">
-            {/* Window Header */}
-            <div className="flex items-center justify-between p-3 bg-white/10 backdrop-blur-sm border-b border-white/20">
+            {/* Window Header with enhanced glass effect */}
+            <div className="flex items-center justify-between p-3 bg-white/10 backdrop-blur-sm border-b border-white/20 liquid-glass">
               <div className="flex items-center gap-2">
                 <div className="window-controls">
                   <button
@@ -100,16 +137,22 @@ export default function Window({
               </div>
               <div className="flex items-center gap-1">
                 {isMaximized ? (
-                  <Minimize2 size={16} className="text-white/70 hover:text-white cursor-pointer" />
+                  <Minimize2 size={16} className="text-white/70 hover:text-white cursor-pointer transition-colors" />
                 ) : (
-                  <Maximize2 size={16} className="text-white/70 hover:text-white cursor-pointer" />
+                  <Maximize2 size={16} className="text-white/70 hover:text-white cursor-pointer transition-colors" />
                 )}
               </div>
             </div>
 
-            {/* Window Content */}
+            {/* Window Content with liquid glass scrollbar */}
             <div className="p-4 h-full overflow-auto glass-scrollbar">
-              {children}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0.1 }}
+              >
+                {children}
+              </motion.div>
             </div>
           </div>
         </Rnd>

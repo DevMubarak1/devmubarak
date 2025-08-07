@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { 
   User, 
   Briefcase, 
@@ -12,7 +12,6 @@ import {
   Settings,
   Home
 } from 'lucide-react';
-import { AnimatePresence } from 'framer-motion';
 
 interface DockItem {
   id: string;
@@ -85,10 +84,14 @@ export default function Dock({ onAppClick, activeApp }: DockProps) {
   return (
     <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50">
       <motion.div
-        className="liquid-glass rounded-2xl px-4 py-2"
+        className="liquid-glass liquid-glass-cursor liquid-drip rounded-2xl px-4 py-2"
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
+        whileHover={{ 
+          scale: 1.02,
+          boxShadow: "0 20px 40px rgba(0, 0, 0, 0.3)"
+        }}
       >
         <div className="flex items-center gap-2">
           {dockItems.map((item) => (
@@ -97,31 +100,40 @@ export default function Dock({ onAppClick, activeApp }: DockProps) {
               className="relative"
               onHoverStart={() => setHoveredItem(item.id)}
               onHoverEnd={() => setHoveredItem(null)}
-              whileHover={{ scale: 1.1 }}
+              whileHover={{ 
+                scale: 1.2,
+                y: -5,
+                transition: { type: "spring", stiffness: 300, damping: 20 }
+              }}
               whileTap={{ scale: 0.95 }}
             >
               <button
                 onClick={item.onClick}
-                className={`p-3 rounded-xl transition-all duration-200 ${
+                className={`p-3 rounded-xl transition-all duration-300 ${
                   item.isActive 
-                    ? 'bg-white/20 text-white' 
+                    ? 'bg-white/20 text-white liquid-glow' 
                     : 'text-white/70 hover:text-white hover:bg-white/10'
-                }`}
+                } liquid-glass-cursor`}
                 title={item.label}
               >
                 {item.icon}
               </button>
               
-              {/* Tooltip */}
+              {/* Enhanced Tooltip with liquid glass */}
               <AnimatePresence>
                 {hoveredItem === item.id && (
                   <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 10 }}
-                    className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-black/80 text-white text-xs rounded whitespace-nowrap"
+                    initial={{ opacity: 0, y: 10, scale: 0.8 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 10, scale: 0.8 }}
+                    className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-3 px-3 py-2 liquid-glass text-white text-xs rounded-lg whitespace-nowrap liquid-glow"
+                    style={{
+                      backdropFilter: 'blur(12px)',
+                      WebkitBackdropFilter: 'blur(12px)',
+                    }}
                   >
                     {item.label}
+                    <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-white/20"></div>
                   </motion.div>
                 )}
               </AnimatePresence>
