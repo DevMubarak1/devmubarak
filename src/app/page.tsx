@@ -70,7 +70,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Hi, I'm <span className="text-blue-600 dark:text-blue-400">Mubarak</span>
+              Hi, I&apos;m <span className="text-blue-600 dark:text-blue-400">Mubarak</span>
             </motion.h1>
             <motion.p 
               className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 mb-8 max-w-3xl mx-auto"
@@ -118,12 +118,12 @@ export default function Home() {
                 About Me
               </h2>
               <p className="text-lg text-slate-600 dark:text-slate-300 mb-6">
-                I'm a passionate developer who loves turning ideas into reality through code. 
+                I&apos;m a passionate developer who loves turning ideas into reality through code. 
                 With expertise in modern web technologies, I focus on building scalable, 
                 maintainable applications that provide exceptional user experiences.
               </p>
               <p className="text-lg text-slate-600 dark:text-slate-300 mb-8">
-                When I'm not coding, you'll find me exploring new technologies, 
+                When I&apos;m not coding, you&apos;ll find me exploring new technologies, 
                 contributing to open source, or sharing knowledge with the developer community.
               </p>
               <div className="flex flex-wrap gap-2">
@@ -184,11 +184,11 @@ export default function Home() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-slate-800 dark:text-white mb-6">
-              Let's Work Together
+              Let&apos;s Work Together
             </h2>
             <p className="text-lg text-slate-600 dark:text-slate-300 mb-8">
-              I'm always interested in new opportunities and exciting projects. 
-              Feel free to reach out if you'd like to collaborate or just say hello!
+              I&apos;m always interested in new opportunities and exciting projects. 
+              Feel free to reach out if you&apos;d like to collaborate or just say hello!
             </p>
             
             <motion.div 
