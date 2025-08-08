@@ -14,8 +14,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #000000;
+    --foreground: #ffffff;
   }
 }
 
@@ -50,7 +50,7 @@ body {
 /* Dark mode scrollbar */
 @media (prefers-color-scheme: dark) {
   ::-webkit-scrollbar-track {
-    background: #1a1a1a;
+    background: #000000;
   }
   
   ::-webkit-scrollbar-thumb {
