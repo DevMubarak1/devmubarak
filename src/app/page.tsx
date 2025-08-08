@@ -1,53 +1,59 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Github, Linkedin, Twitter, ArrowRight, Sparkles, Code, Zap } from "lucide-react";
+import { Mail, Github, Linkedin, Twitter, ArrowRight, Sparkles, Code, Zap, ExternalLink, MessageCircle, Star } from "lucide-react";
 import ProjectCard from "@/components/ProjectCard";
 import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Home() {
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce solution built with Next.js, TypeScript, and Stripe. Features include user authentication, product management, and secure payment processing.",
-      tech: ["Next.js", "TypeScript", "Stripe", "Tailwind CSS"],
+      title: "Foodify – AI-Powered Culinary Assistant",
+      description: "Recipe discovery, meal planning, shopping lists, and AI chat cooking guide. Experience as Founder and Full-time developer.",
+      tech: ["Next.js", "React Native", "Supabase", "OpenAI API", "Tailwind CSS", "Node.js", "Auth.js"],
       image: "/project1.jpg",
-      link: "#"
+      link: "https://getfoodify.com",
+      role: "Founder & Full-stack Developer"
     },
     {
-      title: "Task Management App",
-      description: "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
-      tech: ["React", "Node.js", "Socket.io", "MongoDB"],
+      title: "Shomoloo - Unified Workflow Platform",
+      description: "A unified workflow platform bringing together designers, fabric vendors, and printing services in one interface—no more jumping between apps or suppliers.",
+      tech: ["Next.js", "Tailwind CSS", "Framer Motion", "Supabase", "PostgreSQL", "Node.js", "Auth.js", "Flutterwave"],
       image: "/project2.jpg",
-      link: "#"
+      link: "https://shomoloo.vercel.app/",
+      role: "Full-stack Developer"
     },
     {
-      title: "AI Chat Assistant",
-      description: "An intelligent chatbot powered by OpenAI's GPT API, featuring natural language processing and context-aware responses.",
-      tech: ["Python", "OpenAI API", "FastAPI", "React"],
+      title: "Perfect Skin Industry - E-commerce Store",
+      description: "A polished e-commerce storefront for skincare products featuring hero banners, product showcases, and integrated payment systems.",
+      tech: ["Next.js", "React Carousel", "Supabase", "Auth.js", "Node.js", "Visa/Mastercard"],
       image: "/project3.jpg",
-      link: "#"
+      link: "https://perfect-skin-industry.vercel.app/",
+      role: "Full-stack Developer"
     },
     {
-      title: "Social Media Dashboard",
-      description: "A comprehensive dashboard for managing multiple social media accounts with analytics, scheduling, and engagement tracking.",
-      tech: ["Vue.js", "Node.js", "PostgreSQL", "Redis"],
+      title: "DevMubarak - Portfolio",
+      description: "My personal portfolio showcasing my work, skills, and experience in modern web development.",
+      tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Lucide React"],
       image: "/project4.jpg",
-      link: "#"
+      link: "#",
+      role: "Full-stack Developer"
     },
     {
-      title: "Real-time Chat Application",
-      description: "A modern chat application with real-time messaging, file sharing, and video calling capabilities.",
-      tech: ["React", "Socket.io", "WebRTC", "Express"],
+      title: "RateRadar - Chrome Extension",
+      description: "Track, convert, and monitor currency and crypto exchange rates—anytime, anywhere.",
+      tech: ["JavaScript", "Chrome APIs", "JSON", "CSS", "HTML"],
       image: "/project5.jpg",
-      link: "#"
+      link: "#",
+      role: "Creator"
     },
     {
-      title: "Weather Forecast App",
-      description: "A beautiful weather application with location-based forecasts, interactive maps, and detailed weather analytics.",
-      tech: ["React Native", "OpenWeather API", "Redux", "TypeScript"],
+      title: "Foodify Recipe Importer - Chrome Extension",
+      description: "Browser extension for importing recipes into the Foodify app from anywhere on the web.",
+      tech: ["JavaScript", "Chrome APIs", "JSON", "CSS", "HTML"],
       image: "/project6.jpg",
-      link: "#"
+      link: "#",
+      role: "Creator"
     }
   ];
 
@@ -56,10 +62,42 @@ export default function Home() {
     { name: "TypeScript", icon: "🔷", color: "from-blue-500 to-blue-600" },
     { name: "React", icon: "⚛️", color: "from-cyan-400 to-blue-500" },
     { name: "Next.js", icon: "⚡", color: "from-gray-800 to-black" },
+    { name: "React Native", icon: "📱", color: "from-blue-500 to-cyan-500" },
     { name: "Node.js", icon: "🟢", color: "from-green-500 to-green-600" },
     { name: "Python", icon: "🐍", color: "from-blue-500 to-purple-600" },
     { name: "PostgreSQL", icon: "🐘", color: "from-blue-400 to-indigo-500" },
+    { name: "Supabase", icon: "🔥", color: "from-green-400 to-emerald-600" },
+    { name: "OpenAI API", icon: "🤖", color: "from-purple-500 to-pink-500" },
+    { name: "Tailwind CSS", icon: "🎨", color: "from-cyan-400 to-blue-500" },
+    { name: "Framer Motion", icon: "✨", color: "from-purple-400 to-pink-400" },
+    { name: "Auth.js", icon: "🔐", color: "from-blue-600 to-indigo-600" },
+    { name: "Chrome APIs", icon: "🌐", color: "from-blue-500 to-green-500" },
+    { name: "Flutterwave", icon: "💳", color: "from-orange-500 to-red-500" },
     { name: "AWS", icon: "☁️", color: "from-orange-500 to-yellow-500" }
+  ];
+
+  const testimonials = [
+    {
+      name: "Sarah Chen",
+      role: "Product Manager",
+      company: "TechCorp",
+      content: "Mubarak's work on our e-commerce platform was exceptional. His attention to detail and technical expertise made all the difference.",
+      avatar: "👩‍💼"
+    },
+    {
+      name: "Alex Rodriguez",
+      role: "Startup Founder",
+      company: "Foodify",
+      content: "Working with Mubarak was a game-changer. His AI integration skills and full-stack capabilities brought our vision to life perfectly.",
+      avatar: "👨‍💻"
+    },
+    {
+      name: "Emma Thompson",
+      role: "Design Director",
+      company: "Creative Studio",
+      content: "Mubarak's technical implementation of our design system was flawless. He truly understands the balance between aesthetics and functionality.",
+      avatar: "👩‍🎨"
+    }
   ];
 
   return (
@@ -106,30 +144,37 @@ export default function Home() {
 
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-white/80 dark:bg-black/80 backdrop-blur-md z-50 border-b border-slate-200/50 dark:border-gray-800/50">
-        <div className="max-w-6xl mx-auto px-6 py-4">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4">
           <div className="flex items-center justify-between">
             <motion.h1 
-              className="text-xl font-bold text-slate-800 dark:text-white flex items-center gap-2"
+              className="text-lg sm:text-xl font-bold text-slate-800 dark:text-white flex items-center gap-2"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <Sparkles className="text-blue-600 dark:text-blue-400" size={20} />
-              DevMubarak
+              <Sparkles className="text-blue-600 dark:text-blue-400" size={18} />
+              <span className="hidden sm:inline">DevMubarak</span>
+              <span className="sm:hidden">DM</span>
             </motion.h1>
-            <div className="flex items-center space-x-6">
-              <a href="#about" className="text-slate-600 dark:text-gray-300 hover:text-slate-800 dark:hover:text-white transition-colors relative group">
-                About
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 dark:bg-blue-400 transition-all group-hover:w-full"></span>
-              </a>
-              <a href="#projects" className="text-slate-600 dark:text-gray-300 hover:text-slate-800 dark:hover:text-white transition-colors relative group">
-                Projects
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 dark:bg-blue-400 transition-all group-hover:w-full"></span>
-              </a>
-              <a href="#contact" className="text-slate-600 dark:text-gray-300 hover:text-slate-800 dark:hover:text-white transition-colors relative group">
-                Contact
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 dark:bg-blue-400 transition-all group-hover:w-full"></span>
-              </a>
+            <div className="flex items-center space-x-4 sm:space-x-6">
+              <div className="hidden sm:flex space-x-6">
+                <a href="#about" className="text-slate-600 dark:text-gray-300 hover:text-slate-800 dark:hover:text-white transition-colors relative group">
+                  About
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 dark:bg-blue-400 transition-all group-hover:w-full"></span>
+                </a>
+                <a href="#projects" className="text-slate-600 dark:text-gray-300 hover:text-slate-800 dark:hover:text-white transition-colors relative group">
+                  Projects
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 dark:bg-blue-400 transition-all group-hover:w-full"></span>
+                </a>
+                <a href="#blog" className="text-slate-600 dark:text-gray-300 hover:text-slate-800 dark:hover:text-white transition-colors relative group">
+                  Blog
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 dark:bg-blue-400 transition-all group-hover:w-full"></span>
+                </a>
+                <a href="#contact" className="text-slate-600 dark:text-gray-300 hover:text-slate-800 dark:hover:text-white transition-colors relative group">
+                  Contact
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 dark:bg-blue-400 transition-all group-hover:w-full"></span>
+                </a>
+              </div>
               <ThemeToggle />
             </div>
           </div>
@@ -137,7 +182,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6 relative">
+      <section className="pt-32 pb-20 px-4 sm:px-6 relative">
         <div className="max-w-6xl mx-auto">
           <motion.div 
             className="text-center relative z-10"
@@ -156,7 +201,7 @@ export default function Home() {
             </motion.div>
             
             <motion.h1 
-              className="text-5xl md:text-7xl font-bold text-slate-800 dark:text-white mb-6"
+              className="text-4xl sm:text-5xl md:text-7xl font-bold text-slate-800 dark:text-white mb-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
@@ -164,7 +209,7 @@ export default function Home() {
               Hi, I&apos;m <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Mubarak</span>
             </motion.h1>
             <motion.p 
-              className="text-xl md:text-2xl text-slate-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto"
+              className="text-lg sm:text-xl md:text-2xl text-slate-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -179,7 +224,7 @@ export default function Home() {
             >
               <motion.a 
                 href="#projects" 
-                className="group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-lg font-medium hover:shadow-lg transition-all duration-300 flex items-center gap-2"
+                className="group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 sm:px-8 py-3 rounded-lg font-medium hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -188,7 +233,7 @@ export default function Home() {
               </motion.a>
               <motion.a 
                 href="#contact" 
-                className="border border-slate-300 dark:border-gray-600 text-slate-700 dark:text-gray-300 px-8 py-3 rounded-lg font-medium hover:bg-slate-50 dark:hover:bg-gray-900 transition-all duration-300"
+                className="border border-slate-300 dark:border-gray-600 text-slate-700 dark:text-gray-300 px-6 sm:px-8 py-3 rounded-lg font-medium hover:bg-slate-50 dark:hover:bg-gray-900 transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -200,7 +245,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 px-6 bg-white/50 dark:bg-black/50 backdrop-blur-sm relative">
+      <section id="about" className="py-20 px-4 sm:px-6 bg-white/50 dark:bg-black/50 backdrop-blur-sm relative">
         <div className="max-w-6xl mx-auto">
           <motion.div 
             className="grid md:grid-cols-2 gap-12 items-center"
@@ -250,15 +295,16 @@ export default function Home() {
                 {skills.map((skill, index) => (
                   <motion.div
                     key={skill.name}
-                    className={`bg-gradient-to-r ${skill.color} text-white px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2 shadow-lg`}
+                    className={`bg-gradient-to-r ${skill.color} text-white px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium flex items-center gap-2 shadow-lg`}
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.3, delay: index * 0.1 }}
+                    transition={{ duration: 0.3, delay: index * 0.05 }}
                     whileHover={{ scale: 1.05 }}
                   >
                     <span>{skill.icon}</span>
-                    {skill.name}
+                    <span className="hidden sm:inline">{skill.name}</span>
+                    <span className="sm:hidden">{skill.name.length > 8 ? skill.name.substring(0, 8) + '...' : skill.name}</span>
                   </motion.div>
                 ))}
               </motion.div>
@@ -270,15 +316,15 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <div className="w-80 h-80 mx-auto bg-gradient-to-br from-blue-400 via-purple-500 to-pink-500 rounded-full opacity-20 blur-xl"></div>
-              <div className="absolute inset-0 w-80 h-80 mx-auto bg-gradient-to-br from-blue-400 to-purple-600 rounded-full opacity-10 animate-pulse"></div>
+              <div className="w-64 sm:w-80 h-64 sm:h-80 mx-auto bg-gradient-to-br from-blue-400 via-purple-500 to-pink-500 rounded-full opacity-20 blur-xl"></div>
+              <div className="absolute inset-0 w-64 sm:w-80 h-64 sm:h-80 mx-auto bg-gradient-to-br from-blue-400 to-purple-600 rounded-full opacity-10 animate-pulse"></div>
             </motion.div>
           </motion.div>
         </div>
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 px-6 relative">
+      <section id="projects" className="py-20 px-4 sm:px-6 relative">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -305,7 +351,7 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {projects.map((project, index) => (
               <ProjectCard key={index} project={project} index={index} />
             ))}
@@ -313,8 +359,107 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Testimonials Section */}
+      <section className="py-20 px-4 sm:px-6 bg-white/50 dark:bg-black/50 backdrop-blur-sm relative">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <motion.div
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-600 to-orange-600 text-white px-4 py-2 rounded-full text-sm font-medium mb-6"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <Star size={16} />
+              Client Testimonials
+            </motion.div>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-800 dark:text-white mb-6">
+              What People Say
+            </h2>
+            <p className="text-lg text-slate-600 dark:text-gray-300 max-w-2xl mx-auto">
+              Here&apos;s what clients and colleagues have to say about working with me.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <motion.div
+                key={index}
+                className="bg-white/70 dark:bg-black/70 backdrop-blur-sm rounded-xl p-6 border border-slate-200/50 dark:border-gray-800/50"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                whileHover={{ y: -5 }}
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="text-2xl">{testimonial.avatar}</div>
+                  <div>
+                    <h3 className="font-semibold text-slate-800 dark:text-white">{testimonial.name}</h3>
+                    <p className="text-sm text-slate-600 dark:text-gray-400">{testimonial.role} at {testimonial.company}</p>
+                  </div>
+                </div>
+                <p className="text-slate-600 dark:text-gray-300 italic">&quot;{testimonial.content}&quot;</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Blog Section */}
+      <section id="blog" className="py-20 px-4 sm:px-6 relative">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <motion.div
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-2 rounded-full text-sm font-medium mb-6"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <MessageCircle size={16} />
+              Coming Soon
+            </motion.div>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-800 dark:text-white mb-6">
+              Blog & Insights
+            </h2>
+            <p className="text-lg text-slate-600 dark:text-gray-300 max-w-2xl mx-auto mb-8">
+              I&apos;m working on sharing my thoughts on development, technology trends, and lessons learned from building products.
+            </p>
+            <motion.div
+              className="bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-900/20 dark:to-pink-900/20 rounded-xl p-8 border border-purple-200/50 dark:border-purple-800/50"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h3 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">
+                🚧 Blog Under Construction
+              </h3>
+              <p className="text-slate-600 dark:text-gray-300">
+                I&apos;m currently setting up my blog to share insights about full-stack development, 
+                AI integration, and building scalable applications. Stay tuned for articles about 
+                React, Next.js, AI APIs, and more!
+              </p>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Contact Section */}
-      <section id="contact" className="py-20 px-6 bg-white/50 dark:bg-black/50 backdrop-blur-sm relative">
+      <section id="contact" className="py-20 px-4 sm:px-6 bg-white/50 dark:bg-black/50 backdrop-blur-sm relative">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -392,7 +537,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 px-6 border-t border-slate-200/50 dark:border-gray-800/50 bg-white/30 dark:bg-black/30 backdrop-blur-sm">
+      <footer className="py-8 px-4 sm:px-6 border-t border-slate-200/50 dark:border-gray-800/50 bg-white/30 dark:bg-black/30 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto text-center">
           <motion.p 
             className="text-slate-600 dark:text-gray-300"

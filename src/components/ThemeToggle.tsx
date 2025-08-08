@@ -14,12 +14,18 @@ export default function ThemeToggle() {
   }, []);
 
   if (!mounted) {
-    return null;
+    return (
+      <div className="relative w-12 h-6 bg-slate-200 rounded-full p-1">
+        <div className="absolute top-0.5 left-0.5 w-5 h-5 bg-white rounded-full shadow-md"></div>
+      </div>
+    );
   }
+
+  const isDark = theme === "dark";
 
   return (
     <motion.button
-      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+      onClick={() => setTheme(isDark ? "light" : "dark")}
       className="relative w-12 h-6 bg-slate-200 dark:bg-gray-700 rounded-full p-1 transition-colors duration-300"
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
@@ -27,11 +33,11 @@ export default function ThemeToggle() {
       <motion.div
         className="absolute top-0.5 left-0.5 w-5 h-5 bg-white rounded-full shadow-md flex items-center justify-center"
         animate={{
-          x: theme === "dark" ? 24 : 0,
+          x: isDark ? 24 : 0,
         }}
         transition={{ type: "spring", stiffness: 500, damping: 30 }}
       >
-        {theme === "dark" ? (
+        {isDark ? (
           <Moon size={12} className="text-gray-800" />
         ) : (
           <Sun size={12} className="text-yellow-500" />
