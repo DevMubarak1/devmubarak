@@ -13,6 +13,14 @@ export default function ThemeToggle() {
     setMounted(true);
   }, []);
 
+  const toggleTheme = () => {
+    if (theme === "dark") {
+      setTheme("light");
+    } else {
+      setTheme("dark");
+    }
+  };
+
   if (!mounted) {
     return (
       <div className="relative w-12 h-6 bg-slate-200 rounded-full p-1">
@@ -25,10 +33,11 @@ export default function ThemeToggle() {
 
   return (
     <motion.button
-      onClick={() => setTheme(isDark ? "light" : "dark")}
+      onClick={toggleTheme}
       className="relative w-12 h-6 bg-slate-200 dark:bg-gray-700 rounded-full p-1 transition-colors duration-300"
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
+      aria-label={`Switch to ${isDark ? 'light' : 'dark'} mode`}
     >
       <motion.div
         className="absolute top-0.5 left-0.5 w-5 h-5 bg-white rounded-full shadow-md flex items-center justify-center"

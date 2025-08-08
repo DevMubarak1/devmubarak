@@ -12,13 +12,6 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #000000;
-    --foreground: #ffffff;
-  }
-}
-
 html {
   scroll-behavior: smooth;
 }
@@ -48,16 +41,14 @@ body {
 }
 
 /* Dark mode scrollbar */
-@media (prefers-color-scheme: dark) {
-  ::-webkit-scrollbar-track {
-    background: #000000;
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    background: #404040;
-  }
-  
-  ::-webkit-scrollbar-thumb:hover {
-    background: #525252;
-  }
+.dark ::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #404040;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #525252;
 }
