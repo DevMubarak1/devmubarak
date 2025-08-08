@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ExternalLink, Code, Globe, Smartphone, Database, Zap, Palette, ShoppingCart, Chrome } from "lucide-react";
+import { ExternalLink, Code, Globe, Smartphone, Database, Zap, Palette, ShoppingCart, Chrome, LucideIcon } from "lucide-react";
 
 interface Project {
   title: string;
@@ -15,8 +15,8 @@ interface ProjectCardProps {
   index: number;
 }
 
-const getTechIcon = (tech: string) => {
-  const iconMap: { [key: string]: any } = {
+const getTechIcon = (tech: string): LucideIcon => {
+  const iconMap: Record<string, LucideIcon> = {
     "Next.js": Globe,
     "React": Code,
     "React Native": Smartphone,

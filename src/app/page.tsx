@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Github, Linkedin, Twitter, ArrowRight, Sparkles, Code, Zap, ExternalLink, MessageCircle, Star } from "lucide-react";
+import { Mail, Github, Linkedin, Twitter, ArrowRight, Sparkles, Code, Zap, MessageCircle, Star } from "lucide-react";
 import ProjectCard from "@/components/ProjectCard";
 import ThemeToggle from "@/components/ThemeToggle";
 
