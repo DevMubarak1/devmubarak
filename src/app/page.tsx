@@ -1,9 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Github, Linkedin, Twitter, ArrowRight, Sparkles, Code, Zap, MessageCircle, Star } from "lucide-react";
+import { Mail, Github, Linkedin, ArrowRight, Sparkles, Code, Zap, MessageCircle, Star } from "lucide-react";
 import ProjectCard from "@/components/ProjectCard";
 import ThemeToggle from "@/components/ThemeToggle";
+import { XIcon } from "@/components/XIcon";
 
 export default function Home() {
   const projects = [
@@ -513,7 +514,7 @@ export default function Home() {
               {[
                 { href: "https://github.com/yourusername", icon: Github, label: "GitHub" },
                 { href: "https://linkedin.com/in/yourusername", icon: Linkedin, label: "LinkedIn" },
-                { href: "https://twitter.com/yourusername", icon: Twitter, label: "Twitter" }
+                { href: "https://x.com/yourusername", icon: XIcon, label: "X (Twitter)" }
               ].map((social, index) => (
                 <motion.a
                   key={social.label}
@@ -546,7 +547,7 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            © 2024 DevMubarak. Built with Next.js and Tailwind CSS.
+            © 2024 DevMubarak. All rights reserved.
           </motion.p>
         </div>
       </footer>
