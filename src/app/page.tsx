@@ -102,7 +102,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-black dark:via-gray-900 dark:to-black relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-black dark:via-gray-900 dark:to-black relative overflow-hidden transition-colors duration-300">
       {/* Floating Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
@@ -183,7 +183,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 sm:px-6 relative">
+      <section className="pt-32 pb-32 px-4 sm:px-6 relative min-h-screen flex items-center">
         {/* Hero Background Patterns */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {/* Grid Pattern */}
@@ -285,7 +285,7 @@ export default function Home() {
           <div className="absolute bottom-0 right-0 w-32 h-32 border-r-2 border-b-2 border-pink-300/30 dark:border-pink-600/30"></div>
         </div>
 
-        <div className="max-w-6xl mx-auto relative z-10">
+        <div className="max-w-6xl mx-auto relative z-10 w-full">
           <motion.div 
             className="text-center"
             initial={{ opacity: 0, y: 20 }}

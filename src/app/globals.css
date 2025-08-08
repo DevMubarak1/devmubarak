@@ -20,6 +20,12 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Ensure theme transitions work properly */
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
 
 /* Custom scrollbar */
@@ -29,11 +35,13 @@ body {
 
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
+  transition: background-color 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb {
   background: #c1c1c1;
   border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
