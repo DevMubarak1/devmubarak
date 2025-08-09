@@ -14,13 +14,11 @@ export default function ThemeToggle() {
   }, []);
 
   const toggleTheme = () => {
-    if (theme === "dark") {
-      setTheme("light");
-    } else {
-      setTheme("dark");
-    }
+    const newTheme = theme === "dark" ? "light" : "dark";
+    setTheme(newTheme);
   };
 
+  // Show loading state until mounted
   if (!mounted) {
     return (
       <div className="relative w-12 h-6 bg-slate-200 rounded-full p-1">

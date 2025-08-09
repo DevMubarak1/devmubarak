@@ -33,6 +33,7 @@ export default function RootLayout({
           defaultTheme="light" 
           enableSystem={false}
           disableTransitionOnChange={false}
+          storageKey="devmubarak-theme"
         >
           {children}
         </ThemeProvider>
