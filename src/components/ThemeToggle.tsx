@@ -7,19 +7,20 @@ import { useEffect, useState } from "react";
 
 export default function ThemeToggle() {
   const [mounted, setMounted] = useState(false);
-  const { theme, setTheme, resolvedTheme } = useTheme();
+  const { theme, setTheme, resolvedTheme, systemTheme } = useTheme();
 
   useEffect(() => {
     setMounted(true);
-  }, []);
+    // Debug: Log theme state
+    console.log("Theme Debug:", { theme, resolvedTheme, systemTheme });
+  }, [theme, resolvedTheme, systemTheme]);
 
   const toggleTheme = () => {
-    // Force the theme switch regardless of current state
-    if (resolvedTheme === "dark") {
-      setTheme("light");
-    } else {
-      setTheme("dark");
-    }
+    console.log("Toggle clicked, current theme:", theme, "resolved:", resolvedTheme);
+    // Simplified toggle logic
+    const newTheme = theme === "dark" ? "light" : "dark";
+    console.log("Setting theme to:", newTheme);
+    setTheme(newTheme);
   };
 
   // Show loading state until mounted
@@ -31,7 +32,7 @@ export default function ThemeToggle() {
     );
   }
 
-  const isDark = resolvedTheme === "dark";
+  const isDark = theme === "dark";
 
   return (
     <motion.button
@@ -40,6 +41,8 @@ export default function ThemeToggle() {
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       aria-label={`Switch to ${isDark ? 'light' : 'dark'} mode`}
+      data-theme={theme}
+      data-resolved={resolvedTheme}
     >
       <motion.div
         className="absolute top-0.5 left-0.5 w-5 h-5 bg-white dark:bg-gray-100 rounded-full shadow-md flex items-center justify-center"

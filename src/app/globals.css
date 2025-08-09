@@ -1,7 +1,16 @@
 @import "tailwindcss";
 
+/* Tailwind v4 CSS Configuration */
+@theme {
+  --color-background: light-dark(#ffffff, #000000);
+  --color-foreground: light-dark(#0f172a, #f8fafc);
+}
+
+@variant dark (.dark *);
+
 html {
   scroll-behavior: smooth;
+  color-scheme: light dark;
 }
 
 body {
