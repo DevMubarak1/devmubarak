@@ -94,6 +94,21 @@ export const testimonials = [
 
 export const workExperience = [
   {
+    title: "Founder & CEO",
+    company: "Rinnetech",
+    period: "2023 - Present",
+    description: "Founded and leading a technology company specializing in building scalable web applications, mobile apps, and digital solutions for clients across various industries. Providing end-to-end development services from concept to deployment.",
+    achievements: [
+      "Founded and scaled Rinnetech to serve 15+ clients across multiple industries",
+      "Built high-performance web applications with 99.9% uptime",
+      "Delivered scalable mobile solutions for iOS and Android platforms",
+      "Established efficient development workflows reducing project delivery time by 40%",
+      "Led cross-functional teams to deliver projects on time and within budget"
+    ],
+    tech: ["Next.js", "React Native", "Node.js", "PostgreSQL", "AWS", "TypeScript", "Tailwind CSS"],
+    icon: "🏢"
+  },
+  {
     title: "Founder & Full-Stack Developer",
     company: "Foodify",
     period: "2023 - Present",
