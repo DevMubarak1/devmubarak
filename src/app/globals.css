@@ -1,63 +1,131 @@
 @import "tailwindcss";
 
-/* Manual Dark Mode Implementation */
+/* Professional Dark Mode Implementation */
 :root {
   --bg-primary: #ffffff;
   --bg-secondary: rgba(255, 255, 255, 0.8);
   --bg-tertiary: rgba(255, 255, 255, 0.5);
+  --bg-card: rgba(255, 255, 255, 0.7);
   --text-primary: #0f172a;
   --text-secondary: #475569;
   --text-muted: #64748b;
   --border-color: rgba(148, 163, 184, 0.5);
   --accent-blue: #2563eb;
   --accent-purple: #7c3aed;
+  --gradient-start: #f8fafc;
+  --gradient-mid: #e0e7ff;
+  --gradient-end: #e0e7ff;
 }
 
 .dark {
-  --bg-primary: #000000;
-  --bg-secondary: rgba(0, 0, 0, 0.8);
-  --bg-tertiary: rgba(0, 0, 0, 0.5);
+  --bg-primary: #0a0a0a;
+  --bg-secondary: rgba(10, 10, 10, 0.8);
+  --bg-tertiary: rgba(10, 10, 10, 0.5);
+  --bg-card: rgba(17, 17, 17, 0.7);
   --text-primary: #f8fafc;
   --text-secondary: #d1d5db;
   --text-muted: #9ca3af;
   --border-color: rgba(55, 65, 81, 0.5);
   --accent-blue: #3b82f6;
   --accent-purple: #8b5cf6;
+  --gradient-start: #0a0a0a;
+  --gradient-mid: #1e1e1e;
+  --gradient-end: #0a0a0a;
 }
 
-/* Force apply dark mode styles */
-.dark,
-.dark * {
-  color-scheme: dark;
-}
+/* Professional Dark Mode Overrides */
+.dark .bg-white { background: #111111 !important; }
+.dark .bg-slate-50 { background: #0a0a0a !important; }
+.dark .bg-blue-50 { background: #0a0a0a !important; }
+.dark .bg-indigo-100 { background: #0a0a0a !important; }
+.dark .bg-white\/80 { background: rgba(17, 17, 17, 0.8) !important; }
+.dark .bg-white\/70 { background: rgba(17, 17, 17, 0.7) !important; }
+.dark .bg-white\/50 { background: rgba(17, 17, 17, 0.5) !important; }
+.dark .bg-white\/30 { background: rgba(17, 17, 17, 0.3) !important; }
 
-/* Override Tailwind with manual implementations */
-.manual-bg-primary { background: var(--bg-primary) !important; }
-.manual-bg-secondary { background: var(--bg-secondary) !important; }
-.manual-bg-tertiary { background: var(--bg-tertiary) !important; }
-.manual-text-primary { color: var(--text-primary) !important; }
-.manual-text-secondary { color: var(--text-secondary) !important; }
-.manual-text-muted { color: var(--text-muted) !important; }
-.manual-border { border-color: var(--border-color) !important; }
-
-/* Specific dark mode overrides */
-.dark .bg-white { background: #000000 !important; }
-.dark .bg-slate-50 { background: #000000 !important; }
-.dark .bg-blue-50 { background: #111827 !important; }
-.dark .bg-indigo-100 { background: #000000 !important; }
 .dark .text-slate-800 { color: #f8fafc !important; }
 .dark .text-slate-600 { color: #d1d5db !important; }
 .dark .text-gray-300 { color: #d1d5db !important; }
-.dark .bg-white\/80 { background: rgba(0, 0, 0, 0.8) !important; }
-.dark .bg-white\/70 { background: rgba(0, 0, 0, 0.7) !important; }
-.dark .bg-white\/50 { background: rgba(0, 0, 0, 0.5) !important; }
-.dark .bg-white\/30 { background: rgba(0, 0, 0, 0.3) !important; }
-.dark .border-slate-200 { border-color: #374151 !important; }
-.dark .border-gray-800 { border-color: #374151 !important; }
+.dark .text-gray-400 { color: #9ca3af !important; }
+
+.dark .border-slate-200 { border-color: rgba(55, 65, 81, 0.5) !important; }
+.dark .border-gray-800 { border-color: rgba(55, 65, 81, 0.5) !important; }
+
+/* Beautiful gradient backgrounds for dark mode */
+.dark .bg-gradient-to-br.from-slate-50.via-blue-50.to-indigo-100 {
+  background: linear-gradient(to bottom right, #0a0a0a, #1e1e1e, #0a0a0a) !important;
+}
+
+/* Card styling for dark mode */
+.dark .bg-white\/70.dark\:bg-black\/70 {
+  background: rgba(17, 17, 17, 0.7) !important;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(55, 65, 81, 0.3);
+}
+
+/* Navigation dark mode */
+.dark .bg-white\/80.dark\:bg-black\/80 {
+  background: rgba(10, 10, 10, 0.9) !important;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(55, 65, 81, 0.3);
+}
+
+/* Section backgrounds */
+.dark .bg-white\/50.dark\:bg-black\/50 {
+  background: rgba(10, 10, 10, 0.5) !important;
+}
+
+/* Footer dark mode */
+.dark .bg-white\/30.dark\:bg-black\/30 {
+  background: rgba(10, 10, 10, 0.3) !important;
+}
+
+/* Project cards dark mode */
+.dark .group.bg-white\/70.dark\:bg-black\/70 {
+  background: rgba(17, 17, 17, 0.8) !important;
+  border: 1px solid rgba(55, 65, 81, 0.3);
+  backdrop-filter: blur(8px);
+}
+
+/* Experience cards dark mode */
+.dark .bg-white\/70.dark\:bg-black\/70.backdrop-blur-sm {
+  background: rgba(17, 17, 17, 0.8) !important;
+  border: 1px solid rgba(55, 65, 81, 0.3);
+  backdrop-filter: blur(8px);
+}
+
+/* Testimonial cards dark mode */
+.dark .bg-white\/70.dark\:bg-black\/70.backdrop-blur-sm {
+  background: rgba(17, 17, 17, 0.8) !important;
+  border: 1px solid rgba(55, 65, 81, 0.3);
+  backdrop-filter: blur(8px);
+}
+
+/* Tech badges dark mode */
+.dark .bg-gradient-to-r.from-slate-100.to-slate-200 {
+  background: linear-gradient(to right, #1f2937, #374151) !important;
+  color: #d1d5db !important;
+  border: 1px solid rgba(55, 65, 81, 0.5);
+}
+
+.dark .bg-gradient-to-r.from-blue-100.to-purple-100 {
+  background: linear-gradient(to right, #1e3a8a, #3730a3) !important;
+  color: #93c5fd !important;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+/* Button styling dark mode */
+.dark .border-slate-300.dark\:border-gray-600 {
+  border-color: rgba(55, 65, 81, 0.5) !important;
+}
+
+.dark .hover\:bg-slate-50.dark\:hover\:bg-gray-900:hover {
+  background: rgba(17, 24, 39, 0.8) !important;
+}
 
 /* Tailwind v4 CSS Configuration */
 @theme {
-  --color-background: light-dark(#ffffff, #000000);
+  --color-background: light-dark(#ffffff, #0a0a0a);
   --color-foreground: light-dark(#0f172a, #f8fafc);
 }
 
@@ -105,13 +173,13 @@ html, body {
 
 /* Dark mode scrollbar */
 .dark ::-webkit-scrollbar-track {
-  background: #000000;
+  background: #0a0a0a;
 }
 
 .dark ::-webkit-scrollbar-thumb {
-  background: #404040;
+  background: #374151;
 }
 
 .dark ::-webkit-scrollbar-thumb:hover {
-  background: #525252;
+  background: #4b5563;
 }

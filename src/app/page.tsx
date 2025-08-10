@@ -35,22 +35,16 @@ export default function Home() {
 
   return (
     <div 
-      className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-black dark:via-gray-900 dark:to-black relative overflow-hidden transition-colors duration-300"
+      className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-gray-900 dark:via-gray-800 dark:to-black relative overflow-hidden transition-all duration-500"
       data-theme-container
       data-theme={currentTheme}
       style={{
-        backgroundColor: currentTheme === 'dark' ? '#000000' : 'transparent',
-        color: currentTheme === 'dark' ? '#f8fafc' : 'inherit'
+        background: currentTheme === 'dark' 
+          ? 'linear-gradient(to bottom right, #0a0a0a, #1e1e1e, #0a0a0a)' 
+          : 'linear-gradient(to bottom right, #f8fafc, #e0e7ff, #e0e7ff)',
+        transition: 'all 0.5s ease'
       }}
     >
-      {/* Theme Debug Indicator - Remove this after testing */}
-      <div 
-        className="fixed top-4 left-4 z-[9999] bg-red-500 text-white px-2 py-1 rounded text-xs"
-        style={{ display: process.env.NODE_ENV === 'development' ? 'block' : 'none' }}
-      >
-        Theme: {currentTheme}
-      </div>
-
       {/* Global Floating Background Elements */}
       <BackgroundElements />
 
