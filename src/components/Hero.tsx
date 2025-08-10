@@ -27,7 +27,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Animated Background Pattern */}
       <div className="absolute inset-0 opacity-5 dark:opacity-10">
         <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
@@ -73,7 +73,7 @@ export default function Hero() {
         >
           Hi, I&apos;m{" "}
           <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-            Mubarak
+            Dev.Mubarak
           </span>
         </motion.h1>
 
@@ -117,7 +117,7 @@ export default function Hero() {
           </motion.button>
 
           <motion.a
-            href="mailto:your.email@example.com"
+            href="mailto:devmubarak@getfoodify.com"
             className="group border-2 border-slate-300 dark:border-gray-600 text-slate-700 dark:text-gray-300 px-8 py-4 rounded-full font-semibold text-lg hover:bg-slate-50 dark:hover:bg-gray-800 transition-all duration-300 flex items-center gap-2"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}

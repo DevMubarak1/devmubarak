@@ -53,8 +53,8 @@ export default function ContactSection() {
     <section id="contact" className="py-20 px-4 sm:px-6 relative">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5 dark:opacity-10">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-blue-500/20 to-purple-500/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-green-500/20 to-blue-500/20 rounded-full blur-3xl"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-emerald-500/20 to-teal-500/20 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-cyan-500/20 to-blue-500/20 rounded-full blur-3xl"></div>
       </div>
 
       <div className="max-w-6xl mx-auto relative z-10">
@@ -66,7 +66,7 @@ export default function ContactSection() {
           className="text-center mb-16"
         >
           <motion.div
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium mb-6"
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-4 py-2 rounded-full text-sm font-medium mb-6"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -107,7 +107,7 @@ export default function ContactSection() {
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     className="flex items-start gap-4 group"
                   >
-                    <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300">
+                    <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300">
                       <info.icon className="w-6 h-6 text-white" />
                     </div>
                     <div className="flex-1">
@@ -116,7 +116,7 @@ export default function ContactSection() {
                       </h4>
                       <a
                         href={info.link}
-                        className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium transition-colors duration-300 flex items-center gap-2 group/link"
+                        className="text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 font-medium transition-colors duration-300 flex items-center gap-2 group/link"
                       >
                         {info.value}
                         <ExternalLink size={14} className="opacity-0 group-hover/link:opacity-100 transition-opacity duration-300" />
@@ -172,7 +172,7 @@ export default function ContactSection() {
             <div className="relative mb-8">
               {/* Character Body */}
               <motion.div
-                className="w-32 h-32 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-2xl"
+                className="w-32 h-32 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-full flex items-center justify-center shadow-2xl"
                 animate={{
                   y: [0, -10, 0],
                 }}
@@ -217,7 +217,7 @@ export default function ContactSection() {
 
               {/* Waving Hand */}
               <motion.div
-                className="absolute -top-4 -right-4 w-8 h-12 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full origin-bottom"
+                className="absolute -top-4 -right-4 w-8 h-12 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-full origin-bottom"
                 animate={{
                   rotate: [-20, 20, -20],
                 }}
@@ -238,7 +238,7 @@ export default function ContactSection() {
               transition={{ duration: 0.8, delay: 0.3 }}
             >
               <motion.div
-                className="bg-white/70 dark:bg-black/70 backdrop-blur-sm rounded-2xl p-6 border border-slate-200/50 dark:border-gray-700/50 shadow-xl"
+                className="bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 dark:from-emerald-900/20 dark:via-teal-900/20 dark:to-cyan-900/20 rounded-2xl p-6 border border-emerald-200/50 dark:border-emerald-800/50 shadow-xl"
                 animate={{
                   y: [0, -5, 0],
                 }}
@@ -253,7 +253,7 @@ export default function ContactSection() {
                 </p>
                 <motion.a
                   href="mailto:devmubarak@getfoodify.com"
-                  className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent hover:from-blue-700 hover:to-purple-700 transition-all duration-300"
+                  className="text-xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent hover:from-emerald-700 hover:to-teal-700 transition-all duration-300"
                   whileHover={{ scale: 1.05 }}
                 >
                   devmubarak@getfoodify.com
@@ -277,7 +277,7 @@ export default function ContactSection() {
 
             {/* Floating Elements */}
             <motion.div
-              className="absolute -top-4 -left-4 w-4 h-4 bg-blue-400 rounded-full"
+              className="absolute -top-4 -left-4 w-4 h-4 bg-emerald-400 rounded-full"
               animate={{
                 y: [0, -10, 0],
                 opacity: [0.5, 1, 0.5],
@@ -289,7 +289,7 @@ export default function ContactSection() {
               }}
             />
             <motion.div
-              className="absolute -bottom-4 -right-4 w-3 h-3 bg-purple-400 rounded-full"
+              className="absolute -bottom-4 -right-4 w-3 h-3 bg-teal-400 rounded-full"
               animate={{
                 y: [0, 10, 0],
                 opacity: [0.5, 1, 0.5],
@@ -312,7 +312,7 @@ export default function ContactSection() {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="text-center mt-16"
         >
-          <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-2xl p-8 border border-blue-200/50 dark:border-blue-800/50">
+          <div className="bg-gradient-to-r from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-2xl p-8 border border-emerald-200/50 dark:border-emerald-800/50">
             <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-4">
               Ready to Start Your Project?
             </h3>
@@ -322,7 +322,7 @@ export default function ContactSection() {
             </p>
             <motion.a
               href="mailto:devmubarak@getfoodify.com"
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >

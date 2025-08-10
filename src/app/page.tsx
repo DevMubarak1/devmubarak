@@ -35,7 +35,7 @@ export default function Home() {
 
   return (
     <div 
-      className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-gray-900 dark:via-gray-800 dark:to-black relative overflow-hidden transition-all duration-500"
+      className="relative overflow-hidden"
       data-theme-container
       data-theme={currentTheme}
       style={{
@@ -54,17 +54,32 @@ export default function Home() {
       {/* Hero Section */}
       <Hero />
 
+      {/* Section Divider */}
+      <div className="h-20 bg-gradient-to-b from-transparent to-white/10 dark:to-black/10"></div>
+
       {/* Work Experience Section */}
       <ExperienceSection />
+
+      {/* Section Divider */}
+      <div className="h-20 bg-gradient-to-b from-transparent to-white/10 dark:to-black/10"></div>
 
       {/* Projects Section */}
       <ProjectsSection />
 
+      {/* Section Divider */}
+      <div className="h-20 bg-gradient-to-b from-transparent to-white/10 dark:to-black/10"></div>
+
       {/* Testimonials Section */}
       <TestimonialsSection />
 
+      {/* Section Divider */}
+      <div className="h-20 bg-gradient-to-b from-transparent to-white/10 dark:to-black/10"></div>
+
       {/* Blog Section */}
       <BlogSection />
+
+      {/* Section Divider */}
+      <div className="h-20 bg-gradient-to-b from-transparent to-white/10 dark:to-black/10"></div>
 
       {/* Contact Section */}
       <ContactSection />
