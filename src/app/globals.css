@@ -1,5 +1,60 @@
 @import "tailwindcss";
 
+/* Manual Dark Mode Implementation */
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: rgba(255, 255, 255, 0.8);
+  --bg-tertiary: rgba(255, 255, 255, 0.5);
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --border-color: rgba(148, 163, 184, 0.5);
+  --accent-blue: #2563eb;
+  --accent-purple: #7c3aed;
+}
+
+.dark {
+  --bg-primary: #000000;
+  --bg-secondary: rgba(0, 0, 0, 0.8);
+  --bg-tertiary: rgba(0, 0, 0, 0.5);
+  --text-primary: #f8fafc;
+  --text-secondary: #d1d5db;
+  --text-muted: #9ca3af;
+  --border-color: rgba(55, 65, 81, 0.5);
+  --accent-blue: #3b82f6;
+  --accent-purple: #8b5cf6;
+}
+
+/* Force apply dark mode styles */
+.dark,
+.dark * {
+  color-scheme: dark;
+}
+
+/* Override Tailwind with manual implementations */
+.manual-bg-primary { background: var(--bg-primary) !important; }
+.manual-bg-secondary { background: var(--bg-secondary) !important; }
+.manual-bg-tertiary { background: var(--bg-tertiary) !important; }
+.manual-text-primary { color: var(--text-primary) !important; }
+.manual-text-secondary { color: var(--text-secondary) !important; }
+.manual-text-muted { color: var(--text-muted) !important; }
+.manual-border { border-color: var(--border-color) !important; }
+
+/* Specific dark mode overrides */
+.dark .bg-white { background: #000000 !important; }
+.dark .bg-slate-50 { background: #000000 !important; }
+.dark .bg-blue-50 { background: #111827 !important; }
+.dark .bg-indigo-100 { background: #000000 !important; }
+.dark .text-slate-800 { color: #f8fafc !important; }
+.dark .text-slate-600 { color: #d1d5db !important; }
+.dark .text-gray-300 { color: #d1d5db !important; }
+.dark .bg-white\/80 { background: rgba(0, 0, 0, 0.8) !important; }
+.dark .bg-white\/70 { background: rgba(0, 0, 0, 0.7) !important; }
+.dark .bg-white\/50 { background: rgba(0, 0, 0, 0.5) !important; }
+.dark .bg-white\/30 { background: rgba(0, 0, 0, 0.3) !important; }
+.dark .border-slate-200 { border-color: #374151 !important; }
+.dark .border-gray-800 { border-color: #374151 !important; }
+
 /* Tailwind v4 CSS Configuration */
 @theme {
   --color-background: light-dark(#ffffff, #000000);
@@ -15,6 +70,7 @@ html {
 
 body {
   font-family: var(--font-geist-sans), system-ui, Arial, Helvetica, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Ensure theme transitions work properly */
