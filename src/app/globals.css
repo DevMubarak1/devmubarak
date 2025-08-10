@@ -58,13 +58,13 @@
   }
 }
 
-/* Optimized animations - reduced for better performance */
+/* Custom animations */
 @keyframes float {
   0%, 100% {
     transform: translateY(0px);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-20px);
   }
 }
 
@@ -73,16 +73,29 @@
     opacity: 1;
   }
   50% {
-    opacity: 0.7;
+    opacity: 0.5;
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
 
 .animate-float {
-  animation: float 4s ease-in-out infinite;
+  animation: float 6s ease-in-out infinite;
 }
 
 .animate-pulse-slow {
-  animation: pulse-slow 2s ease-in-out infinite;
+  animation: pulse-slow 3s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
 }
 
 /* Dark theme improvements */
@@ -104,6 +117,14 @@
   color: #e2e8f0;
 }
 
+.dark .text-gray-100 {
+  color: #f3f4f6;
+}
+
+.dark .text-gray-200 {
+  color: #e5e7eb;
+}
+
 .dark .text-gray-300 {
   color: #d1d5db;
 }
@@ -121,12 +142,20 @@
   background-color: rgba(0, 0, 0, 0.8);
 }
 
+.dark .bg-white\/90 {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
 .dark .bg-black\/70 {
   background-color: rgba(0, 0, 0, 0.9);
 }
 
 .dark .bg-black\/80 {
   background-color: rgba(0, 0, 0, 0.95);
+}
+
+.dark .bg-black\/90 {
+  background-color: rgba(0, 0, 0, 0.98);
 }
 
 /* Better border contrast in dark mode */
@@ -136,6 +165,11 @@
 
 .dark .border-gray-700\/50 {
   border-color: rgba(55, 65, 81, 0.5);
+}
+
+/* Improved gradient backgrounds for dark mode */
+.dark .bg-gradient-to-br {
+  background-image: linear-gradient(to bottom right, rgba(15, 23, 42, 0.8), rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.8));
 }
 
 /* Better shadow contrast in dark mode */
@@ -201,6 +235,10 @@
   opacity: 0.25;
 }
 
+.dark .opacity-15 {
+  opacity: 0.35;
+}
+
 .dark .opacity-20 {
   opacity: 0.4;
 }
@@ -208,6 +246,10 @@
 /* Improved button contrast in dark mode */
 .dark .border-slate-300 {
   border-color: #475569;
+}
+
+.dark .border-gray-500 {
+  border-color: #6b7280;
 }
 
 .dark .border-gray-600 {
@@ -237,34 +279,21 @@
   background: #64748b;
 }
 
-/* Performance optimizations */
-* {
-  box-sizing: border-box;
+/* Hero section specific improvements */
+.dark #home {
+  background: linear-gradient(to bottom right, #0f172a, #1e293b, #334155);
 }
 
-/* Reduce motion for users who prefer it */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
+/* Better text visibility in hero section */
+.dark #home .text-slate-700 {
+  color: #f1f5f9;
 }
 
-/* Optimize for better performance */
-.animate-bounce {
-  animation: bounce 1s infinite;
+.dark #home .text-slate-600 {
+  color: #e2e8f0;
 }
 
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(-25%);
-    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-  }
-  50% {
-    transform: none;
-    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-  }
+/* Improved social icons in dark mode */
+.dark .group:hover .text-slate-700 {
+  color: #3b82f6;
 }
