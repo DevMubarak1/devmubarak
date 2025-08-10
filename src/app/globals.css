@@ -1,185 +1,270 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-/* Professional Dark Mode Implementation */
-:root {
-  --bg-primary: #ffffff;
-  --bg-secondary: rgba(255, 255, 255, 0.8);
-  --bg-tertiary: rgba(255, 255, 255, 0.5);
-  --bg-card: rgba(255, 255, 255, 0.7);
-  --text-primary: #0f172a;
-  --text-secondary: #475569;
-  --text-muted: #64748b;
-  --border-color: rgba(148, 163, 184, 0.5);
-  --accent-blue: #2563eb;
-  --accent-purple: #7c3aed;
-  --gradient-start: #f8fafc;
-  --gradient-mid: #e0e7ff;
-  --gradient-end: #e0e7ff;
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 94.1%;
+  }
 }
 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Optimized animations - reduced for better performance */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 2s ease-in-out infinite;
+}
+
+/* Dark theme improvements */
 .dark {
-  --bg-primary: #0a0a0a;
-  --bg-secondary: rgba(10, 10, 10, 0.8);
-  --bg-tertiary: rgba(10, 10, 10, 0.5);
-  --bg-card: rgba(17, 17, 17, 0.7);
-  --text-primary: #f8fafc;
-  --text-secondary: #d1d5db;
-  --text-muted: #9ca3af;
-  --border-color: rgba(55, 65, 81, 0.5);
-  --accent-blue: #3b82f6;
-  --accent-purple: #8b5cf6;
-  --gradient-start: #0a0a0a;
-  --gradient-mid: #1e1e1e;
-  --gradient-end: #0a0a0a;
+  color-scheme: dark;
 }
 
-/* Professional Dark Mode Overrides */
-.dark .bg-white { background: #111111 !important; }
-.dark .bg-slate-50 { background: #0a0a0a !important; }
-.dark .bg-blue-50 { background: #0a0a0a !important; }
-.dark .bg-indigo-100 { background: #0a0a0a !important; }
-.dark .bg-white\/80 { background: rgba(17, 17, 17, 0.8) !important; }
-.dark .bg-white\/70 { background: rgba(17, 17, 17, 0.7) !important; }
-.dark .bg-white\/50 { background: rgba(17, 17, 17, 0.5) !important; }
-.dark .bg-white\/30 { background: rgba(17, 17, 17, 0.3) !important; }
-
-.dark .text-slate-800 { color: #f8fafc !important; }
-.dark .text-slate-600 { color: #d1d5db !important; }
-.dark .text-gray-300 { color: #d1d5db !important; }
-.dark .text-gray-400 { color: #9ca3af !important; }
-
-.dark .border-slate-200 { border-color: rgba(55, 65, 81, 0.5) !important; }
-.dark .border-gray-800 { border-color: rgba(55, 65, 81, 0.5) !important; }
-
-/* Beautiful gradient backgrounds for dark mode */
-.dark .bg-gradient-to-br.from-slate-50.via-blue-50.to-indigo-100 {
-  background: linear-gradient(to bottom right, #0a0a0a, #1e1e1e, #0a0a0a) !important;
+.dark body {
+  background: linear-gradient(to bottom right, #0a0a0a, #1a1a1a, #0a0a0a);
+  color: #f8fafc;
 }
 
-/* Card styling for dark mode */
-.dark .bg-white\/70.dark\:bg-black\/70 {
-  background: rgba(17, 17, 17, 0.7) !important;
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(55, 65, 81, 0.3);
+/* Better contrast for dark mode text */
+.dark .text-slate-600 {
+  color: #cbd5e1;
 }
 
-/* Navigation dark mode */
-.dark .bg-white\/80.dark\:bg-black\/80 {
-  background: rgba(10, 10, 10, 0.9) !important;
+.dark .text-slate-700 {
+  color: #e2e8f0;
+}
+
+.dark .text-gray-300 {
+  color: #d1d5db;
+}
+
+.dark .text-gray-400 {
+  color: #9ca3af;
+}
+
+/* Improved dark mode backgrounds */
+.dark .bg-white\/70 {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.dark .bg-white\/80 {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.dark .bg-black\/70 {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.dark .bg-black\/80 {
+  background-color: rgba(0, 0, 0, 0.95);
+}
+
+/* Better border contrast in dark mode */
+.dark .border-slate-200\/50 {
+  border-color: rgba(51, 65, 85, 0.5);
+}
+
+.dark .border-gray-700\/50 {
+  border-color: rgba(55, 65, 81, 0.5);
+}
+
+/* Better shadow contrast in dark mode */
+.dark .shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+}
+
+.dark .shadow-xl {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
+}
+
+.dark .shadow-2xl {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* Improved backdrop blur for dark mode */
+.dark .backdrop-blur-sm {
+  backdrop-filter: blur(4px);
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.dark .backdrop-blur-md {
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(55, 65, 81, 0.3);
+  background-color: rgba(0, 0, 0, 0.85);
 }
 
-/* Section backgrounds */
-.dark .bg-white\/50.dark\:bg-black\/50 {
-  background: rgba(10, 10, 10, 0.5) !important;
+/* Better hover states for dark mode */
+.dark .hover\:bg-slate-50:hover {
+  background-color: rgba(15, 23, 42, 0.8);
 }
 
-/* Footer dark mode */
-.dark .bg-white\/30.dark\:bg-black\/30 {
-  background: rgba(10, 10, 10, 0.3) !important;
+.dark .hover\:bg-gray-800\/50:hover {
+  background-color: rgba(31, 41, 55, 0.8);
 }
 
-/* Project cards dark mode */
-.dark .group.bg-white\/70.dark\:bg-black\/70 {
-  background: rgba(17, 17, 17, 0.8) !important;
-  border: 1px solid rgba(55, 65, 81, 0.3);
-  backdrop-filter: blur(8px);
+/* Improved text contrast for gradients in dark mode */
+.dark .bg-clip-text {
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
-/* Experience cards dark mode */
-.dark .bg-white\/70.dark\:bg-black\/70.backdrop-blur-sm {
-  background: rgba(17, 17, 17, 0.8) !important;
-  border: 1px solid rgba(55, 65, 81, 0.3);
-  backdrop-filter: blur(8px);
+/* Better section backgrounds for dark mode */
+.dark section {
+  background: linear-gradient(to bottom, rgba(15, 23, 42, 0.3), rgba(30, 41, 59, 0.3));
 }
 
-/* Testimonial cards dark mode */
-.dark .bg-white\/70.dark\:bg-black\/70.backdrop-blur-sm {
-  background: rgba(17, 17, 17, 0.8) !important;
-  border: 1px solid rgba(55, 65, 81, 0.3);
-  backdrop-filter: blur(8px);
+/* Improved card backgrounds in dark mode */
+.dark .bg-gradient-to-br.from-indigo-50.via-purple-50.to-pink-50 {
+  background: linear-gradient(to bottom right, rgba(30, 27, 75, 0.3), rgba(88, 28, 135, 0.3), rgba(219, 39, 119, 0.3));
 }
 
-/* Tech badges dark mode */
-.dark .bg-gradient-to-r.from-slate-100.to-slate-200 {
-  background: linear-gradient(to right, #1f2937, #374151) !important;
-  color: #d1d5db !important;
-  border: 1px solid rgba(55, 65, 81, 0.5);
+.dark .bg-gradient-to-br.from-emerald-50.via-teal-50.to-cyan-50 {
+  background: linear-gradient(to bottom right, rgba(6, 78, 59, 0.3), rgba(20, 83, 45, 0.3), rgba(21, 94, 117, 0.3));
 }
 
-.dark .bg-gradient-to-r.from-blue-100.to-purple-100 {
-  background: linear-gradient(to right, #1e3a8a, #3730a3) !important;
-  color: #93c5fd !important;
-  border: 1px solid rgba(59, 130, 246, 0.3);
+/* Better opacity for background patterns in dark mode */
+.dark .opacity-5 {
+  opacity: 0.15;
 }
 
-/* Button styling dark mode */
-.dark .border-slate-300.dark\:border-gray-600 {
-  border-color: rgba(55, 65, 81, 0.5) !important;
+.dark .opacity-10 {
+  opacity: 0.25;
 }
 
-.dark .hover\:bg-slate-50.dark\:hover\:bg-gray-900:hover {
-  background: rgba(17, 24, 39, 0.8) !important;
+.dark .opacity-20 {
+  opacity: 0.4;
 }
 
-/* Tailwind v4 CSS Configuration */
-@theme {
-  --color-background: light-dark(#ffffff, #0a0a0a);
-  --color-foreground: light-dark(#0f172a, #f8fafc);
+/* Improved button contrast in dark mode */
+.dark .border-slate-300 {
+  border-color: #475569;
 }
 
-@variant dark (.dark *);
-
-html {
-  scroll-behavior: smooth;
-  color-scheme: light dark;
+.dark .border-gray-600 {
+  border-color: #4b5563;
 }
 
-body {
-  font-family: var(--font-geist-sans), system-ui, Arial, Helvetica, sans-serif;
-  transition: background-color 0.3s ease, color 0.3s ease;
+/* Better focus states for dark mode */
+.dark .focus\:ring-2:focus {
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
 }
 
-/* Ensure theme transitions work properly */
-* {
-  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
-}
-
-/* Remove transition for html and body to prevent conflicts */
-html, body {
-  transition: none !important;
-}
-
-/* Custom scrollbar */
-::-webkit-scrollbar {
+/* Improved scrollbar for dark mode */
+.dark ::-webkit-scrollbar {
   width: 8px;
 }
 
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  transition: background-color 0.3s ease;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #c1c1c1;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #a8a8a8;
-}
-
-/* Dark mode scrollbar */
 .dark ::-webkit-scrollbar-track {
-  background: #0a0a0a;
+  background: #1e293b;
 }
 
 .dark ::-webkit-scrollbar-thumb {
-  background: #374151;
+  background: #475569;
+  border-radius: 4px;
 }
 
 .dark ::-webkit-scrollbar-thumb:hover {
-  background: #4b5563;
+  background: #64748b;
+}
+
+/* Performance optimizations */
+* {
+  box-sizing: border-box;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Optimize for better performance */
+.animate-bounce {
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
 }

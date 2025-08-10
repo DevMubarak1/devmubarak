@@ -10,7 +10,6 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import BlogSection from "@/components/BlogSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
-import BackgroundElements from "@/components/BackgroundElements";
 
 export default function Home() {
   const { theme } = useTheme();
@@ -35,19 +34,16 @@ export default function Home() {
 
   return (
     <div 
-      className="relative overflow-hidden"
+      className="relative overflow-hidden min-h-screen"
       data-theme-container
       data-theme={currentTheme}
       style={{
         background: currentTheme === 'dark' 
-          ? 'linear-gradient(to bottom right, #0a0a0a, #1e1e1e, #0a0a0a)' 
-          : 'linear-gradient(to bottom right, #f8fafc, #e0e7ff, #e0e7ff)',
-        transition: 'all 0.5s ease'
+          ? 'linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #334155 50%, #1e293b 75%, #0f172a 100%)' 
+          : 'linear-gradient(135deg, #f8fafc 0%, #e0e7ff 25%, #c7d2fe 50%, #e0e7ff 75%, #f8fafc 100%)',
+        transition: 'all 0.3s ease'
       }}
     >
-      {/* Global Floating Background Elements */}
-      <BackgroundElements />
-
       {/* Navigation */}
       <Navigation />
 
@@ -55,31 +51,31 @@ export default function Home() {
       <Hero />
 
       {/* Section Divider */}
-      <div className="h-20 bg-gradient-to-b from-transparent to-white/10 dark:to-black/10"></div>
+      <div className="h-16 bg-gradient-to-b from-transparent to-white/10 dark:to-black/20"></div>
 
       {/* Work Experience Section */}
       <ExperienceSection />
 
       {/* Section Divider */}
-      <div className="h-20 bg-gradient-to-b from-transparent to-white/10 dark:to-black/10"></div>
+      <div className="h-16 bg-gradient-to-b from-transparent to-white/10 dark:to-black/20"></div>
 
       {/* Projects Section */}
       <ProjectsSection />
 
       {/* Section Divider */}
-      <div className="h-20 bg-gradient-to-b from-transparent to-white/10 dark:to-black/10"></div>
+      <div className="h-16 bg-gradient-to-b from-transparent to-white/10 dark:to-black/20"></div>
 
       {/* Testimonials Section */}
       <TestimonialsSection />
 
       {/* Section Divider */}
-      <div className="h-20 bg-gradient-to-b from-transparent to-white/10 dark:to-black/10"></div>
+      <div className="h-16 bg-gradient-to-b from-transparent to-white/10 dark:to-black/20"></div>
 
       {/* Blog Section */}
       <BlogSection />
 
       {/* Section Divider */}
-      <div className="h-20 bg-gradient-to-b from-transparent to-white/10 dark:to-black/10"></div>
+      <div className="h-16 bg-gradient-to-b from-transparent to-white/10 dark:to-black/20"></div>
 
       {/* Contact Section */}
       <ContactSection />

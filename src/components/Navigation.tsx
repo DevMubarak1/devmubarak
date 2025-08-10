@@ -38,7 +38,7 @@ export default function Navigation() {
     <motion.nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-white/90 dark:bg-black/90 backdrop-blur-md shadow-lg border-b border-slate-200/50 dark:border-gray-700/50"
+          ? "bg-white/95 dark:bg-black/95 backdrop-blur-md shadow-lg border-b border-slate-200/50 dark:border-gray-700/50"
           : "bg-transparent"
       }`}
       initial={{ y: -100 }}
@@ -67,7 +67,7 @@ export default function Navigation() {
               <motion.button
                 key={item.name}
                 onClick={() => scrollToSection(item.href.slice(1))}
-                className="text-slate-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors duration-300 relative group"
+                className="text-slate-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors duration-300 relative group"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -85,7 +85,7 @@ export default function Navigation() {
             
             {/* Mobile Menu Button */}
             <motion.button
-              className="md:hidden p-2 rounded-lg text-slate-700 dark:text-gray-300 hover:bg-slate-100 dark:hover:bg-gray-800 transition-colors duration-300"
+              className="md:hidden p-2 rounded-lg text-slate-700 dark:text-gray-200 hover:bg-slate-100 dark:hover:bg-gray-800 transition-colors duration-300"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               whileTap={{ scale: 0.95 }}
             >
@@ -127,7 +127,7 @@ export default function Navigation() {
               <motion.button
                 key={item.name}
                 onClick={() => scrollToSection(item.href.slice(1))}
-                className="block w-full text-left px-4 py-3 text-slate-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-50 dark:hover:bg-gray-800/50 rounded-lg font-medium transition-all duration-300"
+                className="block w-full text-left px-4 py-3 text-slate-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-50 dark:hover:bg-gray-800/50 rounded-lg font-medium transition-all duration-300"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.3, delay: index * 0.1 }}
