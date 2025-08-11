@@ -35,7 +35,7 @@ export default function Home() {
 
   return (
     <div 
-      className="relative overflow-hidden min-h-screen"
+      className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-black dark:via-gray-900 dark:to-black relative overflow-hidden transition-colors duration-300"
       data-theme-container
       data-theme={currentTheme}
     >
