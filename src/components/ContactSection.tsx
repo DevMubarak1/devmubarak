@@ -24,38 +24,94 @@ export default function ContactSection() {
             <Mail size={16} />
             Let&apos;s Connect
           </motion.div>
+          
           <h2 className="text-3xl md:text-4xl font-bold text-slate-800 dark:text-white mb-6">
             Let&apos;s Work Together
           </h2>
-          <p className="text-lg text-slate-600 dark:text-gray-300 mb-8">
-            I&apos;m always interested in new opportunities and exciting projects. 
-            Feel free to reach out if you&apos;d like to collaborate or just say hello!
-          </p>
           
-          <motion.div 
-            className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8"
+          {/* Animated Waving Character */}
+          <motion.div
+            className="flex justify-center mb-8"
+            initial={{ opacity: 0, scale: 0.5 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <div className="relative">
+              {/* Character Body */}
+              <motion.div
+                className="w-24 h-24 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-4xl shadow-lg"
+                animate={{
+                  y: [0, -5, 0],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              >
+                👋
+              </motion.div>
+              
+              {/* Waving Hand Animation */}
+              <motion.div
+                className="absolute -top-2 -right-2 text-2xl"
+                animate={{
+                  rotate: [0, 20, 0, -20, 0],
+                }}
+                transition={{
+                  duration: 1.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              >
+                👋
+              </motion.div>
+              
+              {/* Floating Bubbles */}
+              {[...Array(3)].map((_, i) => (
+                <motion.div
+                  key={i}
+                  className="absolute w-3 h-3 bg-blue-400/60 rounded-full"
+                  style={{
+                    left: `${20 + i * 15}px`,
+                    top: `${-10 - i * 8}px`,
+                  }}
+                  animate={{
+                    y: [0, -10, 0],
+                    opacity: [0.6, 1, 0.6],
+                  }}
+                  transition={{
+                    duration: 2,
+                    delay: i * 0.3,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                />
+              ))}
+            </div>
+          </motion.div>
+          
+          <motion.p 
+            className="text-lg text-slate-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <motion.a
-              href="mailto:your.email@example.com"
-              className="group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg font-medium hover:shadow-lg transition-all duration-300 flex items-center gap-3"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Mail size={20} />
-              your.email@example.com
-            </motion.a>
-          </motion.div>
-
+            Feel free to reach out to me at{" "}
+            <span className="font-semibold text-blue-600 dark:text-blue-400">
+              devmubarak@getfoodify.com
+            </span>{" "}
+            or click the links below!
+          </motion.p>
+          
           <motion.div 
             className="flex justify-center gap-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
           >
             {[
               { href: "https://github.com/yourusername", icon: Github, label: "GitHub" },
@@ -73,7 +129,7 @@ export default function ContactSection() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: 0.5 + index * 0.1 }}
+                transition={{ duration: 0.3, delay: 0.8 + index * 0.1 }}
               >
                 <social.icon size={24} />
               </motion.a>
