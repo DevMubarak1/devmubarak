@@ -64,7 +64,7 @@ export default function ThemeToggle() {
             : "bg-white left-0.5"
         }`}
         animate={{
-          x: 0,
+          x: 0, // Remove framer motion animation conflicts
         }}
         transition={{ type: "spring", stiffness: 500, damping: 30 }}
       >

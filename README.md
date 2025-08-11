@@ -27,8 +27,8 @@ A clean, modern portfolio website built with Next.js, TypeScript, Tailwind CSS, 
    ```
 
 2. **Run the development server**:
-```bash
-npm run dev
+   ```bash
+   npm run dev
    ```
 
 3. **Open [http://localhost:3000](http://localhost:3000)** in your browser.
