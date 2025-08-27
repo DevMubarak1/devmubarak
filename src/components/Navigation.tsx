@@ -136,9 +136,9 @@ export default function Navigation() {
                 animate={{ opacity: 1, height: "auto" }}
                 exit={{ opacity: 0, height: 0 }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
-                className="md:hidden border-t border-slate-200/50 dark:border-gray-800/50 mt-3 pt-3"
+                className="md:hidden border-t border-slate-200/50 dark:border-gray-800/50 mt-3 pt-3 overflow-hidden"
               >
-                <div className="space-y-2">
+                <div className="space-y-1 pb-2">
                   {navItems.map((item, index) => (
                     <motion.div
                       key={item.name}

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Instagram, Linkedin, Mail } from "lucide-react";
+import { Instagram, Github, Mail } from "lucide-react";
 import XIcon from "./XIcon";
 
 export default function Hero() {
@@ -26,7 +26,7 @@ export default function Hero() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            🚀 Available for new opportunities
+             Available for new opportunities
           </motion.div>
 
           {/* Main Heading */}
@@ -62,7 +62,7 @@ export default function Hero() {
           >
             {/* Instagram */}
             <motion.a
-              href="https://instagram.com/devmubarak"
+              href="https://instagram.com/dev.mubarak"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-full font-semibold hover:from-pink-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl group"
@@ -74,7 +74,7 @@ export default function Hero() {
 
             {/* X (Twitter) */}
             <motion.a
-              href="https://x.com/devmubarak"
+              href="https://x.com/dev_mubarak"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-600 text-white rounded-full font-semibold hover:from-blue-600 hover:to-cyan-700 transition-all duration-300 shadow-lg hover:shadow-xl group"
@@ -84,16 +84,16 @@ export default function Hero() {
               <XIcon size={20} className="group-hover:scale-110 transition-transform duration-300" />
             </motion.a>
 
-            {/* LinkedIn */}
+            {/* GitHub */}
             <motion.a
-              href="https://linkedin.com/in/devmubarak"
+              href="https://github.com/DevMubarak1"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-full font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-lg hover:shadow-xl group"
+              className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-r from-gray-700 to-gray-900 text-white rounded-full font-semibold hover:from-gray-800 hover:to-black transition-all duration-300 shadow-lg hover:shadow-xl group"
               whileHover={{ scale: 1.1, y: -3 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Linkedin size={20} className="group-hover:scale-110 transition-transform duration-300" />
+              <Github size={20} className="group-hover:scale-110 transition-transform duration-300" />
             </motion.a>
 
             {/* Email */}

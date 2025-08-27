@@ -96,7 +96,7 @@ export const workExperience = [
   {
     title: "Founder & CEO",
     company: "Rinnetech",
-    period: "2023 - Present",
+    period: "2025 - Present",
     description: "Founded and leading a technology company specializing in building scalable web applications, mobile apps, and digital solutions for clients across various industries. Providing end-to-end development services from concept to deployment.",
     achievements: [
       "Founded and scaled Rinnetech to serve 15+ clients across multiple industries",
@@ -111,7 +111,7 @@ export const workExperience = [
   {
     title: "Founder & Full-Stack Developer",
     company: "Foodify",
-    period: "2023 - Present",
+    period: "2025 - Present",
     description: "Leading the development of an AI-powered culinary assistant platform. Built from concept to production with Next.js, React Native, and OpenAI integration. Managing team of 3 developers and overseeing product strategy.",
     achievements: [
       "Built AI-powered recipe generation and meal planning features",
@@ -125,7 +125,7 @@ export const workExperience = [
   {
     title: "Full-Stack Developer",
     company: "Shomoloo",
-    period: "2023 - Present",
+    period: "2025 - Present",
     description: "Developed a unified workflow platform connecting designers, fabric vendors, and printing services. Built comprehensive e-commerce solution with payment processing and logistics management.",
     achievements: [
       "Built end-to-end e-commerce platform with payment integration",
@@ -139,7 +139,7 @@ export const workExperience = [
   {
     title: "Full-Stack Developer",
     company: "Perfect Skin Industry",
-    period: "2023 - Present",
+    period: "2025 - Present",
     description: "Developed a polished e-commerce storefront for skincare products with advanced product management, payment processing, and customer analytics.",
     achievements: [
       "Built responsive e-commerce platform with product catalog",
@@ -153,7 +153,7 @@ export const workExperience = [
   {
     title: "Chrome Extension Developer",
     company: "RateRadar & Foodify Extensions",
-    period: "2023 - Present",
+    period: "2025 - Present",
     description: "Created browser extensions for currency tracking and recipe importing. Built tools that enhance user productivity and workflow efficiency.",
     achievements: [
       "Developed RateRadar for real-time currency conversion",
