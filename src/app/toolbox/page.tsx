@@ -5,7 +5,6 @@ import { useTheme } from "next-themes";
 import Navigation from "@/components/Navigation";
 import ServicesSection from "@/components/ServicesSection";
 import BackgroundElements from "@/components/BackgroundElements";
-import ScrollProgress from "@/components/ScrollProgress";
 import BackToTop from "@/components/BackToTop";
 
 export default function Toolbox() {
@@ -20,9 +19,6 @@ export default function Toolbox() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-black dark:via-gray-900 dark:to-black relative overflow-hidden transition-colors duration-300">
-      {/* Scroll Progress Indicator */}
-      <ScrollProgress />
-      
       {/* Back to Top Button */}
       <BackToTop />
 
