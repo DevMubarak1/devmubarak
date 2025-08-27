@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ExternalLink, Code, Globe, Smartphone, Database, Zap, Palette, ShoppingCart, Chrome, LucideIcon } from "lucide-react";
+import Image from "next/image";
 
 interface Project {
   title: string;
@@ -51,9 +52,13 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       whileHover={{ y: -5 }}
     >
       <div className="relative h-48 bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 dark:from-blue-900/20 dark:via-purple-900/20 dark:to-pink-900/20 flex items-center justify-center overflow-hidden">
-        <div className="text-4xl text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform duration-300">
-          📱
-        </div>
+        <Image
+          src={project.image}
+          alt={project.title}
+          fill
+          className="object-cover group-hover:scale-110 transition-transform duration-300"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        />
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       </div>
       <div className="p-6">
