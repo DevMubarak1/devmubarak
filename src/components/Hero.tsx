@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Download, Mail } from "lucide-react";
+import { Instagram, Twitter, Linkedin, Mail } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -52,31 +52,57 @@ export default function Hero() {
             mobile apps, and AI-powered solutions that make a difference.
           </motion.p>
 
-          {/* CTA Buttons */}
+          {/* Social Media Buttons */}
           <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
+            className="flex flex-wrap justify-center items-center gap-4 mb-12"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
           >
+            {/* Instagram */}
             <motion.a
-              href="/about"
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl group"
-              whileHover={{ scale: 1.05, y: -2 }}
+              href="https://instagram.com/devmubarak"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-full font-semibold hover:from-pink-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl group"
+              whileHover={{ scale: 1.1, y: -3 }}
               whileTap={{ scale: 0.95 }}
             >
-              Learn More About Me
-              <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform duration-300" />
+              <Instagram size={20} className="group-hover:scale-110 transition-transform duration-300" />
             </motion.a>
 
+            {/* X (Twitter) */}
             <motion.a
-              href="mailto:devmubarak@getfoodify.com"
-              className="inline-flex items-center gap-2 bg-white/80 dark:bg-gray-800/80 text-slate-800 dark:text-white px-8 py-4 rounded-full font-semibold hover:bg-white dark:hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl backdrop-blur-sm border border-slate-200/50 dark:border-gray-700/50"
-              whileHover={{ scale: 1.05, y: -2 }}
+              href="https://x.com/devmubarak"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-600 text-white rounded-full font-semibold hover:from-blue-600 hover:to-cyan-700 transition-all duration-300 shadow-lg hover:shadow-xl group"
+              whileHover={{ scale: 1.1, y: -3 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Mail size={20} />
-              Send Email
+              <Twitter size={20} className="group-hover:scale-110 transition-transform duration-300" />
+            </motion.a>
+
+            {/* LinkedIn */}
+            <motion.a
+              href="https://linkedin.com/in/devmubarak"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-full font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-lg hover:shadow-xl group"
+              whileHover={{ scale: 1.1, y: -3 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Linkedin size={20} className="group-hover:scale-110 transition-transform duration-300" />
+            </motion.a>
+
+            {/* Email */}
+            <motion.a
+              href="mailto:devmubarak@getfoodify.com"
+              className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-full font-semibold hover:from-green-600 hover:to-emerald-700 transition-all duration-300 shadow-lg hover:shadow-xl group"
+              whileHover={{ scale: 1.1, y: -3 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Mail size={20} className="group-hover:scale-110 transition-transform duration-300" />
             </motion.a>
           </motion.div>
 
