@@ -60,12 +60,12 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.5 }}
           >
             <motion.a
-              href="#contact"
+              href="/about"
               className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl group"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
-              Let&apos;s Work Together
+              Learn More About Me
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform duration-300" />
             </motion.a>
 

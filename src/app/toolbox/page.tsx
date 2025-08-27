@@ -3,18 +3,16 @@
 import { useEffect } from "react";
 import { useTheme } from "next-themes";
 import Navigation from "@/components/Navigation";
-import Hero from "@/components/Hero";
+import ServicesSection from "@/components/ServicesSection";
 import BackgroundElements from "@/components/BackgroundElements";
 import ScrollProgress from "@/components/ScrollProgress";
 import BackToTop from "@/components/BackToTop";
 
-export default function Home() {
+export default function Toolbox() {
   const { theme } = useTheme();
 
-  // Debug theme changes
   useEffect(() => {
-    console.log("Main page theme changed to:", theme);
-    // Force re-render by updating a class on the body
+    console.log("Toolbox page theme changed to:", theme);
     if (typeof window !== "undefined") {
       document.body.className = document.body.className.replace(/theme-\w+/, '') + ` theme-${theme}`;
     }
@@ -34,8 +32,11 @@ export default function Home() {
       {/* Navigation */}
       <Navigation />
 
-      {/* Hero Section */}
-      <Hero />
+      {/* Toolbox Content */}
+      <div className="pt-24 pb-16">
+        {/* Services Section */}
+        <ServicesSection />
+      </div>
     </div>
   );
-}
+} 
