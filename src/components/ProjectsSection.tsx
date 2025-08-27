@@ -29,8 +29,11 @@ export default function ProjectsSection() {
           <h2 className="text-3xl md:text-4xl font-bold text-slate-800 dark:text-white mb-6">
             Featured Projects
           </h2>
-          <p className="text-lg text-slate-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-lg text-slate-600 dark:text-gray-300 max-w-2xl mx-auto mb-4">
             Here are some of my recent projects that showcase my skills and passion for development.
+          </p>
+          <p className="text-lg text-slate-600 dark:text-gray-300 max-w-2xl mx-auto">
+            and plenty more.......
           </p>
         </motion.div>
 
