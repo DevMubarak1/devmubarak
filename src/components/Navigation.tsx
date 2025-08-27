@@ -27,7 +27,9 @@ export default function Navigation() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="bg-white/95 dark:bg-black/95 backdrop-blur-xl border border-slate-200/60 dark:border-gray-800/60 rounded-full shadow-2xl shadow-black/10 dark:shadow-black/20 max-w-4xl w-[95%]"
+        className={`bg-white/95 dark:bg-black/95 backdrop-blur-xl border border-slate-200/60 dark:border-gray-800/60 rounded-full shadow-2xl shadow-black/10 dark:shadow-black/20 max-w-4xl w-[95%] transition-all duration-300 ${
+          isOpen ? 'min-h-[300px]' : 'min-h-[60px]'
+        }`}
       >
         <div className="px-6 py-3">
           <div className="flex justify-between items-center">

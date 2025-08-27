@@ -29,19 +29,29 @@ export default function ProjectsSection() {
           <h2 className="text-3xl md:text-4xl font-bold text-slate-800 dark:text-white mb-6">
             Featured Projects
           </h2>
-          <p className="text-lg text-slate-600 dark:text-gray-300 max-w-2xl mx-auto mb-4">
-            Here are some of my recent projects that showcase my skills and passion for development.
-          </p>
           <p className="text-lg text-slate-600 dark:text-gray-300 max-w-2xl mx-auto">
-            and plenty more.......
+            Here are some of my recent projects that showcase my skills and passion for development.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12">
           {projects.map((project, index) => (
             <ProjectCard key={index} project={project} index={index} />
           ))}
         </div>
+
+        {/* And plenty more text */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="text-center"
+        >
+          <p className="text-lg text-slate-600 dark:text-gray-300 max-w-2xl mx-auto">
+            and plenty more.......
+          </p>
+        </motion.div>
       </div>
     </section>
   );
