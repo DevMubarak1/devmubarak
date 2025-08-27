@@ -26,9 +26,9 @@ export default function Navigation() {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 bg-white/95 dark:bg-black/95 backdrop-blur-xl border border-slate-200/60 dark:border-gray-800/60 rounded-full shadow-2xl shadow-black/10 dark:shadow-black/20"
+      className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 bg-white/95 dark:bg-black/95 backdrop-blur-xl border border-slate-200/60 dark:border-gray-800/60 rounded-full shadow-2xl shadow-black/10 dark:shadow-black/20 max-w-4xl w-[95%]"
     >
-      <div className="px-8 py-4">
+      <div className="px-6 py-3">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <motion.div
@@ -45,7 +45,7 @@ export default function Navigation() {
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-10">
+          <div className="hidden lg:flex items-center space-x-8">
             {navItems.map((item, index) => (
               <motion.div
                 key={item.name}
@@ -85,8 +85,8 @@ export default function Navigation() {
           </div>
 
           {/* Tablet Navigation */}
-          <div className="hidden md:flex lg:hidden items-center space-x-6">
-            {navItems.slice(0, 3).map((item, index) => (
+          <div className="hidden md:flex lg:hidden items-center space-x-4">
+            {navItems.slice(0, 2).map((item, index) => (
               <motion.div
                 key={item.name}
                 initial={{ opacity: 0, y: -10 }}
@@ -115,7 +115,7 @@ export default function Navigation() {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center space-x-4">
+          <div className="md:hidden flex items-center space-x-3">
             <ThemeToggle />
             <motion.button
               onClick={toggleMenu}
@@ -135,7 +135,7 @@ export default function Navigation() {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="md:hidden border-t border-slate-200/50 dark:border-gray-800/50 mt-4 pt-4"
+              className="md:hidden border-t border-slate-200/50 dark:border-gray-800/50 mt-3 pt-3"
             >
               <div className="space-y-2">
                 {navItems.map((item, index) => (

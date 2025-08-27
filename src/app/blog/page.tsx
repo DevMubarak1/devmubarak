@@ -33,7 +33,7 @@ export default function Blog() {
       <Navigation />
 
       {/* Blog Content */}
-      <div className="pt-24 pb-16">
+      <div className="pt-16 pb-16">
         {/* Blog Section */}
         <BlogSection />
       </div>

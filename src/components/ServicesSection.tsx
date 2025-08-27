@@ -21,8 +21,8 @@ export default function ServicesSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-4xl md:text-5xl font-bold text-slate-800 dark:text-white mb-6"
           >
-            My Complete
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> Toolbox</span>
+            Complete
+            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> Skill Set</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}

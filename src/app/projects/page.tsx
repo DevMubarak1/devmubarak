@@ -33,7 +33,7 @@ export default function Projects() {
       <Navigation />
 
       {/* Projects Content */}
-      <div className="pt-24 pb-16">
+      <div className="pt-16 pb-16">
         {/* Projects Section */}
         <ProjectsSection />
       </div>
