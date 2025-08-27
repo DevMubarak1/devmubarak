@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Instagram, Twitter, Linkedin, Mail } from "lucide-react";
+import { Instagram, Linkedin, Mail } from "lucide-react";
+import XIcon from "./XIcon";
 
 export default function Hero() {
   return (
@@ -80,7 +81,7 @@ export default function Hero() {
               whileHover={{ scale: 1.1, y: -3 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Twitter size={20} className="group-hover:scale-110 transition-transform duration-300" />
+              <XIcon size={20} className="group-hover:scale-110 transition-transform duration-300" />
             </motion.a>
 
             {/* LinkedIn */}

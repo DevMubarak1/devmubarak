@@ -6,25 +6,14 @@ import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
 export default function ThemeToggle() {
-  const [mounted, setMounted] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
   const { setTheme } = useTheme();
 
   useEffect(() => {
-    setMounted(true);
     // Check initial theme state
     const hasClass = document.documentElement.classList.contains('dark');
     setIsDarkMode(hasClass);
   }, []);
-
-  // Don't render anything on the server to avoid hydration mismatch
-  if (!mounted) {
-    return (
-      <div className="relative w-12 h-6 bg-slate-200 rounded-full p-1">
-        <div className="absolute top-0.5 left-0.5 w-5 h-5 bg-white rounded-full shadow-md"></div>
-      </div>
-    );
-  }
 
   const handleToggle = () => {
     const newTheme = isDarkMode ? "light" : "dark";
