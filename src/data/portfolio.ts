@@ -28,7 +28,7 @@ export const projects = [
     description: "My personal portfolio showcasing my work, skills, and experience in modern web development.",
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Lucide React"],
     image: "/portfolio-project.jpg",
-    link: "#",
+    link: "https://devmubarak.vercel.app/",
     role: "Full-stack Developer"
   },
   {
@@ -36,7 +36,7 @@ export const projects = [
     description: "Track, convert, and monitor currency and crypto exchange rates—anytime, anywhere.",
     tech: ["JavaScript", "Chrome APIs", "JSON", "CSS", "HTML"],
     image: "/rateradar-project.jpg",
-    link: "#",
+    link: "https://rateradar-five.vercel.app/",
     role: "Creator"
   },
   {
@@ -44,7 +44,7 @@ export const projects = [
     description: "Browser extension for importing recipes into the Foodify app from anywhere on the web.",
     tech: ["JavaScript", "Chrome APIs", "JSON", "CSS", "HTML"],
     image: "/foodify-extension-project.jpg",
-    link: "#",
+    link: "https://chromewebstore.google.com/detail/foodify-recipe-importer/egnlnfdglpdbhcoppajiajlpfdfgleei",
     role: "Creator"
   }
 ];

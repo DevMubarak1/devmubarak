@@ -28,7 +28,7 @@ export default function Navigation() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         className={`bg-white/95 dark:bg-black/95 backdrop-blur-xl border border-slate-200/60 dark:border-gray-800/60 rounded-full shadow-2xl shadow-black/10 dark:shadow-black/20 max-w-4xl w-[95%] transition-all duration-300 ${
-          isOpen ? 'min-h-[300px]' : 'min-h-[60px]'
+          isOpen ? 'min-h-[400px]' : 'min-h-[60px]'
         }`}
       >
         <div className="px-6 py-3">
@@ -140,7 +140,7 @@ export default function Navigation() {
                 transition={{ duration: 0.3, ease: "easeInOut" }}
                 className="md:hidden border-t border-slate-200/50 dark:border-gray-800/50 mt-3 pt-3 overflow-hidden"
               >
-                <div className="space-y-1 pb-2">
+                <div className="space-y-1 pb-4">
                   {navItems.map((item, index) => (
                     <motion.div
                       key={item.name}
