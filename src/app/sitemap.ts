@@ -1,37 +1,38 @@
-how it looks like:
-import { MetadataRoute } from 'next';
+import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = "https://devmubarak.me";
+
   return [
     {
-      url: 'https://devmubarak.me',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
+      url: baseUrl,
+      lastModified: new Date().toISOString(),
+      changeFrequency: "monthly",
       priority: 1,
     },
     {
-      url: 'https://devmubarak.me/about', 
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
+      url: `${baseUrl}/about`,
+      lastModified: new Date().toISOString(),
+      changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: 'https://devmubarak.me/projects', 
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
+      url: `${baseUrl}/projects`,
+      lastModified: new Date().toISOString(),
+      changeFrequency: "yearly",
       priority: 0.6,
     },
     {
-        url: 'https://devmubarak.me/toolbox',
-        lastModified: new Date(),
-        changeFrequency: 'monthly',
-        priority: 0.6,
-      },
-      {
-        url: 'https://devmubarak.me/blog',
-        lastModified: new Date(),
-        changeFrequency: 'monthly',
-        priority: 0.6,
-      },
+      url: `${baseUrl}/toolbox`,
+      lastModified: new Date().toISOString(),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/blog`,
+      lastModified: new Date().toISOString(),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
   ];
 }
