@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ExternalLink, Code, Globe, Smartphone, Database, Zap, Palette, ShoppingCart, Chrome, LucideIcon } from "lucide-react";
+import { ExternalLink, Code, Globe, Smartphone, Database, Zap, Palette, ShoppingCart, Chrome } from "lucide-react";
 import Image from "next/image";
 
 interface Project {
@@ -16,8 +16,8 @@ interface ProjectCardProps {
   index: number;
 }
 
-const getTechIcon = (tech: string): LucideIcon => {
-  const iconMap: Record<string, LucideIcon> = {
+const getTechIcon = (tech: string): React.ElementType => {
+  const iconMap: Record<string, React.ElementType> = {
     "Next.js": Globe,
     "React": Code,
     "React Native": Smartphone,
