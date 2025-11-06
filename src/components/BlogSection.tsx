@@ -15,11 +15,7 @@ export default function BlogSection() {
           className="text-center mb-16"
         >
           <motion.div
-<<<<<<< HEAD
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-black to-gray-800 text-white px-4 py-2 rounded-full text-sm font-medium mb-6"
-=======
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-2 rounded-full text-sm font-medium mb-6"
->>>>>>> fd9b60d1375b9367d3397a3e938935719c4ebebf
+            className="inline-flex items-center gap-2 bg-black text-white px-4 py-2 rounded-full text-sm font-medium mb-6"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -28,27 +24,23 @@ export default function BlogSection() {
             <MessageCircle size={16} />
             Coming Soon
           </motion.div>
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-800 dark:text-white mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">
             Blog & Insights
           </h2>
-          <p className="text-lg text-slate-600 dark:text-gray-300 max-w-2xl mx-auto mb-8">
+          <p className="text-lg text-black max-w-2xl mx-auto mb-8">
             I&apos;m working on sharing my thoughts on development, technology trends, and lessons learned from building products.
           </p>
           <motion.div
-<<<<<<< HEAD
-            className="bg-gradient-to-r from-black to-gray-900 rounded-xl p-8 border border-gray-800/50"
-=======
-            className="bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-900/20 dark:to-pink-900/20 rounded-xl p-8 border border-purple-200/50 dark:border-purple-800/50"
->>>>>>> fd9b60d1375b9367d3397a3e938935719c4ebebf
+            className="bg-black rounded-xl p-8 border border-black"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h3 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">
+            <h3 className="text-xl font-semibold text-white mb-4">
               🚧 Blog Under Construction
             </h3>
-            <p className="text-slate-600 dark:text-gray-300">
+            <p className="text-white">
               I&apos;m currently setting up my blog to share insights about full-stack development, 
               AI integration, and building scalable applications. Stay tuned for articles about 
               React, Next.js, AI APIs, and more!
@@ -58,8 +50,4 @@ export default function BlogSection() {
       </div>
     </section>
   );
-<<<<<<< HEAD
 }
-=======
-} 
->>>>>>> fd9b60d1375b9367d3397a3e938935719c4ebebf

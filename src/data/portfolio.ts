@@ -50,25 +50,6 @@ export const projects = [
 ];
 
 export const skills = [
-<<<<<<< HEAD
-  { name: "JavaScript", icon: "⚡", color: "from-black to-gray-700" },
-  { name: "TypeScript", icon: "🔷", color: "from-black to-gray-700" },
-  { name: "React", icon: "⚛️", color: "from-black to-gray-700" },
-  { name: "Next.js", icon: "⚡", color: "from-black to-gray-700" },
-  { name: "React Native", icon: "📱", color: "from-black to-gray-700" },
-  { name: "Node.js", icon: "🟢", color: "from-black to-gray-700" },
-  { name: "Python", icon: "🐍", color: "from-black to-gray-700" },
-  { name: "PostgreSQL", icon: "🐘", color: "from-black to-gray-700" },
-  { name: "Supabase", icon: "🔥", color: "from-black to-gray-700" },
-  { name: "OpenAI API", icon: "🤖", color: "from-black to-gray-700" },
-  { name: "Tailwind CSS", icon: "🎨", color: "from-black to-gray-700" },
-  { name: "Framer Motion", icon: "✨", color: "from-black to-gray-700" },
-  { name: "Auth.js", icon: "🔐", color: "from-black to-gray-700" },
-  { name: "Chrome APIs", icon: "🌐", color: "from-black to-gray-700" },
-  { name: "Flutterwave", icon: "💳", color: "from-black to-gray-700" },
-  { name: "AWS", icon: "☁️", color: "from-black to-gray-700" }
-];
-=======
   { name: "JavaScript", icon: "⚡", color: "from-yellow-400 to-orange-500" },
   { name: "TypeScript", icon: "🔷", color: "from-blue-500 to-blue-600" },
   { name: "React", icon: "⚛️", color: "from-cyan-400 to-blue-500" },
@@ -87,4 +68,3 @@ export const skills = [
   { name: "AWS", icon: "☁️", color: "from-orange-500 to-yellow-500" }
 ];
  
->>>>>>> fd9b60d1375b9367d3397a3e938935719c4ebebf

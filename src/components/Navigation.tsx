@@ -5,7 +5,6 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import ThemeToggle from "./ThemeToggle";
 
 const navItems = [
   { name: "Home", href: "/" },
@@ -27,7 +26,7 @@ export default function Navigation() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className={`bg-white/95 dark:bg-black/95 backdrop-blur-xl border border-slate-200/60 dark:border-gray-800/60 rounded-full shadow-2xl shadow-black/10 dark:shadow-black/20 max-w-4xl w-[95%] transition-all duration-300 ${
+        className={`bg-black/95 dark:bg-black/95 backdrop-blur-xl border border-slate-200/60 dark:border-gray-800/60 rounded-full shadow-2xl shadow-black/10 dark:shadow-black/20 max-w-4xl w-[95%] transition-all duration-300 ${
           isOpen ? 'min-h-[400px]' : 'min-h-[60px]'
         }`}
       >
@@ -41,11 +40,7 @@ export default function Navigation() {
             >
               <Link
                 href="/"
-<<<<<<< HEAD
-                className="text-xl font-bold bg-gradient-to-r from-black to-gray-700 bg-clip-text text-transparent"
-=======
-                className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
->>>>>>> fd9b60d1375b9367d3397a3e938935719c4ebebf
+                className="text-xl font-bold text-black"
               >
                 DevMubarak
               </Link>
@@ -63,19 +58,15 @@ export default function Navigation() {
                 >
                   <Link
                     href={item.href}
-                    className={`relative text-slate-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 font-medium ${
-                      pathname === item.href ? "text-blue-600 dark:text-blue-400" : ""
+                    className={`relative text-black hover:text-black transition-colors duration-200 font-medium ${
+                      pathname === item.href ? "text-black" : ""
                     }`}
                   >
                     {item.name}
                     {pathname === item.href && (
                       <motion.div
                         layoutId="activeTab"
-<<<<<<< HEAD
-                        className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-black to-gray-700 rounded-full"
-=======
-                        className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full"
->>>>>>> fd9b60d1375b9367d3397a3e938935719c4ebebf
+                        className="absolute -bottom-1 left-0 right-0 h-0.5 bg-black rounded-full"
                         initial={false}
                         transition={{ type: "spring", stiffness: 500, damping: 30 }}
                       />
@@ -83,16 +74,6 @@ export default function Navigation() {
                   </Link>
                 </motion.div>
               ))}
-              
-              {/* Theme Toggle */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.3, delay: 0.6 }}
-                className="ml-4"
-              >
-                <ThemeToggle />
-              </motion.div>
             </div>
 
             {/* Tablet Navigation */}
@@ -107,18 +88,17 @@ export default function Navigation() {
                 >
                   <Link
                     href={item.href}
-                    className={`text-slate-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 font-medium text-sm ${
-                      pathname === item.href ? "text-blue-600 dark:text-blue-400" : ""
+                    className={`text-black hover:text-black transition-colors duration-200 font-medium text-sm ${
+                      pathname === item.href ? "text-black" : ""
                     }`}
                   >
                     {item.name}
                   </Link>
                 </motion.div>
               ))}
-              <ThemeToggle />
               <motion.button
                 onClick={toggleMenu}
-                className="text-slate-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+                className="text-black hover:text-black transition-colors duration-200"
                 whileTap={{ scale: 0.95 }}
               >
                 {isOpen ? <X size={20} /> : <Menu size={20} />}
@@ -127,10 +107,9 @@ export default function Navigation() {
 
             {/* Mobile Menu Button */}
             <div className="md:hidden flex items-center space-x-3">
-              <ThemeToggle />
               <motion.button
                 onClick={toggleMenu}
-                className="text-slate-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+                className="text-black hover:text-black transition-colors duration-200"
                 whileTap={{ scale: 0.95 }}
               >
                 {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -158,8 +137,8 @@ export default function Navigation() {
                     >
                       <Link
                         href={item.href}
-                        className={`block px-4 py-3 text-slate-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-100 dark:hover:bg-gray-800 rounded-xl transition-all duration-200 font-medium ${
-                          pathname === item.href ? "text-blue-600 dark:text-blue-400 bg-slate-100 dark:bg-gray-800" : ""
+                        className={`block px-4 py-3 text-black hover:text-black hover:bg-black rounded-xl transition-all duration-200 font-medium ${
+                          pathname === item.href ? "text-black bg-black" : ""
                         }`}
                         onClick={() => setIsOpen(false)}
                       >
@@ -175,8 +154,4 @@ export default function Navigation() {
       </motion.nav>
     </div>
   );
-<<<<<<< HEAD
 }
-=======
-} 
->>>>>>> fd9b60d1375b9367d3397a3e938935719c4ebebf

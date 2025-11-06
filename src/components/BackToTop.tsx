@@ -35,12 +35,7 @@ export default function BackToTop() {
   return (
     <motion.button
       onClick={scrollToTop}
-<<<<<<< HEAD
-      className="fixed bottom-8 right-8 w-12 h-12 bg-gradient-to-r from-black to-gray-800 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 z-40 flex items-center justify-center"
-=======
-      className="fixed bottom-8 right-8 w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 z-40 flex items-center justify-center"
->>>>>>> fd9b60d1375b9367d3397a3e938935719c4ebebf
-      style={{ opacity, scale }}
+      className="fixed bottom-8 right-8 w-12 h-12 bg-black text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 z-40 flex items-center justify-center"
       whileHover={{ 
         scale: 1.1,
         y: -2,
@@ -51,8 +46,4 @@ export default function BackToTop() {
       <ChevronUp size={20} />
     </motion.button>
   );
-<<<<<<< HEAD
 }
-=======
-} 
->>>>>>> fd9b60d1375b9367d3397a3e938935719c4ebebf

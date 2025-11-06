@@ -6,11 +6,7 @@ import { Home, ArrowLeft } from "lucide-react";
 
 export default function NotFound() {
   return (
-<<<<<<< HEAD
-    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black flex items-center justify-center px-4">
-=======
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-black dark:via-gray-900 dark:to-black flex items-center justify-center px-4">
->>>>>>> fd9b60d1375b9367d3397a3e938935719c4ebebf
       <div className="text-center max-w-2xl mx-auto">
         {/* 404 Animation */}
         <motion.div
@@ -20,11 +16,7 @@ export default function NotFound() {
           className="mb-8"
         >
           <motion.div
-<<<<<<< HEAD
-            className="text-9xl font-bold bg-gradient-to-r from-black to-gray-700 bg-clip-text text-transparent mb-4"
-=======
             className="text-9xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4"
->>>>>>> fd9b60d1375b9367d3397a3e938935719c4ebebf
             animate={{
               y: [0, -10, 0],
             }}
@@ -72,11 +64,7 @@ export default function NotFound() {
 
           <Link href="/">
             <motion.div
-<<<<<<< HEAD
-              className="flex items-center justify-center gap-2 bg-gradient-to-r from-black to-gray-800 text-white px-6 py-3 rounded-full font-semibold hover:from-gray-900 hover:to-black transition-all duration-300 shadow-lg hover:shadow-xl"
-=======
               className="flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl"
->>>>>>> fd9b60d1375b9367d3397a3e938935719c4ebebf
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -117,8 +105,4 @@ export default function NotFound() {
       </div>
     </div>
   );
-<<<<<<< HEAD
-}
-=======
 } 
->>>>>>> fd9b60d1375b9367d3397a3e938935719c4ebebf
