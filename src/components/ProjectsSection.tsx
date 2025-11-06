@@ -17,7 +17,11 @@ export default function ProjectsSection() {
           className="text-center mb-16"
         >
           <motion.div
+<<<<<<< HEAD
             className="inline-flex items-center gap-2 bg-gradient-to-r from-black to-gray-800 text-white px-4 py-2 rounded-full text-sm font-medium mb-6"
+=======
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-green-600 to-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium mb-6"
+>>>>>>> fd9b60d1375b9367d3397a3e938935719c4ebebf
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -55,4 +59,8 @@ export default function ProjectsSection() {
       </div>
     </section>
   );
+<<<<<<< HEAD
 }
+=======
+} 
+>>>>>>> fd9b60d1375b9367d3397a3e938935719c4ebebf

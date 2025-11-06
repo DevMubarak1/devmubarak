@@ -51,7 +51,11 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       className="group bg-white/70 dark:bg-black/70 backdrop-blur-sm rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-slate-200/50 dark:border-gray-800/50 hover:scale-105"
       whileHover={{ y: -5 }}
     >
+<<<<<<< HEAD
       <div className="relative h-48 bg-gradient-to-br from-black via-gray-900 to-black flex items-center justify-center overflow-hidden">
+=======
+      <div className="relative h-48 bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 dark:from-blue-900/20 dark:via-purple-900/20 dark:to-pink-900/20 flex items-center justify-center overflow-hidden">
+>>>>>>> fd9b60d1375b9367d3397a3e938935719c4ebebf
         <Image
           src={project.image}
           alt={project.title}
@@ -81,7 +85,11 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
               return (
                 <motion.div
                   key={techIndex}
+<<<<<<< HEAD
                   className="flex items-center gap-1 bg-gradient-to-r from-black to-gray-700 text-white px-2 py-1 rounded text-xs font-medium border border-gray-700/50"
+=======
+                  className="flex items-center gap-1 bg-gradient-to-r from-slate-100 to-slate-200 dark:from-gray-800 dark:to-gray-700 text-slate-700 dark:text-gray-300 px-2 py-1 rounded text-xs font-medium border border-slate-200/50 dark:border-gray-700/50"
+>>>>>>> fd9b60d1375b9367d3397a3e938935719c4ebebf
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
@@ -115,4 +123,8 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       </div>
     </motion.div>
   );
+<<<<<<< HEAD
 }
+=======
+} 
+>>>>>>> fd9b60d1375b9367d3397a3e938935719c4ebebf

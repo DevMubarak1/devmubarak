@@ -6,11 +6,19 @@ import XIcon from "./XIcon";
 
 export default function Hero() {
   return (
+<<<<<<< HEAD
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden py-20 bg-black">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(0,0,0,0.6),transparent_50%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(0,0,0,0.6),transparent_50%)]" />
+=======
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden py-20">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(147,51,234,0.1),transparent_50%)]" />
+>>>>>>> fd9b60d1375b9367d3397a3e938935719c4ebebf
       </div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center relative z-10">
@@ -21,7 +29,11 @@ export default function Hero() {
         >
           {/* Badge */}
           <motion.div
+<<<<<<< HEAD
             className="inline-flex items-center gap-2 bg-gradient-to-r from-black to-gray-800 text-white px-4 py-2 rounded-full text-sm font-medium mb-8"
+=======
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium mb-8"
+>>>>>>> fd9b60d1375b9367d3397a3e938935719c4ebebf
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -31,20 +43,32 @@ export default function Hero() {
 
           {/* Main Heading */}
           <motion.h1
+<<<<<<< HEAD
             className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
+=======
+            className="text-4xl md:text-6xl lg:text-7xl font-bold text-slate-800 dark:text-white mb-6 leading-tight"
+>>>>>>> fd9b60d1375b9367d3397a3e938935719c4ebebf
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
             Hi, I&apos;m{" "}
+<<<<<<< HEAD
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-black to-gray-400">
+=======
+            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+>>>>>>> fd9b60d1375b9367d3397a3e938935719c4ebebf
               Mubarak
             </span>
           </motion.h1>
 
           {/* Subtitle */}
           <motion.p
+<<<<<<< HEAD
             className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed"
+=======
+            className="text-xl md:text-2xl text-slate-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed"
+>>>>>>> fd9b60d1375b9367d3397a3e938935719c4ebebf
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -65,7 +89,11 @@ export default function Hero() {
               href="https://instagram.com/dev.mubarak"
               target="_blank"
               rel="noopener noreferrer"
+<<<<<<< HEAD
               className="inline-flex items-center justify-center w-12 h-12 bg-black text-white rounded-full font-semibold hover:bg-gray-900 transition-all duration-300 shadow-lg hover:shadow-xl group"
+=======
+              className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-full font-semibold hover:from-pink-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl group"
+>>>>>>> fd9b60d1375b9367d3397a3e938935719c4ebebf
               whileHover={{ scale: 1.1, y: -3 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -77,7 +105,11 @@ export default function Hero() {
               href="https://x.com/dev_mubarak"
               target="_blank"
               rel="noopener noreferrer"
+<<<<<<< HEAD
               className="inline-flex items-center justify-center w-12 h-12 bg-black text-white rounded-full font-semibold hover:bg-gray-900 transition-all duration-300 shadow-lg hover:shadow-xl group"
+=======
+              className="inline-flex items-center justify-center w-12 h-12 bg-black text-white rounded-full font-semibold hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl group"
+>>>>>>> fd9b60d1375b9367d3397a3e938935719c4ebebf
               whileHover={{ scale: 1.1, y: -3 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -89,7 +121,11 @@ export default function Hero() {
               href="https://github.com/DevMubarak1"
               target="_blank"
               rel="noopener noreferrer"
+<<<<<<< HEAD
               className="inline-flex items-center justify-center w-12 h-12 bg-black text-white rounded-full font-semibold hover:bg-gray-900 transition-all duration-300 shadow-lg hover:shadow-xl group"
+=======
+              className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-r from-gray-700 to-gray-900 text-white rounded-full font-semibold hover:from-gray-800 hover:to-black transition-all duration-300 shadow-lg hover:shadow-xl group"
+>>>>>>> fd9b60d1375b9367d3397a3e938935719c4ebebf
               whileHover={{ scale: 1.1, y: -3 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -99,7 +135,11 @@ export default function Hero() {
             {/* Email */}
             <motion.a
               href="mailto:devmubarak@getfoodify.com"
+<<<<<<< HEAD
               className="inline-flex items-center justify-center w-12 h-12 bg-black text-white rounded-full font-semibold hover:bg-gray-900 transition-all duration-300 shadow-lg hover:shadow-xl group"
+=======
+              className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-full font-semibold hover:from-green-600 hover:to-emerald-700 transition-all duration-300 shadow-lg hover:shadow-xl group"
+>>>>>>> fd9b60d1375b9367d3397a3e938935719c4ebebf
               whileHover={{ scale: 1.1, y: -3 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -115,6 +155,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.6 }}
           >
             <div className="text-center">
+<<<<<<< HEAD
               <motion.div className="text-2xl md:text-3xl font-bold text-white mb-2" animate={{ y: [0, -6, 0] }} transition={{ duration: 2, repeat: Infinity }}>
                 15+
               </motion.div>
@@ -131,12 +172,53 @@ export default function Hero() {
                 100%
               </motion.div>
               <div className="text-gray-400 text-sm">Client Satisfaction</div>
+=======
+              <div className="text-2xl md:text-3xl font-bold text-slate-800 dark:text-white mb-2">15+</div>
+              <div className="text-slate-600 dark:text-gray-300 text-sm">Projects Completed</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl md:text-3xl font-bold text-slate-800 dark:text-white mb-2">3+</div>
+              <div className="text-slate-600 dark:text-gray-300 text-sm">Years Experience</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl md:text-3xl font-bold text-slate-800 dark:text-white mb-2">100%</div>
+              <div className="text-slate-600 dark:text-gray-300 text-sm">Client Satisfaction</div>
+>>>>>>> fd9b60d1375b9367d3397a3e938935719c4ebebf
             </div>
           </motion.div>
         </motion.div>
       </div>
 
+<<<<<<< HEAD
       {/* Floating Elements removed per request */}
     </section>
   );
 }
+=======
+      {/* Floating Elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        {[...Array(6)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-2 h-2 bg-blue-400/30 rounded-full"
+            style={{
+              left: `${20 + i * 15}%`,
+              top: `${30 + i * 10}%`,
+            }}
+            animate={{
+              y: [0, -30, 0],
+              opacity: [0, 1, 0],
+            }}
+            transition={{
+              duration: 3 + i,
+              delay: i * 0.5,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+        ))}
+      </div>
+    </section>
+  );
+} 
+>>>>>>> fd9b60d1375b9367d3397a3e938935719c4ebebf

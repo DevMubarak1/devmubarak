@@ -41,7 +41,11 @@ export default function Navigation() {
             >
               <Link
                 href="/"
+<<<<<<< HEAD
                 className="text-xl font-bold bg-gradient-to-r from-black to-gray-700 bg-clip-text text-transparent"
+=======
+                className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
+>>>>>>> fd9b60d1375b9367d3397a3e938935719c4ebebf
               >
                 DevMubarak
               </Link>
@@ -67,7 +71,11 @@ export default function Navigation() {
                     {pathname === item.href && (
                       <motion.div
                         layoutId="activeTab"
+<<<<<<< HEAD
                         className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-black to-gray-700 rounded-full"
+=======
+                        className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full"
+>>>>>>> fd9b60d1375b9367d3397a3e938935719c4ebebf
                         initial={false}
                         transition={{ type: "spring", stiffness: 500, damping: 30 }}
                       />
@@ -167,4 +175,8 @@ export default function Navigation() {
       </motion.nav>
     </div>
   );
+<<<<<<< HEAD
 }
+=======
+} 
+>>>>>>> fd9b60d1375b9367d3397a3e938935719c4ebebf

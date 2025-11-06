@@ -15,7 +15,11 @@ export default function BlogSection() {
           className="text-center mb-16"
         >
           <motion.div
+<<<<<<< HEAD
             className="inline-flex items-center gap-2 bg-gradient-to-r from-black to-gray-800 text-white px-4 py-2 rounded-full text-sm font-medium mb-6"
+=======
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-2 rounded-full text-sm font-medium mb-6"
+>>>>>>> fd9b60d1375b9367d3397a3e938935719c4ebebf
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -31,7 +35,11 @@ export default function BlogSection() {
             I&apos;m working on sharing my thoughts on development, technology trends, and lessons learned from building products.
           </p>
           <motion.div
+<<<<<<< HEAD
             className="bg-gradient-to-r from-black to-gray-900 rounded-xl p-8 border border-gray-800/50"
+=======
+            className="bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-900/20 dark:to-pink-900/20 rounded-xl p-8 border border-purple-200/50 dark:border-purple-800/50"
+>>>>>>> fd9b60d1375b9367d3397a3e938935719c4ebebf
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -50,4 +58,8 @@ export default function BlogSection() {
       </div>
     </section>
   );
+<<<<<<< HEAD
 }
+=======
+} 
+>>>>>>> fd9b60d1375b9367d3397a3e938935719c4ebebf
