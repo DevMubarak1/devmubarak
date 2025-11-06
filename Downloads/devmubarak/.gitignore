@@ -39,3 +39,27 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Ignore files/folders outside the current project root that were listed
+# NOTE: You are working in C:\Users\USER\Downloads\devmubarak
+
+../../.android/
+../../.chocolatey/
+../../.config/
+../../.cursor/
+../../.docker/
+../../.emulator_console_auth_token
+../../.gitconfig
+../../.ipython/
+# ... and so on for all the other ../../ files ...
+
+# Also ignore common large files and folders in your current Downloads folder
+*.exe
+*.msi
+*.zip
+*.iso
+*.har
+
+# The folders right next to your project (in the Downloads folder)
+-Getintopc.com-ArcGISPro_3.4.2/
+CODSOFT/
