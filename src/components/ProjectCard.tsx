@@ -16,8 +16,8 @@ interface ProjectCardProps {
   index: number;
 }
 
-const getTechIcon = (tech: string): typeof Code => {
-  const iconMap: Record<string, typeof Code> = {
+const getTechIcon = (tech: string): React.ElementType => {
+  const iconMap: Record<string, React.ElementType> = {
     "Next.js": Globe,
     "React": Code,
     "React Native": Smartphone,
