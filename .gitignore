@@ -1,68 +1,47 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.*
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/versions
-
-# testing
+# Testing
 /coverage
 
-# next.js
-/.next/
-/out/
-
-# production
+# Production
+.next/
 /build
+/out
+/dist
 
-# misc
+# Misc
 .DS_Store
 *.pem
-
-# debug
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
-.env*
+# Environment variables
+.env
+.env.local
+.env.*.local
 
-# vercel
-.vercel
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
 
-# typescript
+# OS
+Thumbs.db
+
+# TypeScript
 *.tsbuildinfo
 next-env.d.ts
-<<<<<<< HEAD
 
-# Ignore files/folders outside the current project root that were listed
-# NOTE: You are working in C:\Users\USER\Downloads\devmubarak
+# Cache
+.eslintcache
 
-../../.android/
-../../.chocolatey/
-../../.config/
-../../.cursor/
-../../.docker/
-../../.emulator_console_auth_token
-../../.gitconfig
-../../.ipython/
-# ... and so on for all the other ../../ files ...
-
-# Also ignore common large files and folders in your current Downloads folder
-*.exe
-*.msi
-*.zip
-*.iso
-*.har
-
-# The folders right next to your project (in the Downloads folder)
--Getintopc.com-ArcGISPro_3.4.2/
-CODSOFT/
-=======
->>>>>>> fd9b60d1375b9367d3397a3e938935719c4ebebf
+# Vercel
+.vercel

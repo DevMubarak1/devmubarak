@@ -1,7 +1,14 @@
 {
-  "name": "devmubarak1",
-  "version": "0.1.0",
+  "name": "devmubarak",
+  "version": "1.0.0",
+  "description": "A minimal, clean, and modern portfolio website built with Next.js, TypeScript, and Tailwind CSS",
   "private": true,
+  "author": "Mubarak",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DevMubarak1/devmubarak.git"
+  },
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
@@ -9,14 +16,13 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@types/react-rnd": "^8.0.0",
+    "client-only": "^0.0.1",
     "framer-motion": "^12.23.12",
+    "is-number": "^7.0.0",
     "lucide-react": "^0.537.0",
     "next": "15.4.6",
-    "next-themes": "^0.4.6",
     "react": "19.1.0",
-    "react-dom": "19.1.0",
-    "react-rnd": "^10.5.2"
+    "react-dom": "19.1.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
