@@ -35,10 +35,21 @@ export default function RootLayout({
             __html: `
               (function() {
                 try {
-                  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                  const theme = prefersDark ? 'black' : 'light';
-                  document.documentElement.className = theme;
-                  localStorage.setItem('theme', theme);
+                  // Check localStorage first
+                  let isDark = localStorage.getItem('theme') === 'dark';
+                  
+                  // If not set in localStorage, check system preference
+                  if (!localStorage.getItem('theme')) {
+                    isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+                  }
+                  
+                  // Apply the theme
+                  if (isDark) {
+                    document.documentElement.classList.add('dark');
+                  } else {
+                    document.documentElement.classList.remove('dark');
+                  }
                 } catch (e) {}
               })();
             `,

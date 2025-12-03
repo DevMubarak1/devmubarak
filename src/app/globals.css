@@ -16,20 +16,16 @@ body {
 }
 
 /* Light theme (default) */
-html.light {
+html {
   color-scheme: light;
-  --background: 255 255 255;
-  --foreground: 0 0 0;
 }
 
-/* Black theme */
-html.black {
+/* Dark theme */
+html.dark {
   color-scheme: dark;
-  --background: 0 0 0;
-  --foreground: 255 255 255;
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar for light theme */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -48,14 +44,14 @@ html.black {
 }
 
 /* Dark mode scrollbar */
-html.black ::-webkit-scrollbar-track {
+html.dark ::-webkit-scrollbar-track {
   background: #000000;
 }
 
-html.black ::-webkit-scrollbar-thumb {
+html.dark ::-webkit-scrollbar-thumb {
   background: #404040;
 }
 
-html.black ::-webkit-scrollbar-thumb:hover {
+html.dark ::-webkit-scrollbar-thumb:hover {
   background: #525252;
 }
