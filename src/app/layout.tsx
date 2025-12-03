@@ -35,20 +35,27 @@ export default function RootLayout({
             __html: `
               (function() {
                 try {
-                  // Check localStorage first
-                  let isDark = localStorage.getItem('theme') === 'dark';
-                  
-                  // If not set in localStorage, check system preference
-                  if (!localStorage.getItem('theme')) {
-                    isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  function applyTheme() {
+                    const savedTheme = localStorage.getItem('theme');
+                    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                    const isDark = savedTheme ? savedTheme === 'dark' : prefersDark;
+                    
+                    if (isDark) {
+                      document.documentElement.classList.add('dark');
+                      document.body.classList.add('dark');
+                    } else {
+                      document.documentElement.classList.remove('dark');
+                      document.body.classList.remove('dark');
+                    }
                     localStorage.setItem('theme', isDark ? 'dark' : 'light');
                   }
                   
-                  // Apply the theme
-                  if (isDark) {
-                    document.documentElement.classList.add('dark');
-                  } else {
-                    document.documentElement.classList.remove('dark');
+                  // Run immediately
+                  applyTheme();
+                  
+                  // Also run on DOMContentLoaded to be sure
+                  if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', applyTheme);
                   }
                 } catch (e) {}
               })();

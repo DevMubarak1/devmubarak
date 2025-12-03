@@ -16,16 +16,62 @@ body {
 }
 
 /* Light theme (default) */
-html {
-  color-scheme: light;
+html,
+html body {
+  background-color: #ffffff;
+  color: #111827;
 }
 
 /* Dark theme */
-html.dark {
-  color-scheme: dark;
+.dark {
+  background-color: #000000 !important;
+  color: #ffffff !important;
 }
 
-/* Custom scrollbar for light theme */
+.dark p {
+  color: #d1d5db !important;
+}
+
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4,
+.dark h5,
+.dark h6 {
+  color: #ffffff !important;
+}
+
+.dark a {
+  color: #ffffff !important;
+}
+
+.dark a:hover {
+  color: #60a5fa !important;
+}
+
+.dark section {
+  background-color: #000000 !important;
+}
+
+.dark footer {
+  background-color: #000000 !important;
+  color: #9ca3af !important;
+  border-color: #1f2937 !important;
+}
+
+.dark .bg-white {
+  background-color: #000000 !important;
+}
+
+.dark .text-gray-900 {
+  color: #ffffff !important;
+}
+
+.dark .text-gray-600 {
+  color: #d1d5db !important;
+}
+
+/* Scrollbar styling - Light mode */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -44,14 +90,14 @@ html.dark {
 }
 
 /* Dark mode scrollbar */
-html.dark ::-webkit-scrollbar-track {
+.dark ::-webkit-scrollbar-track {
   background: #000000;
 }
 
-html.dark ::-webkit-scrollbar-thumb {
+.dark ::-webkit-scrollbar-thumb {
   background: #404040;
 }
 
-html.dark ::-webkit-scrollbar-thumb:hover {
+.dark ::-webkit-scrollbar-thumb:hover {
   background: #525252;
 }

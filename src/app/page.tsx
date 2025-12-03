@@ -55,7 +55,7 @@ export default function Home() {
       <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 py-20">
         <div className="max-w-2xl w-full">
           {/* Animated Heading */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 sm:mb-8 md:mb-10 leading-tight whitespace-pre-wrap break-normal">
             {text.split("").map((char, index) => (
               <motion.span
                 key={index}
