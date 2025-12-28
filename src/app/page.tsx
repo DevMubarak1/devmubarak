@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Github, Mail } from "lucide-react";
+import { Github, Mail, Twitter, Instagram, Youtube } from "lucide-react";
 
 // Projects Data
 const projects = [
@@ -62,7 +62,7 @@ export default function Home() {
     <div className="min-h-screen bg-white dark:bg-black text-gray-900 dark:text-white transition-colors duration-300">
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 py-20">
-        <div className="max-w-2xl w-full">
+        <div className="max-w-4xl w-full">
           {/* Animated Heading */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 sm:mb-8 md:mb-10 leading-tight whitespace-pre-wrap break-normal">
             {text.split("").map((char, index) => (
@@ -150,12 +150,35 @@ export default function Home() {
 
             {/* X (Twitter) */}
             <a
-              href="https://x.com/dev_mubarak"
+              href="https://x.com/theDevMubarak"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 group font-bold text-xl"
+              className="flex items-center gap-2 text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 group"
             >
-              <span className="group-hover:scale-110 transition-transform duration-300 inline-block">X</span>
+              <Twitter size={20} className="group-hover:scale-110 transition-transform duration-300" />
+              <span className="text-base sm:text-lg font-medium">X</span>
+            </a>
+
+            {/* Instagram */}
+            <a
+              href="https://www.instagram.com/dev.mubarak/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 group"
+            >
+              <Instagram size={20} className="group-hover:scale-110 transition-transform duration-300" />
+              <span className="text-base sm:text-lg font-medium">Instagram</span>
+            </a>
+
+            {/* YouTube */}
+            <a
+              href="https://youtube.com/@dev.mubarak?si=q2mqGKLXtJXvsm9u"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 group"
+            >
+              <Youtube size={20} className="group-hover:scale-110 transition-transform duration-300" />
+              <span className="text-base sm:text-lg font-medium">YouTube</span>
             </a>
           </motion.div>
         </div>
@@ -163,7 +186,7 @@ export default function Home() {
 
       {/* Projects Section */}
       <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6">
-        <div className="max-w-2xl w-full mx-auto">
+        <div className="max-w-4xl w-full mx-auto">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 sm:mb-10 md:mb-12">Projects</h2>
 
           <div className="space-y-4 sm:space-y-6">
@@ -207,7 +230,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="py-6 sm:py-8 px-4 sm:px-6 border-t border-gray-200 dark:border-gray-800">
-        <div className="max-w-2xl mx-auto text-center text-xs sm:text-sm text-gray-600 dark:text-gray-400">
+        <div className="max-w-4xl mx-auto text-center text-xs sm:text-sm text-gray-600 dark:text-gray-400">
           <p>© 2025 DevMubarak.</p>
         </div>
       </footer>
