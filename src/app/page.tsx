@@ -32,6 +32,15 @@ const projects = [
     logo: "/foodify-logo.jpg",
     link: "https://getfoodify.com",
     role: "Founder"
+  },
+  {
+    title: "AnyShape",
+    description: "Crop images to any shape with 16+ presets or custom shapes. Privacy-first, all processing happens in your browser.",
+    tech: ["Next.js", "TypeScript", "Canvas API", "SVG"],
+    image: "/anyshape-logo.png",
+    logo: "/anyshape-logo.png",
+    link: "https://anyshape.devmubarak.me/",
+    role: "Creator"
   }
 ];
 
