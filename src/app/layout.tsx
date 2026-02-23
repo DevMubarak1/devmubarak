@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   keywords: ["Full-stack developer", "Next.js", "React", "TypeScript", "Node.js"],
   authors: [{ name: "DevMubarak" }],
   creator: "DevMubarak",
-  metadataBase: new URL("https://devmubarak.vercel.app"),
+  metadataBase: new URL("https://devmubarak.me"),
 };
 
 export default function RootLayout({

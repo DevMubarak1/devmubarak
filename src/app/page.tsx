@@ -42,6 +42,15 @@ const projects = [
     link: "https://anyshape.devmubarak.me/",
     role: "Creator"
   }
+  ,{
+    title: "Circuit Weaver",
+    description: "A platform for weaving together circuits and digital logic visually.",
+    tech: ["Next.js", "TypeScript", "Digital Logic", "Visualization"],
+    image: "/circuitweaver-logo.png",
+    logo: "/circuitweaver-logo.png",
+    link: "https://circuitweaver.devmubarak.me/",
+    role: "Creator"
+  }
 ];
 
 export default function Home() {
@@ -156,7 +165,7 @@ export default function Home() {
               className="flex items-center gap-2 text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 group"
             >
               <Twitter size={20} className="group-hover:scale-110 transition-transform duration-300" />
-              <span className="text-base sm:text-lg font-medium">X</span>
+              <span className="text-base sm:text-lg font-medium">Twitter</span>
             </a>
 
             {/* Instagram */}
@@ -231,7 +240,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="py-6 sm:py-8 px-4 sm:px-6 border-t border-gray-200 dark:border-gray-800">
         <div className="max-w-4xl mx-auto text-center text-xs sm:text-sm text-gray-600 dark:text-gray-400">
-          <p>© 2025 DevMubarak.</p>
+          <p>© 2026 DevMubarak.</p>
         </div>
       </footer>
     </div>
