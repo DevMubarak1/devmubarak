@@ -39,7 +39,6 @@ export default function RootLayout({
                     const savedTheme = localStorage.getItem('theme');
                     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
                     const isDark = savedTheme ? savedTheme === 'dark' : prefersDark;
-                    
                     if (isDark) {
                       document.documentElement.classList.add('dark');
                       document.body.classList.add('dark');
@@ -49,11 +48,7 @@ export default function RootLayout({
                     }
                     localStorage.setItem('theme', isDark ? 'dark' : 'light');
                   }
-                  
-                  // Run immediately
                   applyTheme();
-                  
-                  // Also run on DOMContentLoaded to be sure
                   if (document.readyState === 'loading') {
                     document.addEventListener('DOMContentLoaded', applyTheme);
                   }
@@ -64,6 +59,20 @@ export default function RootLayout({
         />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <div style={{ position: 'fixed', top: 24, right: 24, zIndex: 50 }}>
+          <a
+            href="https://github.com/sponsors/DevMubarak1"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-4 py-2 rounded-full bg-pink-600 hover:bg-pink-700 text-white font-semibold shadow-lg transition-colors duration-200 border border-pink-700"
+            style={{ boxShadow: '0 2px 8px rgba(236, 72, 153, 0.15)' }}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 text-white">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 3.75a5.25 5.25 0 00-4.5 2.482A5.25 5.25 0 007.5 3.75 5.25 5.25 0 003 9c0 7.25 9 11.25 9 11.25s9-4 9-11.25a5.25 5.25 0 00-5.25-5.25z" />
+            </svg>
+            <span>Sponsor</span>
+          </a>
+        </div>
         {children}
       </body>
     </html>
