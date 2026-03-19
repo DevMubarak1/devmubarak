@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Flutterwave Skills">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#101010" />
+      <stop offset="100%" stop-color="#000000" />
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="52" fill="url(#bg)" />
+  <rect x="24" y="24" width="208" height="208" rx="44" fill="none" stroke="#f5f5f5" stroke-opacity="0.18" />
+  <path d="M76 70h104v24h-76v30h64v24h-64v38H76z" fill="#ffffff" />
+  <path d="M180 164c0 14-12 22-27 22-13 0-24-5-32-13l14-16c6 5 11 8 17 8 5 0 8-2 8-5 0-3-2-4-11-8-17-7-25-14-25-30 0-18 15-30 35-30 13 0 23 4 31 11l-14 17c-6-4-10-6-15-6-5 0-8 2-8 5 0 3 2 4 10 8 17 7 27 13 27 31z" fill="#ffffff" fill-opacity="0.86" />
+</svg>

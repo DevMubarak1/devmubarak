@@ -43,8 +43,17 @@ const projects = [
     role: "Creator"
   }
   ,{
+    title: "Flutterwave Skills",
+    description: "An open-source skill collection that helps AI coding agents ship reliable Flutterwave integrations across checkout, transfers, webhooks, and regional payment rails.",
+    tech: ["Next.js", "TypeScript", "SVG"],
+    image: "/svg/flutterwave-skills.svg",
+    logo: "/svg/flutterwave-skills.svg",
+    link: "https://flutterwave.devmubarak.me/",
+    role: "Creator"
+  }
+  ,{
     title: "Circuit Weaver",
-    description: "A platform for weaving together circuits and digital logic visually.",
+    description: "A learning-focused digital logic puzzle lab where you build circuits with real gates, solve progressive levels, and understand how signals flow step by step.",
     tech: ["Next.js", "TypeScript", "Digital Logic", "Visualization"],
     image: "/circuitweaver-logo.png",
     logo: "/circuitweaver-logo.png",
