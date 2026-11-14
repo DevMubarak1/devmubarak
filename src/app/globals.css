@@ -2,102 +2,299 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ─── Base Styles ─── */
 html {
   scroll-behavior: smooth;
-  color-scheme: light dark;
+  color-scheme: dark;
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  background-color: #121212;
+  color: #F5F5F5;
+  font-family: var(--font-open-sans), 'Open Sans', system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
-/* Light theme (default) */
-html,
-html body {
-  background-color: #ffffff;
-  color: #111827;
-}
-
-/* Dark theme */
-.dark {
-  background-color: #000000 !important;
-  color: #ffffff !important;
-}
-
-.dark p {
-  color: #d1d5db !important;
-}
-
-.dark h1,
-.dark h2,
-.dark h3,
-.dark h4,
-.dark h5,
-.dark h6 {
-  color: #ffffff !important;
-}
-
-.dark a {
-  color: #ffffff !important;
-}
-
-.dark a:hover {
-  color: #60a5fa !important;
-}
-
-.dark section {
-  background-color: #000000 !important;
-}
-
-.dark footer {
-  background-color: #000000 !important;
-  color: #9ca3af !important;
-  border-color: #1f2937 !important;
-}
-
-.dark .bg-white {
-  background-color: #000000 !important;
-}
-
-.dark .text-gray-900 {
-  color: #ffffff !important;
-}
-
-.dark .text-gray-600 {
-  color: #d1d5db !important;
-}
-
-/* Scrollbar styling - Light mode */
+/* ─── Custom Scrollbar ─── */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
-
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #121212;
 }
-
 ::-webkit-scrollbar-thumb {
-  background: #c1c1c1;
-  border-radius: 4px;
+  background: #2E2E2E;
+  border-radius: 3px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
-  background: #a8a8a8;
+  background: #444444;
 }
 
-/* Dark mode scrollbar */
-.dark ::-webkit-scrollbar-track {
-  background: #000000;
+/* ─── Section Labels ─── */
+.section-label {
+  font-family: var(--font-fira-code), 'Fira Code', monospace;
+  font-size: 0.8125rem;
+  color: #A6A6A6;
+  letter-spacing: 0.05em;
 }
 
-.dark ::-webkit-scrollbar-thumb {
-  background: #404040;
+/* ─── Dark Cards ─── */
+.dark-card {
+  background-color: #181818;
+  border: 1px solid #2E2E2E;
+  border-radius: 20px;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.dark-card:hover {
+  border-color: #3D3D3D;
+  background-color: #1E1E1E;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
 }
 
-.dark ::-webkit-scrollbar-thumb:hover {
-  background: #525252;
+/* ─── Pill Buttons ─── */
+.social-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.625rem 1.25rem;
+  background-color: #181818;
+  border: 1px solid #2E2E2E;
+  border-radius: 9999px;
+  color: #A6A6A6;
+  font-size: 0.8125rem;
+  font-family: var(--font-open-sans), sans-serif;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+.social-pill svg {
+  stroke-width: 2.5;
+}
+.social-pill:hover {
+  background-color: #222222;
+  border-color: #F5F5F5;
+  color: #F5F5F5;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.pill-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.25rem;
+  background-color: #F5F5F5;
+  color: #121212;
+  font-weight: 600;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+.pill-action:hover {
+  background-color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(245, 245, 245, 0.15);
+}
+
+/* ─── Circular Icon Buttons ─── */
+.circle-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #181818;
+  border: 1px solid #2E2E2E;
+  color: #F5F5F5;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
+  cursor: pointer;
+}
+.circle-btn:hover {
+  background-color: #F5F5F5;
+  border-color: #F5F5F5;
+  color: #121212;
+  transform: scale(1.08);
+  box-shadow: 0 4px 20px rgba(245, 245, 245, 0.1);
+}
+
+/* ─── Work Timeline Rows with Inverting Hover ─── */
+.work-row {
+  display: grid;
+  grid-template-columns: 160px 1fr 1fr;
+  align-items: center;
+  padding: 1.25rem 1rem;
+  border-bottom: 1px solid #262626;
+  border-radius: 12px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  color: #F5F5F5;
+}
+@media (max-width: 768px) {
+  .work-row {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+}
+.work-row:hover {
+  background-color: #F5F5F5;
+  color: #121212 !important;
+  transform: translateX(4px);
+}
+.work-row:hover .work-period {
+  color: #555555;
+}
+.work-row:hover .work-duration {
+  color: #777777;
+}
+.work-row:hover .work-company {
+  color: #121212;
+}
+.work-row:hover .work-role {
+  color: #121212;
+}
+.work-row:hover .work-arrow {
+  opacity: 1;
+  color: #121212;
+}
+
+/* ─── Decorative Background Circles ─── */
+.bg-arc {
+  position: absolute;
+  pointer-events: none;
+  border: 1px solid rgba(61, 61, 61, 0.25);
+  border-radius: 50%;
+}
+
+/* ─── Hover Micro-Interactions ─── */
+
+/* Tech tag pills hover lift */
+.tag-hover {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.tag-hover:hover {
+  border-color: #F5F5F5;
+  color: #F5F5F5;
+  transform: translateY(-2px);
+}
+
+/* Image/video hover zoom */
+.media-hover {
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.media-hover:hover {
+  transform: scale(1.03);
+}
+
+/* Floating button pulse */
+@keyframes subtlePulse {
+  0%, 100% { box-shadow: 0 4px 20px rgba(245, 245, 245, 0.08); }
+  50% { box-shadow: 0 4px 30px rgba(245, 245, 245, 0.18); }
+}
+.float-btn {
+  animation: subtlePulse 3s ease-in-out infinite;
+}
+
+/* Section label dotted line accent */
+.section-label::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 1px;
+  background: #3D3D3D;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+.section-label::after {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 1px;
+  background: #3D3D3D;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+/* Smooth link underline reveal */
+.link-reveal {
+  position: relative;
+  display: inline-block;
+}
+.link-reveal::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #F5F5F5;
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.link-reveal:hover::after {
+  width: 100%;
+}
+
+/* ─── Smooth Page Transitions ─── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Magnetic Hover Effect on Project Cards ─── */
+.project-card-hover {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+.project-card-hover:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* ─── Gradient Border Glow on Focus ─── */
+.glow-border {
+  position: relative;
+}
+.glow-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(245,245,245,0) 0%, rgba(245,245,245,0.08) 50%, rgba(245,245,245,0) 100%);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.glow-border:hover::before {
+  opacity: 1;
+}
+
+/* ─── Typewriter Cursor Blink ─── */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.cursor-blink::after {
+  content: '▮';
+  animation: blink 1s step-end infinite;
+  color: #F5F5F5;
+  margin-left: 2px;
+}
+
+/* ─── Staggered Entrance for Grid Items ─── */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Smooth Scroll Progress Indicator ─── */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.shimmer-bg {
+  background: linear-gradient(90deg, #181818 25%, #222 50%, #181818 75%);
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite;
 }

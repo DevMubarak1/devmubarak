@@ -1,24 +1,35 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
-  title: "DevMubarak - Full-Stack Developer",
-  description: "Full-stack developer building impactful software with TypeScript, JavaScript, React, and Node.js.",
-  keywords: ["Full-stack developer", "Next.js", "React", "TypeScript", "Node.js"],
-  authors: [{ name: "DevMubarak" }],
-  creator: "DevMubarak",
-  metadataBase: new URL("https://devmubarak.me"),
+  title: "Mubarak Raji — Developer & Civil Engineer",
+  description:
+    "Portfolio of Mubarak Raji (DevMubarak) — Full-Stack Developer, Civil Engineering Undergraduate at LASU, IoT/Edge AI Builder, and National Hackathon Finalist. Building enterprise ERP systems, biometrics, site engineering, and high-performance web applications.",
+  keywords: [
+    "Mubarak Raji",
+    "DevMubarak",
+    "Full-Stack Developer",
+    "Systems Architect",
+    "Next.js",
+    "React",
+    "TypeScript",
+    "Python",
+    "ERPNext",
+    "IoT",
+    "Edge AI",
+  ],
+  authors: [{ name: "Mubarak Raji", url: "https://mubarakraji.me" }],
+  creator: "Mubarak Raji",
+  metadataBase: new URL("https://mubarakraji.me"),
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-32x32.png", type: "image/png", sizes: "32x32" },
+      { url: "/favicon-16x16.png", type: "image/png", sizes: "16x16" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({
@@ -27,52 +38,26 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="dark">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                try {
-                  function applyTheme() {
-                    const savedTheme = localStorage.getItem('theme');
-                    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                    const isDark = savedTheme ? savedTheme === 'dark' : prefersDark;
-                    if (isDark) {
-                      document.documentElement.classList.add('dark');
-                      document.body.classList.add('dark');
-                    } else {
-                      document.documentElement.classList.remove('dark');
-                      document.body.classList.remove('dark');
-                    }
-                    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-                  }
-                  applyTheme();
-                  if (document.readyState === 'loading') {
-                    document.addEventListener('DOMContentLoaded', applyTheme);
-                  }
-                } catch (e) {}
-              })();
-            `,
-          }}
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        {/* Google Fonts loaded at runtime */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap"
+          rel="stylesheet"
         />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <div style={{ position: 'fixed', top: 24, right: 24, zIndex: 50 }}>
-          <a
-            href="https://github.com/sponsors/DevMubarak1"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 rounded-full bg-pink-600 hover:bg-pink-700 text-white font-semibold shadow-lg transition-colors duration-200 border border-pink-700"
-            style={{ boxShadow: '0 2px 8px rgba(236, 72, 153, 0.15)' }}
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 text-white">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 3.75a5.25 5.25 0 00-4.5 2.482A5.25 5.25 0 007.5 3.75 5.25 5.25 0 003 9c0 7.25 9 11.25 9 11.25s9-4 9-11.25a5.25 5.25 0 00-5.25-5.25z" />
-            </svg>
-            <span>Sponsor</span>
-          </a>
-        </div>
+      <body className="font-sans antialiased bg-[#121212] text-[#F5F5F5]">
         {children}
       </body>
     </html>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <rect width="64" height="64" rx="16" fill="#121212" />
+  <rect x="1" y="1" width="62" height="62" rx="15" stroke="#2E2E2E" stroke-width="2" />
+  <text x="50%" y="54%" text-anchor="middle" dominant-baseline="middle" fill="#F5F5F5" font-family="'Fira Code', Consolas, Monaco, monospace" font-size="28" font-weight="700" letter-spacing="-1">MR</text>
+  <circle cx="50" cy="46" r="2.5" fill="#A6A6A6" />
+</svg>
+
