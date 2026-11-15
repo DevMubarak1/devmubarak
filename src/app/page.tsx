@@ -206,9 +206,9 @@ export default function Home() {
           ═══════════════════════════════════════ */}
       <section className="pt-32 md:pt-40 pb-16 md:pb-20 px-6 md:px-10 max-w-7xl mx-auto relative overflow-hidden">
         {/* Decorative semi-circle arcs — hero */}
-        <div className="absolute -top-40 -right-40 w-[600px] h-[600px] border-2 border-[#2E2E2E]/50 rounded-full pointer-events-none" />
-        <div className="absolute -top-20 -right-20 w-[400px] h-[400px] border border-[#2E2E2E]/40 rounded-full pointer-events-none" />
-        <div className="absolute bottom-0 -left-60 w-[500px] h-[500px] border-2 border-[#2E2E2E]/40 rounded-full pointer-events-none" />
+        <div className="absolute -top-40 -right-40 w-[600px] h-[600px] border-2 border-[#2E2E2E]/50 rounded-full pointer-events-none -z-10" />
+        <div className="absolute -top-20 -right-20 w-[400px] h-[400px] border border-[#2E2E2E]/40 rounded-full pointer-events-none -z-10" />
+        <div className="absolute bottom-0 -left-60 w-[500px] h-[500px] border-2 border-[#2E2E2E]/40 rounded-full pointer-events-none -z-10" />
         {/* ── DESKTOP HERO (md and up) ── */}
         <div className="hidden md:block">
           {/* Top Row: "Developer" with small "fullstack" label + Action Buttons */}
@@ -566,8 +566,8 @@ export default function Home() {
           ═══════════════════════════════════════ */}
       <AnimatedSection id="about" className="py-20 md:py-32 px-6 md:px-10 max-w-7xl mx-auto relative overflow-hidden">
         {/* Decorative semi-circle arcs — about */}
-        <div className="absolute top-10 -left-48 w-[450px] h-[450px] border-2 border-[#2E2E2E]/50 rounded-full pointer-events-none" />
-        <div className="absolute -bottom-32 -right-32 w-[350px] h-[350px] border border-[#2E2E2E]/40 rounded-full pointer-events-none" />
+        <div className="absolute top-10 -left-48 w-[450px] h-[450px] border-2 border-[#2E2E2E]/50 rounded-full pointer-events-none -z-10" />
+        <div className="absolute -bottom-32 -right-32 w-[350px] h-[350px] border border-[#2E2E2E]/40 rounded-full pointer-events-none -z-10" />
         {/* Section Header */}
         <div className="grid md:grid-cols-2 gap-8 items-start mb-14">
           <div>
@@ -823,8 +823,8 @@ export default function Home() {
           ═══════════════════════════════════════ */}
       <AnimatedSection id="projects" className="py-20 md:py-32 px-6 md:px-10 max-w-7xl mx-auto relative overflow-hidden">
         {/* Decorative semi-circle arcs — projects */}
-        <div className="absolute top-20 -right-52 w-[500px] h-[500px] border-2 border-[#2E2E2E]/40 rounded-full pointer-events-none" />
-        <div className="absolute bottom-40 -left-40 w-[400px] h-[400px] border border-[#2E2E2E]/30 rounded-full pointer-events-none" />
+        <div className="absolute top-20 -right-52 w-[500px] h-[500px] border-2 border-[#2E2E2E]/40 rounded-full pointer-events-none -z-10" />
+        <div className="absolute bottom-40 -left-40 w-[400px] h-[400px] border border-[#2E2E2E]/30 rounded-full pointer-events-none -z-10" />
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 mb-16">
           <span className="section-label">... /Projects & Works ...</span>
 
@@ -1184,9 +1184,9 @@ export default function Home() {
           ═══════════════════════════════════════ */}
       <footer id="contacts" className="relative pt-24 pb-16 px-6 md:px-10 max-w-7xl mx-auto overflow-hidden">
         {/* Decorative semi-circle arcs */}
-        <div className="absolute top-0 left-0 w-[500px] h-[500px] -translate-x-1/2 -translate-y-1/2 border-2 border-[#2E2E2E]/50 rounded-full pointer-events-none" />
-        <div className="absolute top-20 left-0 w-[350px] h-[350px] -translate-x-1/2 -translate-y-1/4 border border-[#2E2E2E]/40 rounded-full pointer-events-none" />
-        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] translate-x-1/3 translate-y-1/3 border-2 border-[#2E2E2E]/40 rounded-full pointer-events-none" />
+        <div className="absolute top-0 left-0 w-[500px] h-[500px] -translate-x-1/2 -translate-y-1/2 border-2 border-[#2E2E2E]/50 rounded-full pointer-events-none -z-10" />
+        <div className="absolute top-20 left-0 w-[350px] h-[350px] -translate-x-1/2 -translate-y-1/4 border border-[#2E2E2E]/40 rounded-full pointer-events-none -z-10" />
+        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] translate-x-1/3 translate-y-1/3 border-2 border-[#2E2E2E]/40 rounded-full pointer-events-none -z-10" />
 
         <span className="section-label block mb-12 relative z-10">... /Contacts ...</span>
 
