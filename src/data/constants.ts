@@ -33,7 +33,7 @@ export const SOCIAL_PILLS = [
 
 export const FOOTER_PILLS = [
   { label: "Github", href: "https://github.com/DevMubarak1", icon: Github },
-  { label: "in Linkedin", href: "https://linkedin.com/in/rajimubarak123", icon: Linkedin },
+  { label: "Linkedin", href: "https://linkedin.com/in/rajimubarak123", icon: Linkedin },
   { label: "E-mail", href: "mailto:rmbabatunde123@gmail.com", icon: Mail },
   { label: "Telegram", href: "https://t.me/DevMubarak", icon: Send },
   { label: "X", href: "https://x.com/theDevMubarak", icon: XIcon },

@@ -70,7 +70,11 @@ body {
   cursor: pointer;
 }
 .social-pill svg {
-  stroke-width: 2.5;
+  stroke-width: 2;
+}
+.social-pill svg[stroke="none"] {
+  stroke: none;
+  stroke-width: 0;
 }
 .social-pill:hover {
   background-color: #222222;
@@ -165,8 +169,9 @@ body {
 .bg-arc {
   position: absolute;
   pointer-events: none;
-  border: 1px solid rgba(61, 61, 61, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 50%;
+  z-index: 0;
 }
 
 /* ─── Hover Micro-Interactions ─── */

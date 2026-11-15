@@ -9,7 +9,6 @@ import {
   Linkedin,
   Mail,
   Instagram,
-  Twitter,
   Send,
   ArrowRight,
   ArrowUpRight,
@@ -25,6 +24,7 @@ import {
   Terminal,
   ChevronDown,
 } from "lucide-react";
+import XIcon from "@/components/XIcon";
 
 // Data imports (extracted to separate files)
 import { ARTICLES } from "@/data/articles";
@@ -204,13 +204,13 @@ export default function Home() {
       {/* ═══════════════════════════════════════
           HERO SECTION
           ═══════════════════════════════════════ */}
-      <section className="pt-32 md:pt-40 pb-16 md:pb-20 px-6 md:px-10 max-w-7xl mx-auto relative overflow-hidden">
+      <section className="pt-32 md:pt-40 pb-16 md:pb-20 px-6 md:px-10 max-w-7xl mx-auto relative overflow-hidden isolate">
         {/* Decorative semi-circle arcs — hero */}
-        <div className="absolute -top-40 -right-40 w-[600px] h-[600px] border-2 border-[#2E2E2E]/50 rounded-full pointer-events-none -z-10" />
-        <div className="absolute -top-20 -right-20 w-[400px] h-[400px] border border-[#2E2E2E]/40 rounded-full pointer-events-none -z-10" />
-        <div className="absolute bottom-0 -left-60 w-[500px] h-[500px] border-2 border-[#2E2E2E]/40 rounded-full pointer-events-none -z-10" />
+        <div className="absolute -top-40 -right-40 w-[600px] h-[600px] border border-white/20 rounded-full pointer-events-none z-0" />
+        <div className="absolute -top-20 -right-20 w-[400px] h-[400px] border border-white/15 rounded-full pointer-events-none z-0" />
+        <div className="absolute bottom-0 -left-60 w-[500px] h-[500px] border border-white/20 rounded-full pointer-events-none z-0" />
         {/* ── DESKTOP HERO (md and up) ── */}
-        <div className="hidden md:block">
+        <div className="hidden md:block relative z-10">
           {/* Top Row: "Developer" with small "fullstack" label + Action Buttons */}
           <div className="flex items-end justify-between gap-6">
             <motion.div
@@ -296,7 +296,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="flex items-center justify-center gap-5 mt-14"
+            className="flex flex-wrap items-center justify-center gap-4 lg:gap-5 mt-14"
           >
             {SOCIAL_PILLS.map((pill) => {
               const Icon = pill.icon;
@@ -306,7 +306,8 @@ export default function Home() {
                   href={pill.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="social-pill justify-center"                >
+                  className="social-pill justify-center"
+                >
                   <Icon size={14} strokeWidth={2.5} className="text-[#F5F5F5]" />
                   <span>{pill.label}</span>
                 </a>
@@ -316,7 +317,7 @@ export default function Home() {
         </div>
 
         {/* ── MOBILE HERO (below md) ── */}
-        <div className="md:hidden flex flex-col gap-6">
+        <div className="md:hidden flex flex-col gap-6 relative z-10">
           {/* 1. Stacked Hero Titles: Developer \n Engineer with small labels */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
@@ -361,7 +362,7 @@ export default function Home() {
           >
             <a
               href="#projects"
-              className="w-full sm:w-auto inline-flex items-center justify-between gap-3 bg-[#F5F5F5] hover:bg-white text-[#121212] pl-6 pr-2 py-2.5 rounded-full font-sans font-semibold text-sm transition-all group shadow-lg"
+              className="w-full max-w-xs sm:w-auto inline-flex items-center justify-between gap-3 bg-[#F5F5F5] hover:bg-white text-[#121212] pl-6 pr-2 py-2.5 rounded-full font-sans font-semibold text-sm transition-all group shadow-lg"
             >
               <span>Projects</span>
               <span className="w-8 h-8 rounded-full bg-[#121212] text-white flex items-center justify-center font-mono text-sm group-hover:translate-x-0.5 transition-transform">
@@ -426,7 +427,7 @@ export default function Home() {
           {/* Previous Card (Peeked on left) */}
           <Link
             href={`/articles/${prevArticle.slug}`}
-            className="hidden lg:block absolute left-0 w-[300px] h-[380px] dark-card opacity-30 cursor-pointer overflow-hidden scale-90 translate-x-[-40px] pointer-events-auto hover:opacity-50 transition-opacity"
+            className="hidden xl:block absolute left-0 w-[300px] h-[380px] dark-card opacity-30 cursor-pointer overflow-hidden scale-90 translate-x-[-40px] pointer-events-auto hover:opacity-50 transition-opacity"
           >
             <div className="relative h-44 w-full overflow-hidden">
               <Image
@@ -443,11 +444,11 @@ export default function Home() {
             </div>
           </Link>
 
-          {/* Left Arrow Button — desktop only (sides) */}
+          {/* Left Arrow Button — large desktop only (sides) */}
           <button
             onClick={prevCard}
             aria-label="Previous article"
-            className="circle-btn absolute left-2 lg:left-8 z-20 top-1/2 -translate-y-1/2 hidden lg:flex"
+            className="circle-btn absolute left-2 xl:left-8 z-20 top-1/2 -translate-y-1/2 hidden xl:flex"
           >
             <ArrowLeft size={18} />
           </button>
@@ -496,11 +497,11 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Right Arrow Button — desktop only (sides) */}
+          {/* Right Arrow Button — large desktop only (sides) */}
           <button
             onClick={nextCard}
             aria-label="Next article"
-            className="circle-btn absolute right-2 lg:right-8 z-20 top-1/2 -translate-y-1/2 hidden lg:flex"
+            className="circle-btn absolute right-2 xl:right-8 z-20 top-1/2 -translate-y-1/2 hidden xl:flex"
           >
             <ArrowRight size={18} />
           </button>
@@ -508,7 +509,7 @@ export default function Home() {
           {/* Next Card (Peeked on right) */}
           <Link
             href={`/articles/${nextArticle.slug}`}
-            className="hidden lg:block absolute right-0 w-[300px] h-[380px] dark-card opacity-30 cursor-pointer overflow-hidden scale-90 translate-x-[40px] pointer-events-auto hover:opacity-50 transition-opacity"
+            className="hidden xl:block absolute right-0 w-[300px] h-[380px] dark-card opacity-30 cursor-pointer overflow-hidden scale-90 translate-x-[40px] pointer-events-auto hover:opacity-50 transition-opacity"
           >
             <div className="relative h-44 w-full overflow-hidden">
               <Image
@@ -526,13 +527,13 @@ export default function Home() {
           </Link>
         </div>
 
-        {/* Navigation: Arrows (mobile) + Dot Pagination */}
+        {/* Navigation: Arrows (mobile & tablet) + Dot Pagination */}
         <div className="flex justify-center items-center gap-4 mt-8">
-          {/* Left arrow — mobile only */}
+          {/* Left arrow — mobile & tablet */}
           <button
             onClick={prevCard}
             aria-label="Previous article"
-            className="circle-btn lg:hidden"
+            className="circle-btn xl:hidden"
           >
             <ArrowLeft size={16} />
           </button>
@@ -550,11 +551,11 @@ export default function Home() {
             ))}
           </div>
 
-          {/* Right arrow — mobile only */}
+          {/* Right arrow — mobile & tablet */}
           <button
             onClick={nextCard}
             aria-label="Next article"
-            className="circle-btn lg:hidden"
+            className="circle-btn xl:hidden"
           >
             <ArrowRight size={16} />
           </button>
@@ -564,10 +565,11 @@ export default function Home() {
       {/* ═══════════════════════════════════════
           ABOUT ME SECTION
           ═══════════════════════════════════════ */}
-      <AnimatedSection id="about" className="py-20 md:py-32 px-6 md:px-10 max-w-7xl mx-auto relative overflow-hidden">
+      <AnimatedSection id="about" className="py-20 md:py-32 px-6 md:px-10 max-w-7xl mx-auto relative overflow-hidden isolate">
         {/* Decorative semi-circle arcs — about */}
-        <div className="absolute top-10 -left-48 w-[450px] h-[450px] border-2 border-[#2E2E2E]/50 rounded-full pointer-events-none -z-10" />
-        <div className="absolute -bottom-32 -right-32 w-[350px] h-[350px] border border-[#2E2E2E]/40 rounded-full pointer-events-none -z-10" />
+        <div className="absolute top-10 -left-48 w-[450px] h-[450px] border border-white/20 rounded-full pointer-events-none z-0" />
+        <div className="absolute -bottom-32 -right-32 w-[350px] h-[350px] border border-white/15 rounded-full pointer-events-none z-0" />
+        <div className="relative z-10">
         {/* Section Header */}
         <div className="grid md:grid-cols-2 gap-8 items-start mb-14">
           <div>
@@ -678,6 +680,7 @@ export default function Home() {
               <span>Download Full CV (PDF)</span>
             </a>
           </motion.div>
+        </div>
         </div>
       </AnimatedSection>
 
@@ -821,10 +824,11 @@ export default function Home() {
       {/* ═══════════════════════════════════════
           PROJECTS SECTION
           ═══════════════════════════════════════ */}
-      <AnimatedSection id="projects" className="py-20 md:py-32 px-6 md:px-10 max-w-7xl mx-auto relative overflow-hidden">
+      <AnimatedSection id="projects" className="py-20 md:py-32 px-6 md:px-10 max-w-7xl mx-auto relative overflow-hidden isolate">
         {/* Decorative semi-circle arcs — projects */}
-        <div className="absolute top-20 -right-52 w-[500px] h-[500px] border-2 border-[#2E2E2E]/40 rounded-full pointer-events-none -z-10" />
-        <div className="absolute bottom-40 -left-40 w-[400px] h-[400px] border border-[#2E2E2E]/30 rounded-full pointer-events-none -z-10" />
+        <div className="absolute top-20 -right-52 w-[500px] h-[500px] border border-white/20 rounded-full pointer-events-none z-0" />
+        <div className="absolute bottom-40 -left-40 w-[400px] h-[400px] border border-white/15 rounded-full pointer-events-none z-0" />
+        <div className="relative z-10">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 mb-16">
           <span className="section-label">... /Projects & Works ...</span>
 
@@ -1095,6 +1099,7 @@ export default function Home() {
             );
           })}
         </div>
+        </div>
       </AnimatedSection>
 
       {/* ═══════════════════════════════════════
@@ -1182,15 +1187,16 @@ export default function Home() {
       {/* ═══════════════════════════════════════
           CONTACTS / FOOTER
           ═══════════════════════════════════════ */}
-      <footer id="contacts" className="relative pt-24 pb-16 px-6 md:px-10 max-w-7xl mx-auto overflow-hidden">
+      <footer id="contacts" className="relative pt-24 pb-16 px-6 md:px-10 max-w-7xl mx-auto overflow-hidden isolate">
         {/* Decorative semi-circle arcs */}
-        <div className="absolute top-0 left-0 w-[500px] h-[500px] -translate-x-1/2 -translate-y-1/2 border-2 border-[#2E2E2E]/50 rounded-full pointer-events-none -z-10" />
-        <div className="absolute top-20 left-0 w-[350px] h-[350px] -translate-x-1/2 -translate-y-1/4 border border-[#2E2E2E]/40 rounded-full pointer-events-none -z-10" />
-        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] translate-x-1/3 translate-y-1/3 border-2 border-[#2E2E2E]/40 rounded-full pointer-events-none -z-10" />
+        <div className="absolute top-0 left-0 w-[500px] h-[500px] -translate-x-1/2 -translate-y-1/2 border border-white/20 rounded-full pointer-events-none z-0" />
+        <div className="absolute top-20 left-0 w-[350px] h-[350px] -translate-x-1/2 -translate-y-1/4 border border-white/15 rounded-full pointer-events-none z-0" />
+        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] translate-x-1/3 translate-y-1/3 border border-white/20 rounded-full pointer-events-none z-0" />
 
-        <span className="section-label block mb-12 relative z-10">... /Contacts ...</span>
+        <div className="relative z-10">
+        <span className="section-label block mb-12">... /Contacts ...</span>
 
-        <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start relative z-10">
+        <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start">
           {/* Right Column (on desktop) — Contacts nav + Site card */}
           <div className="space-y-6 md:order-2">
             {/* Quick Navigation Links */}
@@ -1283,7 +1289,7 @@ export default function Home() {
 
         {/* Bottom Social Pills */}
         <motion.div
-          className="grid grid-cols-2 sm:flex sm:flex-wrap sm:justify-center gap-3 md:gap-4 mt-16 pt-8 border-t border-[#262626] relative z-10"
+          className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 md:gap-5 mt-16 pt-8 border-t border-[#262626]"
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
@@ -1298,7 +1304,8 @@ export default function Home() {
                 href={pill.href}
                 target={pill.href.startsWith("mailto") ? undefined : "_blank"}
                 rel="noopener noreferrer"
-                className="social-pill justify-center"              >
+                className="social-pill justify-center"
+              >
                 <Icon size={14} strokeWidth={2.5} className="text-[#F5F5F5]" />
                 <span>{pill.label}</span>
               </motion.a>
@@ -1309,7 +1316,7 @@ export default function Home() {
             href="https://github.com/sponsors/DevMubarak1"
             target="_blank"
             rel="noopener noreferrer"
-            className="social-pill hover:border-[#F5F5F5] col-span-2 sm:col-span-1 justify-center"
+            className="social-pill hover:border-[#F5F5F5] justify-center"
           >
             <Heart size={13} className="text-[#F5F5F5]" />
             <span>Sponsor on GitHub</span>
@@ -1317,12 +1324,13 @@ export default function Home() {
         </motion.div>
 
         {/* Bottom Signoff */}
-        <div className="mt-12 text-center text-xs text-[#555555] font-sans flex flex-col sm:flex-row items-center justify-center gap-2 relative z-10">
+        <div className="mt-12 text-center text-xs text-[#555555] font-sans flex flex-col sm:flex-row items-center justify-center gap-2">
           <span>Mubarak Raji</span>
           <span className="hidden sm:inline">•</span>
           <span>Civil Engineer & Full-Stack Developer</span>
           <span className="hidden sm:inline">•</span>
           <span>© {new Date().getFullYear()}</span>
+        </div>
         </div>
       </footer>
     </div>
