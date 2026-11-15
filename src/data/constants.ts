@@ -4,6 +4,7 @@ import {
   Mail,
   Instagram,
   Twitter,
+  X,
   Send,
   Award,
   Heart,
@@ -27,7 +28,7 @@ export const SOCIAL_PILLS = [
   { label: "Linkedin", href: "https://linkedin.com/in/rajimubarak123", icon: Linkedin },
   { label: "E-mail", href: "mailto:rmbabatunde123@gmail.com", icon: Mail },
   { label: "Telegram", href: "https://t.me/DevMubarak", icon: Send },
-  { label: "X / Twitter", href: "https://x.com/theDevMubarak", icon: Twitter },
+  { label: "X", href: "https://x.com/theDevMubarak", icon: X },
   { label: "Instagram", href: "https://www.instagram.com/dev.mubarak/", icon: Instagram },
 ];
 
@@ -36,7 +37,7 @@ export const FOOTER_PILLS = [
   { label: "in Linkedin", href: "https://linkedin.com/in/rajimubarak123", icon: Linkedin },
   { label: "E-mail", href: "mailto:rmbabatunde123@gmail.com", icon: Mail },
   { label: "Telegram", href: "https://t.me/DevMubarak", icon: Send },
-  { label: "X / Twitter", href: "https://x.com/theDevMubarak", icon: Twitter },
+  { label: "X", href: "https://x.com/theDevMubarak", icon: X },
   { label: "Instagram", href: "https://www.instagram.com/dev.mubarak/", icon: Instagram },
 ];
 
