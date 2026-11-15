@@ -9,6 +9,8 @@ export const metadata: Metadata = {
     "Mubarak Raji",
     "DevMubarak",
     "Full-Stack Developer",
+    "Civil Engineer",
+    "Civil Engineering",
     "Systems Architect",
     "Next.js",
     "React",
@@ -17,10 +19,31 @@ export const metadata: Metadata = {
     "ERPNext",
     "IoT",
     "Edge AI",
+    "Lagos State University",
+    "LASU",
+    "Portfolio",
   ],
   authors: [{ name: "Mubarak Raji", url: "https://mubarakraji.me" }],
   creator: "Mubarak Raji",
   metadataBase: new URL("https://mubarakraji.me"),
+  openGraph: {
+    title: "Mubarak Raji — Developer & Civil Engineer",
+    description:
+      "Full-Stack Developer & Civil Engineering undergraduate. Building enterprise ERP systems, IoT devices, and high-performance web applications.",
+    url: "https://mubarakraji.me",
+    siteName: "Mubarak Raji Portfolio",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Mubarak Raji — Developer & Civil Engineer",
+    description:
+      "Full-Stack Developer & Civil Engineering undergraduate. Building enterprise ERP systems, IoT devices, and high-performance web applications.",
+  },
+  alternates: {
+    canonical: "https://mubarakraji.me",
+  },
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },

@@ -204,7 +204,11 @@ export default function Home() {
       {/* ═══════════════════════════════════════
           HERO SECTION
           ═══════════════════════════════════════ */}
-      <section className="pt-32 md:pt-40 pb-16 md:pb-20 px-6 md:px-10 max-w-7xl mx-auto relative">
+      <section className="pt-32 md:pt-40 pb-16 md:pb-20 px-6 md:px-10 max-w-7xl mx-auto relative overflow-hidden">
+        {/* Decorative semi-circle arcs — hero */}
+        <div className="absolute -top-40 -right-40 w-[600px] h-[600px] border border-[#2E2E2E]/20 rounded-full pointer-events-none" />
+        <div className="absolute -top-20 -right-20 w-[400px] h-[400px] border border-[#2E2E2E]/15 rounded-full pointer-events-none" />
+        <div className="absolute bottom-0 -left-60 w-[500px] h-[500px] border border-[#2E2E2E]/15 rounded-full pointer-events-none" />
         {/* ── DESKTOP HERO (md and up) ── */}
         <div className="hidden md:block">
           {/* Top Row: "Developer" with small "fullstack" label + Action Buttons */}
@@ -270,7 +274,7 @@ export default function Home() {
                 <span className="text-[#F5F5F5] font-semibold not-italic">
                   write maintainable, clean and understandable code
                 </span>{" "}
-                to make the development and hardware integration process enjoyable.
+                that makes the development process enjoyable and engineering solutions reliable.
               </p>
             </motion.div>
 
@@ -346,7 +350,7 @@ export default function Home() {
             <span className="text-[#F5F5F5] font-semibold not-italic">
               write maintainable, clean and understandable code
             </span>{" "}
-            to make the development and hardware integration process enjoyable.
+            that makes the development process enjoyable and engineering solutions reliable.
           </motion.p>
 
           {/* 3. Primary Button: Projects (→) — pill style */}
@@ -444,7 +448,7 @@ export default function Home() {
           <button
             onClick={prevCard}
             aria-label="Previous article"
-            className="circle-btn absolute left-2 md:left-4 z-20"
+            className="circle-btn absolute left-2 md:left-8 lg:left-12 z-20 top-1/2 -translate-y-1/2"
           >
             <ArrowLeft size={18} />
           </button>
@@ -497,7 +501,7 @@ export default function Home() {
           <button
             onClick={nextCard}
             aria-label="Next article"
-            className="circle-btn absolute right-2 md:right-4 z-20"
+            className="circle-btn absolute right-2 md:right-8 lg:right-12 z-20 top-1/2 -translate-y-1/2"
           >
             <ArrowRight size={18} />
           </button>
@@ -541,7 +545,10 @@ export default function Home() {
       {/* ═══════════════════════════════════════
           ABOUT ME SECTION
           ═══════════════════════════════════════ */}
-      <AnimatedSection id="about" className="py-20 md:py-32 px-6 md:px-10 max-w-7xl mx-auto">
+      <AnimatedSection id="about" className="py-20 md:py-32 px-6 md:px-10 max-w-7xl mx-auto relative overflow-hidden">
+        {/* Decorative semi-circle arcs — about */}
+        <div className="absolute top-10 -left-48 w-[450px] h-[450px] border border-[#2E2E2E]/20 rounded-full pointer-events-none" />
+        <div className="absolute -bottom-32 -right-32 w-[350px] h-[350px] border border-[#2E2E2E]/15 rounded-full pointer-events-none" />
         {/* Section Header */}
         <div className="grid md:grid-cols-2 gap-8 items-start mb-14">
           <div>
@@ -795,7 +802,9 @@ export default function Home() {
       {/* ═══════════════════════════════════════
           PROJECTS SECTION
           ═══════════════════════════════════════ */}
-      <AnimatedSection id="projects" className="py-20 md:py-32 px-6 md:px-10 max-w-7xl mx-auto">
+      <AnimatedSection id="projects" className="py-20 md:py-32 px-6 md:px-10 max-w-7xl mx-auto relative overflow-hidden">
+        {/* Decorative semi-circle arcs — projects */}
+        <div className="absolute top-20 -right-52 w-[500px] h-[500px] border border-[#2E2E2E]/15 rounded-full pointer-events-none" />
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 mb-16">
           <span className="section-label">... /Projects & Works ...</span>
 
@@ -1153,35 +1162,48 @@ export default function Home() {
       {/* ═══════════════════════════════════════
           CONTACTS / FOOTER
           ═══════════════════════════════════════ */}
-      <footer id="contacts" className="pt-20 pb-16 px-6 md:px-10 max-w-7xl mx-auto border-t border-[#262626]">
-        <span className="section-label block mb-14">... /Contacts ...</span>
+      <footer id="contacts" className="relative pt-24 pb-16 px-6 md:px-10 max-w-7xl mx-auto overflow-hidden">
+        {/* Decorative semi-circle arcs */}
+        <div className="absolute top-0 left-0 w-[500px] h-[500px] -translate-x-1/2 -translate-y-1/2 border border-[#2E2E2E]/30 rounded-full pointer-events-none" />
+        <div className="absolute top-20 left-0 w-[350px] h-[350px] -translate-x-1/2 -translate-y-1/4 border border-[#2E2E2E]/20 rounded-full pointer-events-none" />
+        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] translate-x-1/3 translate-y-1/3 border border-[#2E2E2E]/20 rounded-full pointer-events-none" />
 
-        <div className="grid md:grid-cols-2 gap-12 items-start">
-          {/* Left Column: Big Typography Name & Bio */}
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={textReveal}
-          >
-            <h2 className="font-mono text-6xl sm:text-7xl md:text-8xl font-bold tracking-tighter text-[#F5F5F5] leading-none">
-              Mubarak
-              <br />
-              Raji
-            </h2>
-            <p className="font-sans text-sm text-[#A6A6A6] mt-4">
-              Civil Engineer &amp; Full-Stack Developer
-            </p>
-            <p className="font-mono text-xs text-[#888888] mt-2">
-              Lagos State University (LASU) • rmbabatunde123@gmail.com
-            </p>
-          </motion.div>
+        <span className="section-label block mb-12 relative z-10">... /Contacts ...</span>
 
-          {/* Right Column: Telegram QR Card & Site Info */}
-          <div className="space-y-6 md:pl-8">
-            {/* Telegram QR Connection Card */}
-            <div className="dark-card p-6 border-[#3D3D3D] flex flex-col sm:flex-row items-center gap-5">
-              <div className="relative w-28 h-28 rounded-2xl overflow-hidden border border-[#2E2E2E] bg-white p-1 flex-shrink-0">
+        <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start relative z-10">
+          {/* Right Column (on desktop) — Contacts nav + Site card */}
+          <div className="space-y-6 md:order-2">
+            {/* Quick Navigation Links */}
+            <div className="flex flex-wrap items-center gap-5 text-sm font-sans">
+              <a href="#" className="text-[#A6A6A6] hover:text-[#F5F5F5] transition-colors link-reveal">
+                Main
+              </a>
+              {NAV_LINKS.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className="text-[#A6A6A6] hover:text-[#F5F5F5] transition-colors link-reveal"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+
+            {/* Site Info Card */}
+            <div className="dark-card p-6 max-w-sm">
+              <h4 className="font-mono text-sm font-semibold text-[#F5F5F5] mb-3">Site</h4>
+              <p className="font-mono text-xs text-[#A6A6A6] leading-relaxed">
+                Handcrafted by <span className="text-[#F5F5F5]">Mubarak Raji</span> /
+                <br />
+                Developer &amp; Civil Engineer Portfolio /
+                <br />
+                Powered by <span className="text-[#F5F5F5]">Next.js</span> &amp; <span className="text-[#F5F5F5]">TypeScript</span>
+              </p>
+            </div>
+
+            {/* Telegram QR Card */}
+            <div className="dark-card p-5 flex flex-col sm:flex-row items-center gap-5">
+              <div className="relative w-24 h-24 rounded-2xl overflow-hidden border border-[#2E2E2E] bg-white p-1 flex-shrink-0">
                 <Image
                   src="/telegram-qr.jpg"
                   alt="Telegram QR @DevMubarak"
@@ -1189,13 +1211,13 @@ export default function Home() {
                   className="object-contain"
                 />
               </div>
-              <div className="text-center sm:text-left flex-1 space-y-2">
+              <div className="text-center sm:text-left flex-1 space-y-1.5">
                 <span className="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-[#222222] border border-[#333333] text-[#F5F5F5] uppercase tracking-wider">
                   Direct Channel
                 </span>
                 <h4 className="font-mono text-sm font-bold text-[#F5F5F5]">Chat on Telegram</h4>
                 <p className="text-xs text-[#A6A6A6] font-sans">
-                  Scan code or message directly at <span className="font-mono text-[#F5F5F5]">@DevMubarak</span>
+                  Scan or message <span className="font-mono text-[#F5F5F5]">@DevMubarak</span>
                 </p>
                 <a
                   href="https://t.me/DevMubarak"
@@ -1209,45 +1231,39 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Quick Links & Site Info */}
-            <div className="flex flex-wrap items-center gap-5 text-xs font-sans">
-              <a href="#" className="text-[#A6A6A6] hover:text-[#F5F5F5] transition-colors">
-                Main
-              </a>
-              {NAV_LINKS.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className="text-[#A6A6A6] hover:text-[#F5F5F5] transition-colors"
-                >
-                  {link.label}
-                </a>
-              ))}
-              <a
-                href="/Mubarak_Raji_Resume.pdf"
-                download="Mubarak_Raji_Resume.pdf"
-                className="text-[#F5F5F5] hover:underline font-mono"
-              >
-                Download CV ↓
-              </a>
-            </div>
-
-            <div className="dark-card p-5 max-w-sm">
-              <h4 className="font-mono text-xs font-semibold text-[#F5F5F5] mb-2">Site</h4>
-              <p className="font-sans text-xs text-[#A6A6A6] leading-relaxed">
-                Engineered by Mubarak Raji /
-                <br />
-                Developer &amp; Civil Engineer Portfolio /
-                <br />
-                Powered by Next.js &amp; TypeScript
-              </p>
-            </div>
+            {/* Download CV */}
+            <a
+              href="/Mubarak_Raji_Resume.pdf"
+              download="Mubarak_Raji_Resume.pdf"
+              className="inline-flex items-center gap-2 text-sm font-mono text-[#F5F5F5] hover:underline"
+            >
+              <ArrowDown size={14} />
+              Download CV (PDF)
+            </a>
           </div>
+
+          {/* Left Column — Big Name Typography */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={textReveal}
+            className="md:order-1"
+          >
+            <h2 className="font-mono text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold tracking-tighter text-[#F5F5F5] leading-[0.85]">
+              Mubarak
+              <br />
+              <span className="ml-4 md:ml-8">Raji</span>
+            </h2>
+            <p className="font-sans text-sm text-[#A6A6A6] mt-5">
+              Civil Engineer &amp; Full-Stack Developer
+            </p>
+          </motion.div>
         </div>
 
         {/* Bottom Social Pills */}
         <motion.div
-          className="flex flex-wrap gap-2.5 mt-16 pt-8 border-t border-[#262626]"
+          className="flex flex-wrap gap-2.5 mt-16 pt-8 border-t border-[#262626] relative z-10"
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
@@ -1282,12 +1298,12 @@ export default function Home() {
         </motion.div>
 
         {/* Bottom Signoff */}
-        <div className="mt-16 text-center text-xs text-[#555555] font-sans flex flex-col sm:flex-row items-center justify-center gap-2">
+        <div className="mt-12 text-center text-xs text-[#555555] font-sans flex flex-col sm:flex-row items-center justify-center gap-2 relative z-10">
           <span>Mubarak Raji</span>
           <span className="hidden sm:inline">•</span>
           <span>Civil Engineer & Full-Stack Developer</span>
           <span className="hidden sm:inline">•</span>
-          <span>© 2026</span>
+          <span>© {new Date().getFullYear()}</span>
         </div>
       </footer>
     </div>
