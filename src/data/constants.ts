@@ -3,12 +3,11 @@ import {
   Linkedin,
   Mail,
   Instagram,
-  Twitter,
-  X,
   Send,
   Award,
   Heart,
 } from "lucide-react";
+import XIcon from "@/components/XIcon";
 
 /* ═══════════════════════════════════════════
    NAVIGATION & SOCIAL
@@ -28,7 +27,7 @@ export const SOCIAL_PILLS = [
   { label: "Linkedin", href: "https://linkedin.com/in/rajimubarak123", icon: Linkedin },
   { label: "E-mail", href: "mailto:rmbabatunde123@gmail.com", icon: Mail },
   { label: "Telegram", href: "https://t.me/DevMubarak", icon: Send },
-  { label: "X", href: "https://x.com/theDevMubarak", icon: X },
+  { label: "X", href: "https://x.com/theDevMubarak", icon: XIcon },
   { label: "Instagram", href: "https://www.instagram.com/dev.mubarak/", icon: Instagram },
 ];
 
@@ -37,7 +36,7 @@ export const FOOTER_PILLS = [
   { label: "in Linkedin", href: "https://linkedin.com/in/rajimubarak123", icon: Linkedin },
   { label: "E-mail", href: "mailto:rmbabatunde123@gmail.com", icon: Mail },
   { label: "Telegram", href: "https://t.me/DevMubarak", icon: Send },
-  { label: "X", href: "https://x.com/theDevMubarak", icon: X },
+  { label: "X", href: "https://x.com/theDevMubarak", icon: XIcon },
   { label: "Instagram", href: "https://www.instagram.com/dev.mubarak/", icon: Instagram },
 ];
 

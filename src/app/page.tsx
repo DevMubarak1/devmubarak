@@ -447,7 +447,7 @@ export default function Home() {
           <button
             onClick={prevCard}
             aria-label="Previous article"
-            className="circle-btn absolute left-2 md:left-8 lg:left-12 z-20 top-1/2 -translate-y-1/2 hidden md:flex"
+            className="circle-btn absolute left-2 lg:left-8 z-20 top-1/2 -translate-y-1/2 hidden lg:flex"
           >
             <ArrowLeft size={18} />
           </button>
@@ -500,7 +500,7 @@ export default function Home() {
           <button
             onClick={nextCard}
             aria-label="Next article"
-            className="circle-btn absolute right-2 md:right-8 lg:right-12 z-20 top-1/2 -translate-y-1/2 hidden md:flex"
+            className="circle-btn absolute right-2 lg:right-8 z-20 top-1/2 -translate-y-1/2 hidden lg:flex"
           >
             <ArrowRight size={18} />
           </button>
@@ -532,7 +532,7 @@ export default function Home() {
           <button
             onClick={prevCard}
             aria-label="Previous article"
-            className="circle-btn md:hidden"
+            className="circle-btn lg:hidden"
           >
             <ArrowLeft size={16} />
           </button>
@@ -554,7 +554,7 @@ export default function Home() {
           <button
             onClick={nextCard}
             aria-label="Next article"
-            className="circle-btn md:hidden"
+            className="circle-btn lg:hidden"
           >
             <ArrowRight size={16} />
           </button>
