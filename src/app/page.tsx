@@ -444,15 +444,6 @@ export default function Home() {
             </div>
           </Link>
 
-          {/* Left Arrow Button — large desktop only (sides) */}
-          <button
-            onClick={prevCard}
-            aria-label="Previous article"
-            className="circle-btn absolute left-2 xl:left-8 z-20 top-1/2 -translate-y-1/2 hidden xl:flex"
-          >
-            <ArrowLeft size={18} />
-          </button>
-
           {/* Active Card (Center Focus) */}
           <div className="relative z-10 w-full max-w-[500px] dark-card overflow-hidden shadow-2xl border-[#3D3D3D]">
             {/* Top Artwork */}
@@ -497,15 +488,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Right Arrow Button — large desktop only (sides) */}
-          <button
-            onClick={nextCard}
-            aria-label="Next article"
-            className="circle-btn absolute right-2 xl:right-8 z-20 top-1/2 -translate-y-1/2 hidden xl:flex"
-          >
-            <ArrowRight size={18} />
-          </button>
-
           {/* Next Card (Peeked on right) */}
           <Link
             href={`/articles/${nextArticle.slug}`}
@@ -527,13 +509,13 @@ export default function Home() {
           </Link>
         </div>
 
-        {/* Navigation: Arrows (mobile & tablet) + Dot Pagination */}
-        <div className="flex justify-center items-center gap-4 mt-8">
-          {/* Left arrow — mobile & tablet */}
+        {/* Navigation: Arrows + Dot Pagination */}
+        <div className="flex justify-center items-center gap-4 sm:gap-6 mt-8">
+          {/* Left arrow */}
           <button
             onClick={prevCard}
             aria-label="Previous article"
-            className="circle-btn xl:hidden"
+            className="circle-btn"
           >
             <ArrowLeft size={16} />
           </button>
@@ -551,11 +533,11 @@ export default function Home() {
             ))}
           </div>
 
-          {/* Right arrow — mobile & tablet */}
+          {/* Right arrow */}
           <button
             onClick={nextCard}
             aria-label="Next article"
-            className="circle-btn xl:hidden"
+            className="circle-btn"
           >
             <ArrowRight size={16} />
           </button>

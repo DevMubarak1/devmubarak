@@ -40,129 +40,131 @@ body {
   letter-spacing: 0.05em;
 }
 
-/* ─── Dark Cards ─── */
-.dark-card {
-  background-color: #181818;
-  border: 1px solid #2E2E2E;
-  border-radius: 20px;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.dark-card:hover {
-  border-color: #3D3D3D;
-  background-color: #1E1E1E;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-  transform: translateY(-2px);
-}
-
-/* ─── Pill Buttons ─── */
-.social-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.625rem;
-  padding: 0.625rem 1.25rem;
-  background-color: #181818;
-  border: 1px solid #2E2E2E;
-  border-radius: 9999px;
-  color: #A6A6A6;
-  font-size: 0.8125rem;
-  font-family: var(--font-open-sans), sans-serif;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  cursor: pointer;
-}
-.social-pill svg {
-  stroke-width: 2;
-}
-.social-pill svg[stroke="none"] {
-  stroke: none;
-  stroke-width: 0;
-}
-.social-pill:hover {
-  background-color: #222222;
-  border-color: #F5F5F5;
-  color: #F5F5F5;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-}
-
-.pill-action {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1.25rem;
-  background-color: #F5F5F5;
-  color: #121212;
-  font-weight: 600;
-  border-radius: 9999px;
-  font-size: 0.75rem;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  cursor: pointer;
-}
-.pill-action:hover {
-  background-color: #FFFFFF;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 20px rgba(245, 245, 245, 0.15);
-}
-
-/* ─── Circular Icon Buttons ─── */
-.circle-btn {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #181818;
-  border: 1px solid #2E2E2E;
-  color: #F5F5F5;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  flex-shrink: 0;
-  cursor: pointer;
-}
-.circle-btn:hover {
-  background-color: #F5F5F5;
-  border-color: #F5F5F5;
-  color: #121212;
-  transform: scale(1.08);
-  box-shadow: 0 4px 20px rgba(245, 245, 245, 0.1);
-}
-
-/* ─── Work Timeline Rows with Inverting Hover ─── */
-.work-row {
-  display: grid;
-  grid-template-columns: 160px 1fr 1fr;
-  align-items: center;
-  padding: 1.25rem 1rem;
-  border-bottom: 1px solid #262626;
-  border-radius: 12px;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  color: #F5F5F5;
-}
-@media (max-width: 768px) {
-  .work-row {
-    grid-template-columns: 1fr;
-    gap: 0.5rem;
+@layer components {
+  /* ─── Dark Cards ─── */
+  .dark-card {
+    background-color: #181818;
+    border: 1px solid #2E2E2E;
+    border-radius: 20px;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   }
-}
-.work-row:hover {
-  background-color: #F5F5F5;
-  color: #121212 !important;
-  transform: translateX(4px);
-}
-.work-row:hover .work-period {
-  color: #555555;
-}
-.work-row:hover .work-duration {
-  color: #777777;
-}
-.work-row:hover .work-company {
-  color: #121212;
-}
-.work-row:hover .work-role {
-  color: #121212;
-}
-.work-row:hover .work-arrow {
-  opacity: 1;
-  color: #121212;
+  .dark-card:hover {
+    border-color: #3D3D3D;
+    background-color: #1E1E1E;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+  }
+
+  /* ─── Pill Buttons ─── */
+  .social-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
+    padding: 0.625rem 1.25rem;
+    background-color: #181818;
+    border: 1px solid #2E2E2E;
+    border-radius: 9999px;
+    color: #A6A6A6;
+    font-size: 0.8125rem;
+    font-family: var(--font-open-sans), sans-serif;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+  }
+  .social-pill svg {
+    stroke-width: 2;
+  }
+  .social-pill svg[stroke="none"] {
+    stroke: none;
+    stroke-width: 0;
+  }
+  .social-pill:hover {
+    background-color: #222222;
+    border-color: #F5F5F5;
+    color: #F5F5F5;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  .pill-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.25rem;
+    background-color: #F5F5F5;
+    color: #121212;
+    font-weight: 600;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+  }
+  .pill-action:hover {
+    background-color: #FFFFFF;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(245, 245, 245, 0.15);
+  }
+
+  /* ─── Circular Icon Buttons ─── */
+  .circle-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #181818;
+    border: 1px solid #2E2E2E;
+    color: #F5F5F5;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    flex-shrink: 0;
+    cursor: pointer;
+  }
+  .circle-btn:hover {
+    background-color: #F5F5F5;
+    border-color: #F5F5F5;
+    color: #121212;
+    transform: scale(1.08);
+    box-shadow: 0 4px 20px rgba(245, 245, 245, 0.1);
+  }
+
+  /* ─── Work Timeline Rows with Inverting Hover ─── */
+  .work-row {
+    display: grid;
+    grid-template-columns: 160px 1fr 1fr;
+    align-items: center;
+    padding: 1.25rem 1rem;
+    border-bottom: 1px solid #262626;
+    border-radius: 12px;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    color: #F5F5F5;
+  }
+  @media (max-width: 768px) {
+    .work-row {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+    }
+  }
+  .work-row:hover {
+    background-color: #F5F5F5;
+    color: #121212 !important;
+    transform: translateX(4px);
+  }
+  .work-row:hover .work-period {
+    color: #555555;
+  }
+  .work-row:hover .work-duration {
+    color: #777777;
+  }
+  .work-row:hover .work-company {
+    color: #121212;
+  }
+  .work-row:hover .work-role {
+    color: #121212;
+  }
+  .work-row:hover .work-arrow {
+    opacity: 1;
+    color: #121212;
+  }
 }
 
 /* ─── Decorative Background Circles ─── */
